@@ -4,29 +4,27 @@ Personal Cursor plugin that bundles skills and slash commands so you can reuse t
 
 ## Install (Git)
 
-### 1. Host the repo
+Repo: https://github.com/dimar-hanung/cursor-plugin-enjoy-workflow
 
-Push this repository to GitHub (private is fine).
-
-### 2. Install on each Cursor machine
+### Install on each Cursor machine
 
 ```bash
-git clone <repo-url> ~/.cursor/plugins/local/enjoy-workflow
+git clone https://github.com/dimar-hanung/cursor-plugin-enjoy-workflow.git ~/.cursor/plugins/local/enjoy-workflow
 ```
 
 On Windows (Git Bash):
 
 ```bash
-git clone <repo-url> "$HOME/.cursor/plugins/local/enjoy-workflow"
+git clone https://github.com/dimar-hanung/cursor-plugin-enjoy-workflow.git "$HOME/.cursor/plugins/local/enjoy-workflow"
 ```
 
 Or use Cursor’s **Install from GitHub** for plugins if available, pointing at this repo.
 
-### 3. Reload
+### Reload
 
 Restart Cursor or run **Developer: Reload Window**. Then open **Customize** and confirm the skills and `/commands` from Enjoy Workflow are listed.
 
-### 4. Remote SSH
+### Remote SSH
 
 Install the plugin **once on the Cursor client machine** (your laptop), not on each remote server home directory. Skills and commands come from the local plugin path and apply while you work over SSH.
 
