@@ -41,7 +41,7 @@ Then reload the Cursor window.
 
 ## Inventory
 
-### Skills (11)
+### Skills (10)
 
 | Skill | Source |
 |-------|--------|
@@ -55,13 +55,13 @@ Then reload the Cursor window.
 | `docx` | `~/.agents/skills` |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
-| `tugas-kuliah` | `~/.cursor/skills` |
 
-### Commands (9)
+`tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
+
+### Commands (8)
 
 | Command | Description |
 |---------|-------------|
-| `/brainstorm` | Focused ideation without overwhelming options |
 | `/create-agents-rule` | Add AGENTS.md rule for `.agents/skills` |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
