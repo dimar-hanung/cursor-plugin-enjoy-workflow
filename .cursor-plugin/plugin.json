@@ -1,0 +1,17 @@
+{
+  "name": "enjoy-workflow",
+  "displayName": "Enjoy Workflow",
+  "version": "1.0.0",
+  "description": "Personal Cursor skills and commands for portable workflows across machines and SSH.",
+  "author": {
+    "name": "dimar"
+  },
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "commands",
+    "workflow"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/"
+}
