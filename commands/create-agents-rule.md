@@ -36,3 +36,5 @@ Required Structure:
 
 You can add another section if needed and important.
 ```
+
+Just add it to the AGENTS.md, not the cursor rules.
