@@ -39,7 +39,7 @@ Then reload the Cursor window.
 
 ## Inventory
 
-### Skills (11)
+### Skills (12)
 
 | Skill | Source |
 |-------|--------|
@@ -54,6 +54,7 @@ Then reload the Cursor window.
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
 | `push-git-workflow` | `~/.agents/skills` |
+| `tidy-env` | new |
 
 `tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
 
