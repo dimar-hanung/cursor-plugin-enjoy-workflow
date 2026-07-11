@@ -1,0 +1,81 @@
+---
+description: Require skills under .agents/skills for major modules
+alwaysApply: true
+---
+
+# Agents skills
+
+Every conversation or development cycle must create or update skills inside `.agents/skills`.
+
+## Naming
+
+```text
+.agents/skills/develop-module-[module-name]/
+```
+
+## Scope
+
+This applies only to major modules.
+
+## Folder layout (progressive disclosure)
+
+### Simple skill
+
+```text
+develop-module-checkout/
+└── SKILL.md
+```
+
+### Complex skill (module with sub-parts) — prefer this for one source of truth
+
+```text
+develop-module-checkout/
+├── SKILL.md                 # router + shared map + must-knows (<500 lines)
+└── references/
+    ├── payment.md           # sub-part detail
+    ├── cart.md
+    └── fulfillment.md
+```
+
+Optional when needed: `scripts/`, `assets/`.
+
+Do **not** split one module into many skills that copy the same map. Keep one skill folder; put sub-part detail in `references/`.
+
+## Guidelines
+
+- Keep skills high-level: file locations and must-knows, not deep implementation dumps. Add anything useful that prevents early context thrashing.
+- Use english language.
+- If the module involves an external service or multiple codebases, mention only the project path or project name, and briefly describe its purpose for this module.
+- Keep links **one level deep** from `SKILL.md` (e.g. `references/payment.md`). No reference → reference chains.
+- In `SKILL.md`, say **when** to open each reference (e.g. "If touching payment, read `references/payment.md`"). Do not paste the same facts into both `SKILL.md` and `references/`.
+
+## Required `SKILL.md` structure
+
+```markdown
+## When to Use
+
+## Key locations
+
+## References
+
+## Learned user preferences
+
+## Learned Workspace Facts
+```
+
+In `## References`, list each file under `references/` with when to open it. Example:
+
+```markdown
+## References
+
+- [payment.md](references/payment.md) — when changing payment flow or providers
+- [cart.md](references/cart.md) — when changing cart or line items
+```
+
+If there are no `references/` files yet, write `- (none)` and add entries when files are created.
+
+Optional sections when useful: `Overview`, `External projects`, `Gotchas`.
+
+## `references/` files
+
+Use for sub-part maps, long schemas, edge cases, or domain variants. Each file should be self-contained for that sub-part. Keep the `## References` list in `SKILL.md` in sync with this folder.

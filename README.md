@@ -58,11 +58,16 @@ Then reload the Cursor window.
 
 `tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
 
-### Commands (7)
+### Rules (1)
+
+| Rule | Description |
+|------|-------------|
+| `agents-skills` | Always require `.agents/skills` for major modules |
+
+### Commands (6)
 
 | Command | Description |
 |---------|-------------|
-| `/create-agents-rule` | Add AGENTS.md rule for `.agents/skills` |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
@@ -80,6 +85,8 @@ enjoy-workflow/
 │   └── <skill-name>/SKILL.md
 ├── commands/
 │   └── <command>.md
+├── rules/
+│   └── <rule>.mdc
 ├── LICENSE
 └── README.md
 ```
