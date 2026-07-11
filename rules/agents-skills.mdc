@@ -45,9 +45,22 @@ Do **not** split one module into many skills that copy the same map. Keep one sk
 
 - Keep skills high-level: file locations and must-knows, not deep implementation dumps. Add anything useful that prevents early context thrashing.
 - Use english language.
-- If the module involves an external service or multiple codebases, mention only the project path or project name, and briefly describe its purpose for this module.
 - Keep links **one level deep** from `SKILL.md` (e.g. `references/payment.md`). No reference → reference chains.
 - In `SKILL.md`, say **when** to open each reference (e.g. "If touching payment, read `references/payment.md`"). Do not paste the same facts into both `SKILL.md` and `references/`.
+
+## External services and other codebases (required)
+
+When a module touches an external service or another codebase:
+
+- **MUST** mention only the codebase or project name.
+- **MUST** add one short sentence on what that project does for this module.
+- **MUST NOT** paste APIs, folder trees, paths, or implementation detail from that other codebase into this skill.
+
+Example under `Key locations` or `External projects`:
+
+```markdown
+- `payment-gateway` — handles charge + refund callbacks used by checkout
+```
 
 ## Required `SKILL.md` structure
 
