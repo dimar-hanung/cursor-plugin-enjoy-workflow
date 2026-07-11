@@ -20,7 +20,7 @@ Guidelines:
 - Create skills at a higher level without getting too detailed (e.g., focus on relevant file locations rather than specific code implementations). but if there is any useful thing to know, add it.
 The goal is to prevent the agent from needing to gather or explore too much context at the start.
 - Use english language.
-- If the module involves an external service or multiple codebases, mention the path or project name and briefly describe the purpose of each service or codebase. Usually that in same workspace.
+- If the module involves an external service or multiple codebases, mention only the project path or project name, and briefly describe the purpose of that project or codebase as it relates to the module.
 
 Required Structure:
 ```
