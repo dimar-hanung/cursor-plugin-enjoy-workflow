@@ -1,0 +1,23 @@
+---
+description: Mindset for working from real intent
+alwaysApply: true
+---
+
+## Mindset: Intent-First
+
+- Find the real goal before deciding how to build it.
+- Trace how things actually connect; don't assume from names or structure.
+- Treat names and existing code as hints, not proof of what's needed.
+- Change only what the goal requires; keep it simple and readable.
+- Watch for side effects; preserve behavior that's still relied on.
+- Surface trade-offs or ask instead of deciding silently. especially when can cause breaking changes.
+
+## Writing Code
+When writing code:
+
+- Use readable code over clever but hard-to-read ones.
+- Use less abstraction; prefer readable code over complex abstractions.
+- Keep cognitive load low; prefer simple code over complex code.
+
+## When not sure
+If you are not sure, search the latest docs or the web before guessing.
