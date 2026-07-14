@@ -1,0 +1,23 @@
+---
+description: When explaining database/table structure, always show column-level diagrams
+alwaysApply: false
+---
+# Table structure answers — column diagrams required
+
+When the user asks about **table structure**, **database schema**, **model relationships**, or **kolom tabel**:
+
+1. **Always include a diagram with columns** — not prose-only or table-name lists.
+2. **Prefer Mermaid `erDiagram`** for entity relationships; show key columns per entity.
+3. **Label accurately** from source of truth: `models.py`, migrations, or DB schema — include `db_table` name when known.
+4. **Per entity, show at minimum:**
+   - Primary key (`id`)
+   - Foreign keys (`*_id` + target table)
+   - Business columns relevant to the question
+   - `created_at` / `updated_at` when the model uses them
+5. **Mark optional/nullable** columns when it matters (`?`, `(nullable)`, or note in diagram).
+6. **Show cardinality** on relationships (`||--o{`, `}o--||`, etc.).
+7. **Group related tables** in one diagram when the question spans a module (e.g. diklat catalog + jadwal + enrollment).
+
+Do not skip the diagram even for a single table — a one-entity `erDiagram` block is fine.
+
+If scope is large, use one overview diagram plus focused sub-diagrams per cluster — still with columns.
