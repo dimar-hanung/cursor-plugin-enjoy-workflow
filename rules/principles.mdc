@@ -7,15 +7,11 @@ alwaysApply: true
 
 - Find the real goal before deciding how to build it.
 - Trace how things actually connect; don't assume from names or structure.
-- Treat names and existing code as hints, not proof of what's needed.
-- Change only what the goal requires; keep it simple and readable.
-- Watch for side effects; preserve behavior that's still relied on.
-- Surface trade-offs or ask instead of deciding silently. especially when can cause breaking changes.
 
 ## Writing Code
 When writing code:
 
-- Use readable code over clever but hard-to-read ones.
+- Use readable code over clever but hard-to-read ones. Example use guard clauses instead of nested if statements or else statements.
 - Use less abstraction; prefer readable code over complex abstractions.
 - Keep cognitive load low; prefer simple code over complex code.
 
