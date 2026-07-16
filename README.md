@@ -39,10 +39,12 @@ Then reload the Cursor window.
 
 ## Inventory
 
-### Skills (12)
+### Skills (18)
 
 | Skill | Source |
 |-------|--------|
+| `animation-vocabulary` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| `apple-design` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `brainstorm` | `~/.cursor/skills` |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
@@ -51,9 +53,13 @@ Then reload the Cursor window.
 | `create-skill` | `~/.agents/skills` |
 | `deep-agent` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
+| `emil-design-eng` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| `find-animation-opportunities` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| `improve-animations` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
 | `push-git-workflow` | `~/.agents/skills` |
+| `review-animations` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `tidy-env` | new |
 
 `tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
