@@ -71,6 +71,12 @@ Keep this order. No extra top-level sections.
 
 # Summary
 [New/modified files, schema, APIs, constraints — factual only]
+- **New files** — path and purpose
+- **Modified files** — path and what changes
+- **Data schema changes** — tables, columns, migrations
+- **API endpoints** — method, path, brief purpose
+- **Important notes** — constraints, env vars, config, breaking changes
+
 ```
 
 
