@@ -1,5 +1,5 @@
 ---
-description: Mindset for working from real intent
+description: Rules must be followed.
 alwaysApply: true
 ---
 
@@ -11,9 +11,30 @@ alwaysApply: true
 ## Writing Code
 When writing code:
 
-- Use readable code over clever but hard-to-read ones. Example use guard clauses instead of nested if statements or else statements.
-- Use less abstraction; prefer readable code over complex abstractions.
-- Keep cognitive load low; prefer simple code over complex code.
+### Readable over clever
+
+- **Do** use guard clauses and early returns for validation, preconditions, and error paths.
+- **Do** choose boring, explicit patterns anyone on the team can follow in one pass.
+- **Don't** nest `if`/`else` when flat guards make the happy path obvious.
+- **Don't** use one-liners, meta-programming, or tricks that save lines but hide intent.
+
+### Less abstraction
+
+- **Do** keep logic inline when it is used once or twice and still easy to follow.
+- **Do** extract a helper when the same non-trivial pattern appears in 3+ places, or when one chunk needs a name to stay readable.
+- **Don't** add wrappers, factories, or interfaces for repetition you might need someday.
+- **Don't** split one straightforward flow into many layers just to look "clean."
+
+### Low cognitive load
+
+Low cognitive load is **not** the same as "more abstraction." Extra layers often *increase* what a reader must hold in their head — names, files, indirection — without making the behavior easier to understand.
+
+- **Do** match code complexity to problem complexity — simple problem, simple code.
+- **Do** keep the main path visible in one place; extract only when it genuinely reduces noise.
+- **Do** use small functions and clear names when a block does more than one obvious thing.
+- **Don't** treat abstraction as the default way to simplify — fewer moving parts usually beats more structure.
+- **Don't** force readers to jump across many files, types, or wrappers to understand one user-facing behavior.
+- **Don't** add indirection (extra types, pass-through functions, config layers) that does not remove real complexity.
 
 ## When not sure
 If you are not sure, search the latest docs or the web before guessing.
