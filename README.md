@@ -76,7 +76,7 @@ Then reload the Cursor window.
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
 | `/refine-ux-writing` | UX writing EN → ID localization |
 | `/remove-unrelated` | Hide unnecessary technical detail |
-| `/search-related-problem` | Find one related bug/problem from context |
+| `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
 
 ## Layout
 
