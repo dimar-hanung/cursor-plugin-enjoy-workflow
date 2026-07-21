@@ -39,11 +39,12 @@ Then reload the Cursor window.
 
 ## Inventory
 
-### Skills (18)
+### Skills (19)
 
 | Skill | Source |
 |-------|--------|
 | `animation-vocabulary` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
+| `anti-ai-slop-ui` | new |
 | `apple-design` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `brainstorm` | `~/.cursor/skills` |
 | `canvas-markdown` | `~/.agents/skills` |
