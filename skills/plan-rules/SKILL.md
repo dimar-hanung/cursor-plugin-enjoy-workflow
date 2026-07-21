@@ -62,7 +62,19 @@ This order only. No extra top-level sections. No Domain Index / Risks / Review S
 [High-level changes; detail under domains.]
 
 ## Visualization
-[Mermaid if useful.]
+[Each diagram MUST have a title and a short description of what it shows. Skip the whole section if none needed.]
+
+### [Title — e.g. Order create flow]
+[1–2 sentences: what this diagram visualizes.]
+```mermaid
+…
+```
+
+### [Title — e.g. Domain dependency order]
+[1–2 sentences: what this diagram visualizes.]
+```mermaid
+…
+```
 
 
 # Implementation by Domain
