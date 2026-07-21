@@ -39,48 +39,44 @@ Then reload the Cursor window.
 
 ## Inventory
 
-### Skills (19)
+### Skills (11)
 
 | Skill | Source |
 |-------|--------|
-| `animation-vocabulary` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
-| `anti-ai-slop-ui` | new |
-| `apple-design` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `brainstorm` | `~/.cursor/skills` |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
-| `create-docs-feature-mapping` | `~/.agents/skills` |
-| `create-project-location-skill` | `~/.agents/skills` |
 | `create-skill` | `~/.agents/skills` |
 | `deep-agent` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
-| `emil-design-eng` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
-| `find-animation-opportunities` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
-| `improve-animations` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
 | `push-git-workflow` | `~/.agents/skills` |
-| `review-animations` | [emilkowalski/skills](https://github.com/emilkowalski/skills) |
 | `tidy-env` | new |
+| `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
 
 `tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
 
-### Rules (1)
+### Rules (3)
 
 | Rule | Description |
 |------|-------------|
 | `agents-skills` | Always require `.agents/skills` for major modules |
+| `principles` | Intent-first + readable/low-abstraction code |
+| `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (6)
+### Commands (8)
 
 | Command | Description |
 |---------|-------------|
-| `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid |
+| `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
+| `/create-project-location` | Generate `.agents/skills/project-locations` for the workspace |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
 | `/refine-ux-writing` | UX writing EN → ID localization |
 | `/remove-unrelated` | Hide unnecessary technical detail |
+| `/search-related-problem` | Find one related bug/problem from context |
 
 ## Layout
 
