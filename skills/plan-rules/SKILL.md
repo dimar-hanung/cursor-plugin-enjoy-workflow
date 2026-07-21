@@ -1,89 +1,136 @@
 ---
-
-## name: plan-rules
+name: plan-rules
 description: >-
   Formats implementation plans as Cursor `.plan.md` files with YAML frontmatter
-  (Plan UI), plus overview (goal, current state, changes, visualization), phased
-  tasks, out of scope boundaries, and factual summary for tech lead review. Use
-  when creating, drafting, or presenting any plan — or when switching to Plan mode.
+  (Plan UI). Agent-first domains ordered bottom-up by codebase deps (default
+  backend → frontend). Must do + Inventory per domain. Ask blocking questions
+  via AskQuestion outside the plan. Plans may be large — do not truncate. Use
+  when creating, drafting, or presenting any plan — or when switching to Plan
+  mode.
+---
 
 # Plan Rules
 
-Use when proposing an implementation plan or switching to Plan mode. Skip for trivial one-file fixes.
+## Before writing
 
-- Explore enough to ground the plan in real paths; ask at most 2 clarifying questions.
-- Write a `.plan.md` with **YAML frontmatter first** (required for Cursor Plan UI).
+1. Explore real paths and deps.
+2. Blocking A vs B → **AskQuestion outside the plan** (≤2/round). Never put questions in `.plan.md`.
+3. Bake answers into Must do / Out of Scope as facts, then write the plan (YAML frontmatter first). Domains, not task lists. Do not truncate.
 
+## Domain order
 
+A **domain** = one dependency-bounded area (inside a project or across projects). Order by codebase deps: foundations before dependents — not by feature story.
 
-## Frontmatter (Plan UI)
+- **Stack (default):** shared → **backend** (one domain per area) → **frontend** → wiring  
+e.g. `shared-types` → `user-service` → `order-service` → frontend
+- **Inside BE:** schema → repos → services → handlers
+- **Inside FE:** utils/types → components → pages that use them  
+e.g. `OrderLineItem` → `OrderSummary` → `Checkout`
+
+Wrong: one blob “Frontend”/“Backend”, or frontend before the APIs it needs.
+
+## Frontmatter
 
 ```yaml
 ---
 name: Short plan title
 overview: One-line summary (or "")
 todos:
-  - id: phase-1-slug
-    content: Phase 1 outcome
+  - id: domain-user-service
+    content: "user-service: after shared-schema; done when Must do passes"
     status: pending
 isProject: false
 ---
 ```
 
-- `todos`: one per phase (`pending` | `in-progress` | `completed` | `error`). Detail stays in the body.
-- `isProject`: `true` only for multi-repo / long-running work.
+One `todo` per domain, same order as Domain order. Status: `pending` | `in-progress` | `completed` | `error`.
 
+## Body
 
-
-## Body structure
-
-Keep this order. No extra top-level sections.
+This order only. No extra top-level sections. No Domain Index / Risks / Review Surface.
 
 ```markdown
 # Overview
 
 ## Goal
-[2–3 sentences: what and why]
+[What and why.]
 
 ## What Current
-[Existing files, behavior, APIs — factual]
+[Existing modules / APIs that matter.]
 
 ## What Changes
-[What will change — factual bullets]
+[High-level changes; detail under domains.]
 
 ## Visualization
-[At least one Mermaid diagram; use real module/file names]
-### [Title Visualization 1]
-
-### [Title Visualization 2]
+[Mermaid if useful.]
 
 
-# Implementation Phases
+# Implementation by Domain
 
-## Phase 1: [Outcome title]
+**Done when:** all Must do boxes checked, Inventory paths exist, no out-of-scope work.
+
+## Domain order
+1. `[shared / schema]` — … — depends on: none
+2. `[backend]` — … — depends on: 1
+3. `[frontend]` — … — depends on: 2
+
+## Domain: [matches Domain order #1]
 **Goal**: …
-**Tasks:**
-### Task 1.1: …
-[File paths + main logic/structure — no full code]
+**Depends on**: none
+
+### Must do
+- [ ] …
+- [ ] Reject … / Persist … / Expose … / Call … / Do not …
+
+### Inventory
+- **New files** — `path` — purpose
+- **Modified files** — `path` — what changes
+- **Data schema changes** — … (or None)
+- **API endpoints** — `METHOD /path` — purpose (or None)
+
+## Domain: [matches Domain order #2+]
+**Goal**: …
+**Depends on**: …
+
+### Must do
+- [ ] …
+
+### Inventory
+- …
+
 
 # Out of Scope
-[What this plan does not cover, or: None — full scope as stated in Goal.]
+[Non-goals / nice-to-haves. Or: None.]
 
 # Summary
-[New/modified files, schema, APIs, constraints — factual only]
-- **New files** — path and purpose
-- **Modified files** — path and what changes
-- **Data schema changes** — tables, columns, migrations
-- **API endpoints** — method, path, brief purpose
-- **Important notes** — constraints, env vars, config, breaking changes
-
+- **Important notes** — env, config, breaking changes spanning domains
 ```
 
+## Must do
 
+Observable, required checkboxes. Mix shapes — not only `When…`.
 
-## Must-knows
+Good:
 
-- Tasks name **file paths** and essential behavior; not complete code or “consider also…”.
-- Diagrams use project names, not generic “Frontend” / “Database”.
-- Body and summary stay **factual** — no recommendations or trade-off essays.
+- When `POST /orders` is valid and stock exists, create the order and decrement stock atomically.
+- Reject insufficient stock with `409` `{ code: "INSUFFICIENT_STOCK" }`.
+- Return `{ id, status, total }` on create.
+- Persist `orders.status` default `pending`; never null.
+- Migrate `orders`: add `currency` `char(3) NOT NULL DEFAULT 'USD'`.
+- Expose `OrderCreated` `{ orderId, userId }` for billing.
+- Call `GET /users/:id` first; if missing, abort `404`.
+- Auth: only owner or `admin` may `GET /orders/:id`.
+- Idempotent on `Idempotency-Key`: same key + body → same order, no duplicate row.
+- After success, enqueue `order.created` once (consumers must be idempotent).
+- Render order detail with line items; empty cart → empty state, not an error toast.
+- Disable Submit while the request is in flight.
+- Redirect to `/orders/:id` after create succeeds.
+- Keep copy/labels matching existing checkout strings.
+- Do not charge payment here — billing owns charges.
+
+Bad (never in the plan):
+
+- Improve the API / handle errors properly / consider edge cases.
+- Optionally add CSV? / Should we support guest checkout?
+- Redis vs in-memory? (ask via AskQuestion outside the plan)
 
