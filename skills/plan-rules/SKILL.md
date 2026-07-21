@@ -3,18 +3,27 @@ name: plan-rules
 description: >-
   Formats implementation plans as Cursor `.plan.md` files with YAML frontmatter
   (Plan UI). Agent-first domains ordered bottom-up by codebase deps (default
-  backend → frontend). Must do + Inventory per domain. Ask blocking questions
-  via AskQuestion outside the plan. Plans may be large — do not truncate. Use
-  when creating, drafting, or presenting any plan — or when switching to Plan
-  mode.
+  backend → frontend). Must do + Inventory per domain. Plans are straightforward
+  directives with no questions, options, or opinions — ask decisions via
+  AskQuestion outside the plan. Plans may be large — do not truncate. Use when
+  creating, drafting, or presenting any plan — or when switching to Plan mode.
 ---
 
 # Plan Rules
 
+## Plan tone (non-negotiable)
+
+The plan is for an AI agent to **execute**, not to discuss. Write **one** decided path.
+
+- **Do** state facts and required work: Goal, What Changes, Must do, Inventory, Out of Scope.
+- **Do not** put questions, A/B options, "or", "optionally", "consider", "we could", trade-off lists, or opinionated recommendations in the plan body or frontmatter.
+- **When a decision matters** → stop writing the plan; **AskQuestion outside the plan** (≤4/round). Bake the answer in as settled fact, then continue.
+- No "pick one", "recommended", "prefer X unless…", or open-ended choices inside `.plan.md`.
+
 ## Before writing
 
 1. Explore real paths and deps.
-2. Blocking A vs B → **AskQuestion outside the plan** (≤2/round). Never put questions in `.plan.md`.
+2. Blocking A vs B → **AskQuestion outside the plan** (≤4/round). Never put questions, options, or opinions in `.plan.md`.
 3. Bake answers into Must do / Out of Scope as facts, then write the plan (YAML frontmatter first). Domains, not task lists. Do not truncate.
 
 ## Domain order
@@ -146,5 +155,7 @@ Bad (never in the plan):
 
 - Improve the API / handle errors properly / consider edge cases.
 - Optionally add CSV? / Should we support guest checkout?
-- Redis vs in-memory? (ask via AskQuestion outside the plan)
+- Redis vs in-memory? / Prefer Redis unless latency is low (ask via AskQuestion outside the plan; then write one chosen approach)
+- We could use webhooks or polling — agent should decide
+- Recommended: soft delete; alternatively hard delete if compliance requires it
 
