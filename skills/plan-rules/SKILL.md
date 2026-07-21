@@ -98,7 +98,7 @@ This order only. No extra top-level sections. No Domain Index / Risks / Review S
 domain order example: `SCHEMA - Master Checkout` → `BACKEND [Codebase Name] - User Service` → `BACKEND [Codebase Name] - Order Service` → `FRONTEND [Codebase Name] - Order Summary` → `FRONTEND [Codebase Name] - Checkout`
 
 ## Domain: [matches Domain order #1]
-**Goal**: …
+**Goal**: … 1 or 2 paragraphs
 **Depends on**: none
 
 ### Must do
@@ -112,7 +112,7 @@ domain order example: `SCHEMA - Master Checkout` → `BACKEND [Codebase Name] - 
 - **API endpoints** — `METHOD /path` — purpose (or None)
 
 ## Domain: [matches Domain order #2+]
-**Goal**: …
+**Goal**: … 1 or 2 paragraphs
 **Depends on**: …
 
 ### Must do
