@@ -86,7 +86,7 @@ This order only. No extra top-level sections. No Domain Index / Risks / Review S
 2. `[backend]` depends on 1
 3. `[frontend]` depends on 2
 
-domain order example: `SCHEMA - Master Checkout` → `BACKEND A - User Service` → `BACKEND B - Order Service` → `FRONTEND - Order Summary` → `FRONTEND - Checkout`
+domain order example: `SCHEMA - Master Checkout` → `BACKEND [Codebase Name] - User Service` → `BACKEND [Codebase Name] - Order Service` → `FRONTEND [Codebase Name] - Order Summary` → `FRONTEND [Codebase Name] - Checkout`
 
 ## Domain: [matches Domain order #1]
 **Goal**: …
