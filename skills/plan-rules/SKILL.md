@@ -82,9 +82,11 @@ This order only. No extra top-level sections. No Domain Index / Risks / Review S
 **Done when:** all Must do boxes checked, Inventory paths exist, no out-of-scope work.
 
 ## Domain order
-1. `[shared / schema]` — … — depends on: none
-2. `[backend]` — … — depends on: 1
-3. `[frontend]` — … — depends on: 2
+1. `[shared / schema]` depends on none
+2. `[backend]` depends on 1
+3. `[frontend]` depends on 2
+
+domain order example: `SCHEMA - Master Checkout` → `BACKEND A - User Service` → `BACKEND B - Order Service` → `FRONTEND - Order Summary` → `FRONTEND - Checkout`
 
 ## Domain: [matches Domain order #1]
 **Goal**: …
