@@ -77,6 +77,8 @@ Layout tells reveal whether the page was composed for this product or copied fro
 - One focal composition — not bentos of equal rounded cells
 - Real, load-bearing stats only; one strong number beats a reflex stat banner
 - Gaps sized to content; 1–2px nudges where the eye demands — not every gap locked to `gap-6`/`gap-8` on a strict 4px grid
+- Modal width follows the task: brief confirmations usually 28–32rem; action and edit modals usually 36–44rem — not a narrow alert preset reused for form-heavy work
+- Multi-section or unusually wide editing moves to a page or drawer instead of stretching a modal beyond a comfortable reading and interaction width
 
 ## 5. Surfaces & components
 

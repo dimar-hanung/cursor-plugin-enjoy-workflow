@@ -9,6 +9,7 @@ Open this file when building or reviewing any form, from login to multi-step che
 - Validation
 - Submission
 - Multi-step forms
+- Modal forms
 - Quick checklist
 
 ## 1. Fields
@@ -62,13 +63,24 @@ Splitting a form is a pacing decision: each step should feel like progress, not 
 - Persist each completed step server-side or locally.
 - Review step for consequential submissions (orders, applications) — editable per section.
 
-## 6. Quick checklist
+## 6. Modal forms
+
+Modal width should fit the decision and its fields, not inherit the smallest dialog preset. A narrow edit modal forces labels, values, validation, and actions into an unnecessarily cramped column.
+
+- Brief confirmation modals usually fit within 28–32rem.
+- Action and edit modals usually start around 36–44rem so fields and helper text can breathe.
+- Small screens keep a comfortable 16–24px viewport gutter and a single-column field layout.
+- Multi-section forms, dense comparisons, or work needing more than about 48rem move to a page or drawer.
+- Footer actions remain visible without shrinking or covering the form body.
+
+## 7. Quick checklist
 
 Try submitting empty, submitting with one bad field, going back mid-flow, and refreshing — input and errors should survive all four.
 
 - [ ] Is every field necessary now?
 - [ ] Are field fills visibly distinct from their surrounding surface in resting, focus, error, and disabled states?
 - [ ] Does every field have a visible label (not placeholder-as-label)?
+- [ ] Is an action or edit modal wide enough for its fields, helper text, and validation?
 - [ ] Does submit stay enabled with errors shown on attempt?
 - [ ] Does input survive errors, back, and refresh?
 - [ ] Are server errors mapped to fields?

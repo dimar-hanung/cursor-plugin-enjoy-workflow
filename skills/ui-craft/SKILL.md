@@ -56,6 +56,7 @@ Open references only when the task needs depth (see [References](#references)).
 - **Cards:** default **no card**; never cards in hero unless the system requires it. **NEVER** nest card/box inside card/box — one frame, separators between items.
 - **Surface contrast:** tables and cards must read apart from the page background through a clear hue or value shift; add a restrained hairline or elevation when the color shift alone is insufficient. If no boundary is intended, use an open layout instead of presenting the region as a card.
 - **Input contrast:** input, select, and textarea fills must remain visibly distinct from their surrounding surface through a clear hue or value shift. Borders reinforce the boundary; focus, error, and disabled states stay distinguishable without becoming the only moment the field is visible.
+- **Modal width:** size modals for the task, not the smallest component preset. Brief confirmations usually need 28–32rem; action and edit modals usually need 36–44rem. Keep a comfortable viewport gutter on small screens; move multi-section or unusually wide work to a page or drawer.
 - **Composition:** one job per section; first viewport = brand, one headline, one support line, one CTA group, one dominant visual.
 - **Copy:** concrete outcomes; swap test (competitor name still works → rewrite).
 
@@ -77,6 +78,7 @@ Accent use: CTA + active nav + focus + boundaries (e.g. border-{accent}-300 on p
 Type: display ___ / body ___
 Density: compact | balanced | airy
 Radius: sm / md / lg
+Modal: confirm ___rem / action-edit ___rem / mobile gutter ___px
 Motion: hover __ms / panel __ms / easing ___
 Do not use: violet-indigo gradients, Inter-only, 3 equal cards, border-left accents, emoji eyebrow pills, unasked dark mode, nested cards/boxes, text below 16px
 ```
