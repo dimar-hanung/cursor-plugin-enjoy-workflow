@@ -45,16 +45,18 @@ Identify silently; expose in the answer only when useful:
 
 ## Quick reject checklist
 
-- **DON'T** add a step/modal that only relays what the next one says. **DO** merge or remove.
-- **NEVER** placeholder-as-label. **DO** label above the input.
-- **DON'T** disable submit as validation. **DO** allow submit and reveal errors.
-- **NEVER** "Are you sure?" with Yes/No. **DO** name object + consequence on buttons.
-- **DON'T** center-align table body or wrap IDs. **DO** left text, right numbers with `tabular-nums`.
-- **DON'T** bare spinner for structured content. **DO** skeleton matching final layout.
-- **DON'T** write "Oops! Something went wrong". **DO** what happened + how to fix.
-- **DON'T** tour as onboarding. **DO** core action immediately.
-- **NEVER** hide primary actions behind hover-only affordances. **DO** keyboard + touch path.
-- **NEVER** send/publish/charge/delete from AI or automation without preview + explicit approval.
+- Merge or remove steps/modals that only relay what the next one says.
+- Label above every input — not placeholder-as-label.
+- Submit stays enabled; reveal errors on attempt.
+- Destructive confirms name object + consequence on buttons — not "Are you sure?" with Yes/No.
+- Table body: left text, right numbers with `tabular-nums`; no center-aligned body or wrapped IDs.
+- Skeleton matching final layout for structured content — not a bare spinner.
+- Errors say what happened + how to fix — not "Oops! Something went wrong".
+- Onboarding reaches the core action immediately — not a multi-screen tour.
+- Primary actions available via keyboard and touch — not hover-only.
+- AI/automation does not send/publish/charge/delete without preview + explicit approval.
+- One frame + hairline separators between items — not nested boxes or cards.
+- Body/UI copy at `text-base` minimum; secondary via muted color, not `text-xs`/`text-sm`.
 
 ## Reference routing
 

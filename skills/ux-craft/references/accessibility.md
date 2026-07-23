@@ -1,35 +1,67 @@
 # Accessibility & Inclusive Interaction
 
-Open when changing keyboard behavior, focus, touch targets, contrast, labels, motion, or responsive layout. Accessibility is baseline UX, not a mode.
+Open this file when changing keyboard behavior, focus, touch targets, contrast, labels, motion, or responsive layout. Accessibility is baseline UX, not a mode.
 
-## Keyboard & focus
+## Contents
 
-- **DO** complete every primary task with Tab, Shift+Tab, Enter, Space, Escape. **NEVER** ship a flow that requires a mouse.
-- **DO** focus order that follows decision order; **NEVER** remove focus indicators for aesthetics.
-- **DO** trap focus in modals while open; **DO** restore focus to the trigger on close.
-- **DO** associate errors with fields programmatically (`aria-describedby`, `aria-invalid`).
+- Keyboard & focus
+- Labels
+- Touch & hover
+- Color, motion, responsive
+- Inclusion
+- Quick checklist
 
-## Labels
+## 1. Keyboard & focus
 
-- **NEVER** icon-only buttons without accessible names. **DO** persistent labels on every field — not placeholder-as-label.
-- **DO** link text that describes destination. **DON'T** "click here".
-- **DO** headings that describe structure, not just visual size.
+Every primary task must be completable with Tab, Shift+Tab, Enter, Space, and Escape. No flow should require a mouse.
 
-## Touch & hover
+- Focus order follows decision order.
+- Focus indicators stay visible — never remove them for aesthetics.
+- Trap focus in modals while open; restore focus to the trigger on close.
+- Associate errors with fields programmatically (`aria-describedby`, `aria-invalid`).
 
-- **NEVER** hide required actions behind hover-only menus — touch users don't have hover.
-- **DO** touch targets that forgive real fingers (~44px min); **DO** extra spacing near destructive actions.
-- **DO** visible alternatives to gestures; swipe/long-press can be shortcuts, not the only path.
+## 2. Labels
 
-## Color, motion, responsive
+Names and structure must survive without sight or without hovering.
 
-- **NEVER** carry meaning with color alone — pair with text, icon, or shape (errors, status chips, charts).
-- **NEVER** skip `prefers-reduced-motion`; **DON'T** use motion as the only carrier of critical info.
-- **DO** make the task survive viewport change — primary action still findable, inputs not covered by sticky bars, keyboard type matches input (`email`, `tel`, `numeric`).
-- **DON'T** squeeze a desktop table into horizontal-scroll-only mobile — pick card layout or column priority (see tables.md).
+- Every button has an accessible name — icon-only buttons need visible text or `aria-label`.
+- Every field has a persistent label above the input, not placeholder-as-label.
+- Link text describes the destination — not "click here".
+- Headings describe structure, not just visual size.
 
-## Inclusion
+## 3. Touch & hover
 
-- **DON'T** idioms, jokes, or insider metaphors in billing, health, compliance, or error flows.
-- **DON'T** assume one country's name/address/phone/date/currency format.
-- **DO** plain language when stakes rise; shame has no place in money, health, or productivity UI.
+Touch users do not have hover. Required actions must not live behind hover-only menus.
+
+- Touch targets forgive real fingers — about 44px minimum.
+- Extra spacing near destructive actions.
+- Visible alternatives to gestures; swipe and long-press can be shortcuts, not the only path.
+
+## 4. Color, motion, responsive
+
+Visual and motion choices must work across devices, lighting conditions, and user preferences — not just on a designer's calibrated monitor.
+
+- Body and UI copy at 16px minimum — use `text-base`; secondary text via muted color, not `text-xs`/`text-sm`.
+- Meaning never carried by color alone — pair with text, icon, or shape (errors, status chips, charts).
+- Honor `prefers-reduced-motion`; motion is not the only carrier of critical information.
+- The task survives viewport change — primary action still findable, inputs not covered by sticky bars, keyboard type matches input (`email`, `tel`, `numeric`).
+- On small screens, pick card layout or column priority instead of squeezing a desktop table into horizontal-scroll-only mobile (see tables.md).
+
+## 5. Inclusion
+
+Accessibility extends beyond mechanics to who the product assumes the user is — their language, culture, and emotional state when things go wrong.
+
+- Plain language when stakes rise — shame has no place in money, health, or productivity UI.
+- No idioms, jokes, or insider metaphors in billing, health, compliance, or error flows.
+- Do not assume one country's name, address, phone, date, or currency format.
+
+## 6. Quick checklist
+
+Use this as a final pass whenever interaction behavior, layout, or visual treatment changes.
+
+- [ ] Can every primary task be completed with keyboard only?
+- [ ] Is focus order logical and are focus indicators visible?
+- [ ] Does every interactive element have an accessible name?
+- [ ] Are touch targets at least ~44px?
+- [ ] Is meaning available without color alone?
+- [ ] Does the layout work on narrow viewports without hiding required actions?

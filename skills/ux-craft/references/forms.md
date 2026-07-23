@@ -1,44 +1,72 @@
 # Forms, Inputs, Validation
 
-Open when building or reviewing any form, from login to multi-step checkout.
+Open this file when building or reviewing any form, from login to multi-step checkout.
 
-## Fields
+## Contents
 
-- **DO** ask the minimum. Every field must be used by the product now. **NEVER** ask what you can infer (country from phone code, city from postal code) or fetch later.
-- **DO** single column. **DON'T** place fields side by side except tightly-coupled pairs (first/last name, month/year).
-- **DO** label above the input, always visible. **NEVER** placeholder-as-label — it vanishes on focus and kills recall.
-- **DO** use placeholder only for format examples ("name@company.com"), helper text below for rules that matter before typing.
-- **DO** mark **optional** fields, not required ones (most fields should be required — if not, cut them).
-- **DO** group related fields with headings; order easy → hard (name before payment).
-- **DO** size inputs to expected content — a postal-code field shouldn't be full width.
+- Fields
+- Input behavior
+- Validation
+- Submission
+- Multi-step forms
+- Quick checklist
 
-## Input behavior
+## 1. Fields
 
-- **DO** match input type to data: `type="email"`, `inputmode="numeric"`, `type="tel"` — right mobile keyboard for each.
-- **DO** set `autocomplete` attributes (name, email, address, cc-number); autofill is the fastest form.
-- **DO** auto-format as the user types (card number spacing, phone grouping) and accept any paste — strip spaces/dashes yourself.
-- **DO** trim whitespace; **DON'T** fail validation on a trailing space.
-- **DO** autofocus the first field on dedicated form pages; **DON'T** autofocus inside long content pages.
-- **DON'T** use dropdowns for <5 known options (radio/segmented) or for free-text-sized sets (combobox with search).
+Ask the minimum. Every field must be used by the product now.
 
-## Validation
+- Infer or fetch instead of asking — country from phone code, city from postal code, data you can retrieve later.
+- Single column layout. Side-by-side only for tightly-coupled pairs (first/last name, month/year).
+- Label above the input, always visible. Placeholder-as-label vanishes on focus and kills recall.
+- Placeholder only for format examples ("name@company.com"); helper text below for rules that matter before typing.
+- Mark **optional** fields, not required ones (most fields should be required — if not, cut them).
+- Group related fields with headings; order easy → hard (name before payment).
+- Size inputs to expected content — a postal-code field should not be full width.
 
-- **DO** validate a field on blur after first interaction; re-validate on keystroke only once it's in error (reward fixing instantly).
-- **DO** prevent before validate, validate before submit — catch issues at the earliest step.
-- **NEVER** flag untouched fields while the user is still working.
-- **DON'T** disable the submit button as validation. **DO** allow submit, then show an error summary at top + inline errors, and move focus to the first error.
-- **DO** write errors as what's wrong + how to fix: "Card number is 15 digits — Amex cards start with 34 or 37" (see writing.md for tone).
-- **NEVER** clear or reset fields on a failed submit. All input survives errors, back navigation, and accidental refresh where feasible.
-- **DO** validate on the server too and map server errors back to fields, not a generic banner.
+## 2. Input behavior
 
-## Submission
+Small mechanical choices at the field level compound into large time savings — or friction — across every submission.
 
-- **DO** show progress on the button itself ("Saving…"), disable during flight, keep the label's verb.
-- **DO** make success unmistakable: navigate or confirm what happened ("Invoice sent") — not a silent state change.
-- **DO** protect long forms: warn before navigation discards unsaved changes, or autosave drafts.
+- Match input type to data: `type="email"`, `inputmode="numeric"`, `type="tel"` — right mobile keyboard for each.
+- Set `autocomplete` attributes (name, email, address, cc-number); autofill is the fastest form.
+- Auto-format as the user types (card number spacing, phone grouping) and accept any paste — strip spaces and dashes yourself.
+- Trim whitespace; trailing space should not fail validation.
+- Autofocus the first field on dedicated form pages; no autofocus inside long content pages.
+- Radio or segmented controls for fewer than five known options; combobox with search for large bounded sets — not a dropdown for either extreme.
 
-## Multi-step forms
+## 3. Validation
 
-- **DO** show labeled progress and allow back without loss.
-- **DO** persist each completed step server-side or locally.
-- **DO** end with a review step for consequential submissions (orders, applications) — editable per section.
+Prevent before validate, validate before submit — catch issues at the earliest step.
+
+- Validate a field on blur after first interaction; re-validate on keystroke only once it is in error (reward fixing instantly).
+- Untouched fields stay unflagged while the user is still working.
+- Submit stays enabled. On submit, show an error summary at top + inline errors, and move focus to the first error.
+- Errors say what's wrong + how to fix: "Card number is 15 digits — Amex cards start with 34 or 37" (see writing.md for tone).
+- All input survives errors, back navigation, and accidental refresh where feasible.
+- Server validates too; map server errors back to fields, not a generic banner.
+
+## 4. Submission
+
+The moment of submit is when anxiety peaks — the UI must show progress, preserve effort, and make the outcome unmistakable.
+
+- Progress on the button itself ("Saving…"), disabled during flight, verb stays.
+- Success is unmistakable: navigate or confirm what happened ("Invoice sent") — not a silent state change.
+- Long forms: warn before navigation discards unsaved changes, or autosave drafts.
+
+## 5. Multi-step forms
+
+Splitting a form is a pacing decision: each step should feel like progress, not like arbitrary gates.
+
+- Labeled progress and back navigation without loss.
+- Persist each completed step server-side or locally.
+- Review step for consequential submissions (orders, applications) — editable per section.
+
+## 6. Quick checklist
+
+Try submitting empty, submitting with one bad field, going back mid-flow, and refreshing — input and errors should survive all four.
+
+- [ ] Is every field necessary now?
+- [ ] Does every field have a visible label (not placeholder-as-label)?
+- [ ] Does submit stay enabled with errors shown on attempt?
+- [ ] Does input survive errors, back, and refresh?
+- [ ] Are server errors mapped to fields?

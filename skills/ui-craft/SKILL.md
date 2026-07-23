@@ -15,6 +15,8 @@ One skill for visual UI and motion. Existing design systems / brand guidelines w
 
 **Why slop happens:** slop is the absence of a decision — an unconstrained ask lands on the training-data average. The cure is committed constraints, not a better adjective ("cleaner" / "more premium" are vibes; vibes don't converge).
 
+**Clean ≠ colorless.** "Clean modern" is not all gray neutrals with no accent. **DO** commit a brand accent on primary actions, active nav, focus, and key highlights. **DO** mark panel/section boundaries with a noticeable but restrained border — e.g. `border-border`, `border-{accent}-200/300`, or a tinted hairline — when the area needs to read as one unit. **DON'T** confuse minimal with mute; **DON'T** border every row in flat gray.
+
 ## Default workflow (create / update / refine UI)
 
 1. **Decide first** — lock palette (hex), type pair, density, radius scale, motion presets before CSS/JSX. Every skipped decision becomes a default in the output.
@@ -37,6 +39,8 @@ Open references only when the task needs depth (see [References](#references)).
 - **NEVER** `transition-all` + fade-in-up on every section. **DO** specific props; purposeful motion.
 - **DON'T** default to dark mode + neon glow unasked. **DO** dark only when brand-justified, with a designed dark palette.
 - **DON'T** put `animate-pulse`/glow on the "popular" pricing tier. **DO** static contrast: weight, offset, structure.
+- **NEVER** nest boxes or cards inside boxes or cards. **DO** one outer frame + hairline separators (`divide-y`, `border-b`, `Separator`) between rows/sections.
+- **NEVER** body or UI copy below 16px (`text-xs`, `text-sm`, `text-[11–14px]`, inline `font-size`, `size="sm"` on text-heavy UI). **DO** `text-base` (or omit); hierarchy via `text-lg`/`text-xl` up or muted color — not smaller size.
 - **DON'T** ship generic CTA / SaaS section templates. **DO** product-specific copy and structure.
 
 **Four or more** stacked tells = slop; the signature is the bundle, so fix the combination. Full catalog + de-slop pass: [tells-catalog.md](references/tells-catalog.md).
@@ -46,8 +50,10 @@ Open references only when the task needs depth (see [References](#references)).
 ### Visual
 
 - **MUST** use brand hex tokens; tint neutrals. **NEVER** default purple→indigo / neon glow "premium".
+- **MUST** use the accent deliberately — primary CTA, active/selected states, links, focus, one focal highlight per viewport; section/panel boundaries via tinted border (`border-{accent}-200/300`) or surface shift when the area must read as a unit.
 - **MUST** pair characterful display + readable body (or a deliberate single-family scale).
-- **Cards:** default **no card**; never cards in hero unless the system requires it.
+- **MUST** keep readable UI copy at ≥16px — default `text-base`; secondary via muted color, not `text-xs`/`text-sm`.
+- **Cards:** default **no card**; never cards in hero unless the system requires it. **NEVER** nest card/box inside card/box — one frame, separators between items.
 - **Composition:** one job per section; first viewport = brand, one headline, one support line, one CTA group, one dominant visual.
 - **Copy:** concrete outcomes; swap test (competitor name still works → rewrite).
 
@@ -64,11 +70,12 @@ Open references only when the task needs depth (see [References](#references)).
 
 ```text
 Palette: primary ___ / surface ___ / text ___ / accent ___ (hex)
+Accent use: CTA + active nav + focus + boundaries (e.g. border-{accent}-300 on panels)
 Type: display ___ / body ___
 Density: compact | balanced | airy
 Radius: sm / md / lg
 Motion: hover __ms / panel __ms / easing ___
-Do not use: violet-indigo gradients, Inter-only, 3 equal cards, border-left accents, emoji eyebrow pills, unasked dark mode
+Do not use: violet-indigo gradients, Inter-only, 3 equal cards, border-left accents, emoji eyebrow pills, unasked dark mode, nested cards/boxes, text below 16px
 ```
 
 Add one line of rationale per token ("terracotta — physical goods brand"); unexplained tokens drift back to defaults on the next generation.

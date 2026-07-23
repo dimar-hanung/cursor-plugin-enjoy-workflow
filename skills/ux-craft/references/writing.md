@@ -1,49 +1,87 @@
-# UX Writing / Microcopy
+# UX Writing & Microcopy
 
-Open when writing or reviewing any in-product text: buttons, labels, errors, empty states, confirmations, notifications.
+Open this file when writing or reviewing buttons, labels, errors, confirmations, empty states, banners, toasts, or any user-facing copy.
 
-## Buttons & actions
+## Contents
 
-- **DO** verb + object: "Save changes", "Delete file", "Send invoice". The button alone must answer "what does clicking this do?"
-- **NEVER** "Yes" / "No" / "OK" on consequential actions; **DON'T** bare "Submit" / "Continue" when a specific verb exists.
-- **DO** sentence case everywhere (buttons, titles, labels). **DON'T** Title Case Every Word or ALL CAPS.
-- **DO** keep the verb during progress: "Saving…" not "Loading…".
+- Buttons
+- Errors
+- Confirmations & success
+- Empty states
+- Terminology & tone
+- Dates & numbers
+- Toasts
+- Quick checklist
 
-## Errors
+## 1. Buttons
 
-- **DO** three parts when useful: what happened + why + how to fix. **NEVER** blame the user — "We couldn't find an account with that email," not "You entered an invalid email."
-- **NEVER** "Oops!" or "Something went wrong". Calm, specific, blameless.
-- **DON'T** show raw codes/jargon alone; if a code helps support, append it quietly after the human sentence.
-- **DO** put the fix in the message when known ("File must be under 10 MB — this one is 14 MB").
-- **DON'T** exclamation marks, "please", or "sorry" padding. State it plainly.
+The button alone must answer "what does clicking this do?"
 
-## Confirmations & consequences
+- Verb + object: "Save changes", "Delete file", "Send invoice".
+- Sentence case everywhere (buttons, titles, labels) — not Title Case Every Word or ALL CAPS.
+- Keep the verb during progress: "Saving…" not "Loading…".
+- Consequential actions name the object on the button — not "Yes", "No", or bare "OK".
+- Prefer a specific verb over bare "Submit" or "Continue" when one exists.
 
-- **NEVER** "Are you sure?". **DO** name object + consequence: "Delete 'Q3 report'? This can't be undone." Buttons: "Delete report" / "Cancel".
-- **DO** state scope with numbers: "This removes 3 members from the project."
-- **DO** success messages that name what happened: "Invoice #204 sent to acme.com" — plus the next action when useful ("View invoice").
+## 2. Errors
 
-## Empty states
+Calm, specific, blameless. The user should know what happened and how to fix it.
 
-- **DO** two jobs: what this space is + how to fill it, with the CTA right there. "No API keys yet. Create a key to start making requests." + [Create API key]
-- **DON'T** a lone illustration with "Nothing here!". Distinguish first-use / no-results / error (see states.md).
+- Three parts when useful: what happened + why + how to fix.
+- Never blame the user — "We couldn't find an account with that email," not "You entered an invalid email."
+- No "Oops!" or "Something went wrong".
+- Raw codes or jargon never stand alone; if a code helps support, append it quietly after the human sentence.
+- Put the fix in the message when known ("File must be under 10 MB — this one is 14 MB").
+- No exclamation marks, "please", or "sorry" padding. State it plainly.
 
-## Labels & vocabulary
+## 3. Confirmations & success
 
-- **DO** one term per concept, everywhere — pick "project" or "workspace", never both for the same thing. Keep a terms list for the product.
-- **DO** the user's nouns, not internal names ("Download report", not "Export SSRS artifact").
-- **DO** front-load the key word: "Delete account" not "Click here if you would like to delete your account".
-- **NEVER** marketing adverbs in product UI: "Effortlessly", "Seamlessly", "Supercharge", "Unlock". Plain verbs; say what happens.
-- **DO** tone that scales with stakes — casual for routine, neutral for transactional, formal for irreversible/legal.
-- **NEVER** write copy you wouldn't read aloud to a stranger.
+At the moment of commitment or completion, copy must remove ambiguity about what is about to happen or what just happened.
 
-## Numbers, dates, formats
+- Name object + consequence: "Delete 'Q3 report'? This can't be undone." Buttons: "Delete report" / "Cancel" — not "Are you sure?" with Yes/No.
+- State scope with numbers: "This removes 3 members from the project."
+- Success messages name what happened: "Invoice #204 sent to acme.com" — plus the next action when useful ("View invoice").
 
-- **DO** locale-aware dates and numbers; never raw ISO in body copy.
-- **DO** relative time for recent activity ("2h ago") with absolute on hover; absolute ("12 Mar 2026") for records, invoices, logs.
-- **DO** consistent precision per context; round display values, keep exact on hover/export.
+## 4. Empty states
 
-## Notifications & toasts
+Two jobs: what this space is + how to fill it, with the CTA right there.
 
-- **DO** lead with the event: "Export finished — report.csv ready" + action ("Download").
-- **DON'T** notify what the user is looking at, and don't toast errors that need action (keep those inline — see states.md).
+- Example: "No API keys yet. Create a key to start making requests." + [Create API key]
+- Distinguish first-use, no-results, and error — not a lone illustration with "Nothing here!" (see states.md).
+
+## 5. Terminology & tone
+
+Consistent language builds trust; inconsistent language forces the user to translate your product into their mental model on every screen.
+
+- One term per concept, everywhere — pick "project" or "workspace", never both for the same thing. Keep a terms list for the product.
+- The user's nouns, not internal names ("Download report", not "Export SSRS artifact").
+- Front-load the key word: "Delete account" not "Click here if you would like to delete your account".
+- No marketing adverbs in product UI: "Effortlessly", "Seamlessly", "Supercharge", "Unlock". Plain verbs; say what happens.
+- Tone scales with stakes — casual for routine, neutral for transactional, formal for irreversible/legal.
+- Write copy you would read aloud to a stranger.
+
+## 6. Dates & numbers
+
+How you display time and quantity signals whether the product respects the user's context or was built for one locale and one precision level.
+
+- Locale-aware dates and numbers; never raw ISO in body copy.
+- Relative time for recent activity ("2h ago") with absolute on hover; absolute ("12 Mar 2026") for records, invoices, logs.
+- Consistent precision per context; round display values, keep exact on hover/export.
+
+## 7. Toasts
+
+Toasts are ephemeral — useful for lightweight confirmation, dangerous for anything the user must act on or remember.
+
+- Lead with the event: "Export finished — report.csv ready" + action ("Download").
+- Do not notify what the user is already looking at.
+- Errors that need action stay inline — toasts vanish (see states.md).
+
+## 8. Quick checklist
+
+Read every new or changed string aloud before shipping — awkward spoken copy is almost always wrong written copy.
+
+- [ ] Does every button label answer "what does this do?"
+- [ ] Do errors say what happened and how to fix it?
+- [ ] Do destructive confirms name the object and consequence?
+- [ ] Is terminology consistent with one term per concept?
+- [ ] Would you read this aloud to a stranger without cringing?
