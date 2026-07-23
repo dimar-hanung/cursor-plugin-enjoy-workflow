@@ -13,30 +13,33 @@ description: >-
 
 One skill for visual UI and motion. Existing design systems / brand guidelines win over defaults here.
 
+**Why slop happens:** slop is the absence of a decision — an unconstrained ask lands on the training-data average. The cure is committed constraints, not a better adjective ("cleaner" / "more premium" are vibes; vibes don't converge).
+
 ## Default workflow (create / update / refine UI)
 
-1. **Constraints first** — lock palette (hex), type pair, density, radius scale, motion presets before CSS/JSX. Never rely on "premium" / "modern" alone.
-2. **Anti-slop scan** — run the quick reject checklist below; fix stacked tells.
+1. **Decide first** — lock palette (hex), type pair, density, radius scale, motion presets before CSS/JSX. Every skipped decision becomes a default in the output.
+2. **Never-emit** — the quick reject checklist below is patterns not to emit; about to emit one without a decision → stop and decide.
 3. **Motion gate** — only animate what survives frequency → purpose → speed → function.
 4. **Implement** — property-specific transitions; springs for interruptible gestures; `prefers-reduced-motion`.
-5. **Brand test** — without nav/logo, would the first viewport still read as this product?
+5. **Self-check** — re-scan output against the checklist before presenting; every generation regresses to defaults, so re-apply constraints on each edit.
+6. **Brand test** — without nav/logo, would the first viewport still read as this product?
 
 Open references only when the task needs depth (see [References](#references)).
 
 ## Quick reject checklist (visual)
 
-| Tell | Replace with |
-| --- | --- |
-| Violet↔indigo / purple↔pink hero or CTA gradient | Flat brand hue or real brand gradient |
-| Inter / Geist / Poppins / Roboto as sole face | Display + body pair; tracking on large type |
-| Exactly 3 equal feature cards | Content-led / asymmetric layout |
-| Colored `border-left`/`border-top` on cards | Hairline, space, or semantic alert only |
-| Eyebrow pill + emoji above H1 | Specific claim; no sparkle tax |
-| `rounded-2xl` + `shadow-md` everywhere | Radius/elevation by intent |
-| `transition-all` + fade-in-up on every section | Specific props; purposeful motion |
-| Generic CTA / SaaS section template | Product-specific copy and structure |
+- **NEVER** violet↔indigo / purple↔pink hero or CTA gradient. **DO** flat brand hue or real brand gradient.
+- **DON'T** ship Inter / Geist / Poppins / Roboto as sole face. **DO** display + body pair; tracking on large type.
+- **DON'T** ship exactly 3 equal feature cards. **DO** content-led / asymmetric layout.
+- **NEVER** colored `border-left`/`border-top` on cards. **DO** hairline, space, or semantic alert only.
+- **DON'T** put an eyebrow pill + emoji above the H1. **DO** a specific claim; no sparkle tax.
+- **DON'T** apply `rounded-2xl` + `shadow-md` everywhere. **DO** radius/elevation by intent.
+- **NEVER** `transition-all` + fade-in-up on every section. **DO** specific props; purposeful motion.
+- **DON'T** default to dark mode + neon glow unasked. **DO** dark only when brand-justified, with a designed dark palette.
+- **DON'T** put `animate-pulse`/glow on the "popular" pricing tier. **DO** static contrast: weight, offset, structure.
+- **DON'T** ship generic CTA / SaaS section templates. **DO** product-specific copy and structure.
 
-**Four or more** stacked tells = slop. Fix the combination. Full catalog: [tells-catalog.md](references/tells-catalog.md).
+**Four or more** stacked tells = slop; the signature is the bundle, so fix the combination. Full catalog + de-slop pass: [tells-catalog.md](references/tells-catalog.md).
 
 ## Hard rules (always)
 
@@ -65,15 +68,17 @@ Type: display ___ / body ___
 Density: compact | balanced | airy
 Radius: sm / md / lg
 Motion: hover __ms / panel __ms / easing ___
-Do not use: violet-indigo gradients, Inter-only, 3 equal cards, border-left accents, emoji eyebrow pills
+Do not use: violet-indigo gradients, Inter-only, 3 equal cards, border-left accents, emoji eyebrow pills, unasked dark mode
 ```
+
+Add one line of rationale per token ("terracotta — physical goods brand"); unexplained tokens drift back to defaults on the next generation.
 
 ## Modes
 
 | User intent | Do | Open |
 | --- | --- | --- |
 | Build / update / refine UI | Follow default workflow; implement | tells-catalog if needed; emil-craft for component recipes |
-| De-slop / looks generic | Checklist + review table | [tells-catalog.md](references/tells-catalog.md) |
+| De-slop / looks generic | Checklist + review table; run the de-slop pass (never re-roll whole page) | [tells-catalog.md](references/tells-catalog.md) |
 | Gesture / sheet / spring / Apple-like feel | Springs, interruptibility, materials | [apple-motion.md](references/apple-motion.md) |
 | Deep polish / component feel | Buttons, origins, clip-path, a11y | [emil-craft.md](references/emil-craft.md) |
 | "What should animate?" | Gate ruthlessly; max 5–7 ideas; **do not implement** unless asked | [find-opportunities.md](references/find-opportunities.md) |
