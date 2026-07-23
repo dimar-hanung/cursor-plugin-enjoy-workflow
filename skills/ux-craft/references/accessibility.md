@@ -41,7 +41,7 @@ Touch users do not have hover. Required actions must not live behind hover-only 
 
 Visual and motion choices must work across devices, lighting conditions, and user preferences — not just on a designer's calibrated monitor.
 
-- Body and UI copy at 16px minimum — use `text-base`; secondary text via muted color, not `text-xs`/`text-sm`.
+- All readable UI copy at 16px minimum, including badges, chips, tags, helper text, and table metadata — use `text-base`; secondary text via muted color, not `text-xs`/`text-sm`.
 - Meaning never carried by color alone — pair with text, icon, or shape (errors, status chips, charts).
 - Honor `prefers-reduced-motion`; motion is not the only carrier of critical information.
 - The task survives viewport change — primary action still findable, inputs not covered by sticky bars, keyboard type matches input (`email`, `tel`, `numeric`).

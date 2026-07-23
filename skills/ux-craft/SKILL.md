@@ -47,6 +47,7 @@ Identify silently; expose in the answer only when useful:
 
 - Merge or remove steps/modals that only relay what the next one says.
 - Label above every input — not placeholder-as-label.
+- Input, select, and textarea fills remain visibly distinct from the surrounding surface across resting, focus, error, and disabled states.
 - Submit stays enabled; reveal errors on attempt.
 - Destructive confirms name object + consequence on buttons — not "Are you sure?" with Yes/No.
 - Table body: left text, right numbers with `tabular-nums`; no center-aligned body or wrapped IDs.
@@ -56,7 +57,7 @@ Identify silently; expose in the answer only when useful:
 - Primary actions available via keyboard and touch — not hover-only.
 - AI/automation does not send/publish/charge/delete without preview + explicit approval.
 - One frame + hairline separators between items — not nested boxes or cards.
-- Body/UI copy at `text-base` minimum; secondary via muted color, not `text-xs`/`text-sm`.
+- All readable UI copy uses `text-base` minimum, including badges, chips, tags, helper text, and table metadata; secondary via muted color, not `text-xs`/`text-sm`.
 
 ## Reference routing
 

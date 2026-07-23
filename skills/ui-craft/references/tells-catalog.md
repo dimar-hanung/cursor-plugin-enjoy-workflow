@@ -63,7 +63,7 @@ Type defaults read as "template" before the user reads a word — the face, weig
 - One all-caps micro-label only where hierarchy needs it — not stamped above every section heading
 - Monospace reserved for actual code/data — not decorative "hacker vibe"
 - Commit to a real pairing — not one serif-italic accent word dropped into a sans headline
-- Body and UI copy at ≥16px — `text-base` or omit size class; hierarchy via `text-lg`/`text-xl` up or muted color, not `text-xs`/`text-sm`/`text-[11–14px]`
+- All readable UI copy at ≥16px, including badges, chips, tags, helper text, and table metadata — `text-base` or omit size class; hierarchy via `text-lg`/`text-xl` up or muted color, not `text-xs`/`text-sm`/`text-[11–14px]`
 
 ## 4. Layout
 
@@ -82,6 +82,10 @@ Layout tells reveal whether the page was composed for this product or copied fro
 
 Surface defaults stack into "cardocalypse" — boxes inside boxes, gray borders everywhere, radius and shadow applied uniformly.
 
+- Tables and cards need a visible hue or value shift from the page background; add a restrained hairline or elevation when color contrast alone does not establish the boundary
+- Input, select, and textarea fills need a visible hue or value shift from their surrounding surface; borders reinforce the boundary instead of carrying it alone
+- Resting, focus, error, and disabled field states remain distinguishable without making focus the only moment an input becomes visible
+- Regions meant to blend into the page should use an open layout instead of card styling
 - Hairline all around, space/bg shift; color strips for semantic state only — not colored `border-left`/`border-top` on cards
 - Separate by space → bg shift → elevation; one intentional boundary border last — not border every card in flat gray 1px
 - Radius scale by role; crafted shadow or hairlines — not `rounded-2xl` + `shadow-md` everywhere

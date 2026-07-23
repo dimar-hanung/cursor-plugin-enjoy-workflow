@@ -27,6 +27,7 @@ Tables are read by scanning columns, not by reading rows like prose — alignmen
 
 Each row is a unit of comparison — its shape should make identity, density, and the primary action obvious at a glance.
 
+- Table surface remains visibly distinct from the page background through a small hue or value shift; use a restrained hairline or elevation when the shift alone is insufficient.
 - Primary identifying column first; it is the row's link/click target.
 - One row = one entity; if a row needs paragraphs, it wants a detail view, not a wider row.
 - Density by job: compact for operators scanning hundreds of rows, comfortable for a handful of rich rows.
@@ -72,6 +73,7 @@ Mobile is not a shrunk desktop table — pick a layout that preserves the job-to
 Load the table with zero rows, one row, many rows, and a failed fetch — each state should still orient the user.
 
 - [ ] Text left, numbers right with tabular nums?
+- [ ] Is the table surface visibly distinct from the page background?
 - [ ] Is default sort obvious and is state in the URL?
 - [ ] Are row actions in overflow when there are more than a few?
 - [ ] Do loading and empty states match the final layout?

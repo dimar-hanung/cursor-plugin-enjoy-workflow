@@ -40,7 +40,7 @@ Open references only when the task needs depth (see [References](#references)).
 - **DON'T** default to dark mode + neon glow unasked. **DO** dark only when brand-justified, with a designed dark palette.
 - **DON'T** put `animate-pulse`/glow on the "popular" pricing tier. **DO** static contrast: weight, offset, structure.
 - **NEVER** nest boxes or cards inside boxes or cards. **DO** one outer frame + hairline separators (`divide-y`, `border-b`, `Separator`) between rows/sections.
-- **NEVER** body or UI copy below 16px (`text-xs`, `text-sm`, `text-[11–14px]`, inline `font-size`, `size="sm"` on text-heavy UI). **DO** `text-base` (or omit); hierarchy via `text-lg`/`text-xl` up or muted color — not smaller size.
+- **NEVER** body or UI copy below 16px, including badges, chips, tags, helper text, and table metadata (`text-xs`, `text-sm`, `text-[11–14px]`, inline `font-size`, `size="sm"`). **DO** `text-base` (or omit); hierarchy via `text-lg`/`text-xl` up or muted color — not smaller size.
 - **DON'T** ship generic CTA / SaaS section templates. **DO** product-specific copy and structure.
 
 **Four or more** stacked tells = slop; the signature is the bundle, so fix the combination. Full catalog + de-slop pass: [tells-catalog.md](references/tells-catalog.md).
@@ -52,8 +52,10 @@ Open references only when the task needs depth (see [References](#references)).
 - **MUST** use brand hex tokens; tint neutrals. **NEVER** default purple→indigo / neon glow "premium".
 - **MUST** use the accent deliberately — primary CTA, active/selected states, links, focus, one focal highlight per viewport; section/panel boundaries via tinted border (`border-{accent}-200/300`) or surface shift when the area must read as a unit.
 - **MUST** pair characterful display + readable body (or a deliberate single-family scale).
-- **MUST** keep readable UI copy at ≥16px — default `text-base`; secondary via muted color, not `text-xs`/`text-sm`.
+- **MUST** keep all readable UI copy at ≥16px — default `text-base`, including badges, chips, tags, helper text, and table metadata; secondary via muted color, not `text-xs`/`text-sm`.
 - **Cards:** default **no card**; never cards in hero unless the system requires it. **NEVER** nest card/box inside card/box — one frame, separators between items.
+- **Surface contrast:** tables and cards must read apart from the page background through a clear hue or value shift; add a restrained hairline or elevation when the color shift alone is insufficient. If no boundary is intended, use an open layout instead of presenting the region as a card.
+- **Input contrast:** input, select, and textarea fills must remain visibly distinct from their surrounding surface through a clear hue or value shift. Borders reinforce the boundary; focus, error, and disabled states stay distinguishable without becoming the only moment the field is visible.
 - **Composition:** one job per section; first viewport = brand, one headline, one support line, one CTA group, one dominant visual.
 - **Copy:** concrete outcomes; swap test (competitor name still works → rewrite).
 
@@ -70,6 +72,7 @@ Open references only when the task needs depth (see [References](#references)).
 
 ```text
 Palette: primary ___ / surface ___ / text ___ / accent ___ (hex)
+Surfaces: page ___ / card-table ___ / input ___ / boundary ___ (hex)
 Accent use: CTA + active nav + focus + boundaries (e.g. border-{accent}-300 on panels)
 Type: display ___ / body ___
 Density: compact | balanced | airy
