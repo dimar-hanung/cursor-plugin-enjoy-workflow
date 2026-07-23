@@ -25,7 +25,7 @@ Every primary task must be completable with Tab, Shift+Tab, Enter, Space, and Es
 Names and structure must survive without sight or without hovering.
 
 - Every button has an accessible name — icon-only buttons need visible text or `aria-label`.
-- Every field has a persistent label above the input, not placeholder-as-label.
+- Every input, select, and textarea has a persistent visible label above it with a programmatic association; placeholder text, icons, and `aria-label` are not substitutes.
 - Link text describes the destination — not "click here".
 - Headings describe structure, not just visual size.
 

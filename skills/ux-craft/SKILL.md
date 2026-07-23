@@ -46,7 +46,7 @@ Identify silently; expose in the answer only when useful:
 ## Quick reject checklist
 
 - Merge or remove steps/modals that only relay what the next one says.
-- Label above every input — not placeholder-as-label.
+- Every input, select, and textarea has a persistent visible label with a programmatic association; placeholder text, icons, and `aria-label` are not substitutes.
 - Input, select, and textarea fills remain visibly distinct from the surrounding surface across resting, focus, error, and disabled states.
 - Action and edit modals use enough width for fields, helper text, validation, and footer actions; form-heavy work is not squeezed into a narrow alert preset.
 - Submit stays enabled; reveal errors on attempt.

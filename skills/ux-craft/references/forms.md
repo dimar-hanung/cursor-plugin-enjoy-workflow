@@ -19,7 +19,7 @@ Ask the minimum. Every field must be used by the product now.
 - Infer or fetch instead of asking — country from phone code, city from postal code, data you can retrieve later.
 - Single column layout. Side-by-side only for tightly-coupled pairs (first/last name, month/year).
 - Input, select, and textarea fills remain visibly distinct from the surrounding surface through a small hue or value shift; borders reinforce the boundary instead of carrying it alone.
-- Label above the input, always visible. Placeholder-as-label vanishes on focus and kills recall.
+- Every input, select, and textarea has a persistent visible label above it, associated programmatically with the field. Placeholder text, icons, and `aria-label` are not substitutes.
 - Placeholder only for format examples ("name@company.com"); helper text below for rules that matter before typing.
 - Mark **optional** fields, not required ones (most fields should be required — if not, cut them).
 - Group related fields with headings; order easy → hard (name before payment).
@@ -79,7 +79,7 @@ Try submitting empty, submitting with one bad field, going back mid-flow, and re
 
 - [ ] Is every field necessary now?
 - [ ] Are field fills visibly distinct from their surrounding surface in resting, focus, error, and disabled states?
-- [ ] Does every field have a visible label (not placeholder-as-label)?
+- [ ] Does every field have a persistent visible label with a programmatic association?
 - [ ] Is an action or edit modal wide enough for its fields, helper text, and validation?
 - [ ] Does submit stay enabled with errors shown on attempt?
 - [ ] Does input survive errors, back, and refresh?

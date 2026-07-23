@@ -86,6 +86,7 @@ Surface defaults stack into "cardocalypse" — boxes inside boxes, gray borders 
 
 - Tables and cards need a visible hue or value shift from the page background; add a restrained hairline or elevation when color contrast alone does not establish the boundary
 - Input, select, and textarea fills need a visible hue or value shift from their surrounding surface; borders reinforce the boundary instead of carrying it alone
+- Every input, select, and textarea needs a persistent visible label with a programmatic association; placeholder text, icons, and `aria-label` do not replace it
 - Resting, focus, error, and disabled field states remain distinguishable without making focus the only moment an input becomes visible
 - Regions meant to blend into the page should use an open layout instead of card styling
 - Hairline all around, space/bg shift; color strips for semantic state only — not colored `border-left`/`border-top` on cards

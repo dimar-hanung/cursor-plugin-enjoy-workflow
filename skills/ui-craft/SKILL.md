@@ -56,6 +56,7 @@ Open references only when the task needs depth (see [References](#references)).
 - **Cards:** default **no card**; never cards in hero unless the system requires it. **NEVER** nest card/box inside card/box — one frame, separators between items.
 - **Surface contrast:** tables and cards must read apart from the page background through a clear hue or value shift; add a restrained hairline or elevation when the color shift alone is insufficient. If no boundary is intended, use an open layout instead of presenting the region as a card.
 - **Input contrast:** input, select, and textarea fills must remain visibly distinct from their surrounding surface through a clear hue or value shift. Borders reinforce the boundary; focus, error, and disabled states stay distinguishable without becoming the only moment the field is visible.
+- **Field labels:** every input, select, and textarea must have a persistent visible label with a programmatic association. Placeholder text, icons, and `aria-label` do not replace the visible label.
 - **Modal width:** size modals for the task, not the smallest component preset. Brief confirmations usually need 28–32rem; action and edit modals usually need 36–44rem. Keep a comfortable viewport gutter on small screens; move multi-section or unusually wide work to a page or drawer.
 - **Composition:** one job per section; first viewport = brand, one headline, one support line, one CTA group, one dominant visual.
 - **Copy:** concrete outcomes; swap test (competitor name still works → rewrite).
