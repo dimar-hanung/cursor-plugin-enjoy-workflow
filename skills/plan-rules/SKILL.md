@@ -6,8 +6,9 @@ description: >-
   backend → frontend). Must do + Inventory per domain, written at outcome level
   (where + what must be true), never literal code edits. Plans are straightforward
   directives with no questions, options, or opinions — ask decisions via
-  AskQuestion outside the plan. Plans may be large — do not truncate. Use when
-  creating, drafting, or presenting any plan — or when switching to Plan mode.
+  AskQuestion outside the plan. Study cases capture user behaviour before and
+  after. Plans may be large — do not truncate. Use when creating, drafting, or
+  presenting any plan — or when switching to Plan mode.
 ---
 
 # Plan Rules
@@ -16,29 +17,26 @@ description: >-
 
 The plan is for an AI agent to **execute**, not to discuss. Write **one** decided path.
 
-- **Do** state facts and required work: Goal, What Changes, Must do, Inventory, Out of Scope.
-- **Do** write at outcome level — where the change lands and what must be true after. The executing agent is capable; it chooses the code.
-- **Do not** put questions, A/B options, "or", "optionally", "consider", "we could", trade-off lists, or opinionated recommendations in the plan body or frontmatter.
-- **When a decision matters** → stop writing the plan; **AskQuestion outside the plan** (≤4/round). Bake the answer in as settled fact, then continue.
-- No "pick one", "recommended", "prefer X unless…", or open-ended choices inside `.plan.md`.
+- **Do** state facts and required work: Goal, User Behaviour (study cases), What Current/Changes, Must do, Inventory, Out of Scope.
+- **Do** write at outcome level — where the change lands and what must be true after. The agent chooses the code.
+- **Do not** put questions, A/B options, "or", "optionally", "consider", trade-offs, or recommendations in the plan.
+- **When a decision matters** → **AskQuestion outside the plan** (≤4/round). Bake the answer in as fact, then continue.
 
 ## Before writing
 
 1. Explore real paths and deps.
-2. Blocking A vs B → **AskQuestion outside the plan** (≤4/round). Never put questions, options, or opinions in `.plan.md`.
-3. Bake answers into Must do / Out of Scope as facts, then write the plan (YAML frontmatter first). Domains, not task lists. Do not truncate.
+2. Blocking A vs B → AskQuestion outside the plan. Never options inside `.plan.md`.
+3. Bake answers into Must do / Out of Scope. Write YAML frontmatter first. Domains, not task lists. Do not truncate.
 
 ## Domain order
 
-A **domain** = one dependency-bounded area (inside a project or across projects). Order by codebase deps: foundations before dependents — not by feature story.
+A **domain** = one dependency-bounded area. Order by codebase deps — foundations before dependents, not by feature story.
 
-- **Stack (default):** shared → **backend** (one domain per area) → **frontend** → wiring  
-e.g. `shared-types` → `user-service` → `order-service` → frontend
+- **Stack (default):** shared → **backend** (one domain per area) → **frontend** → wiring
 - **Inside BE:** schema → repos → services → handlers
-- **Inside FE:** utils/types → components → pages that use them  
-e.g. `OrderLineItem` → `OrderSummary` → `Checkout`
+- **Inside FE:** utils/types → components → pages
 
-Wrong: one blob “Frontend”/“Backend”, or frontend before the APIs it needs.
+Wrong: one blob "Frontend"/"Backend", or frontend before the APIs it needs.
 
 ## Frontmatter
 
@@ -66,46 +64,40 @@ This order only. No extra top-level sections. No Domain Index / Risks / Review S
 ## Goal
 [What and why.]
 
-## What Current
+## User Behaviour (Study Cases)
+[Skip when no user-facing surface — write `No user-facing change.`]
+
+Each case: title + three prose paragraphs — `The situation`, `Before changes`, `After changes`. No bullets or options inside a case. Usually 2–5 cases (happy path + edges that drive Must do).
+
+### [Title]
+The situation …
+Before changes …
+After changes …
+
+## What Current (Technical)
 [Existing modules / APIs that matter.]
 
-## What Changes
+## What Changes (Technical)
 [High-level changes; detail under domains.]
 
-## Visualization
-[Each diagram MUST have a title and a short description of what it shows. Skip the whole section if none needed.]
-
-### [Title — e.g. Order create flow]
-[1–2 sentences: what this diagram visualizes.]
-```mermaid
-…
-```
-
-### [Title — e.g. Domain dependency order]
-[1–2 sentences: what this diagram visualizes.]
-```mermaid
-…
-```
-
+## Visualization (Technical)
+[Title + 1–2 sentence description + mermaid. Skip section if none needed.]
 
 # Implementation by Domain
 
-**Done when:** all Must do boxes checked, Inventory paths exist, no out-of-scope work.
+**Done when:** all Must do checked, Inventory paths exist, no out-of-scope work.
 
 ## Domain order
 1. `[shared / schema]` depends on none
 2. `[backend]` depends on 1
 3. `[frontend]` depends on 2
 
-domain order example: `SCHEMA - Master Checkout` → `BACKEND [Codebase Name] - User Service` → `BACKEND [Codebase Name] - Order Service` → `FRONTEND [Codebase Name] - Order Summary` → `FRONTEND [Codebase Name] - Checkout`
-
-## Domain: [matches Domain order #1]
-**Goal**: … 1 or 2 paragraphs
-**Depends on**: none
+## Domain: [name]
+**Goal**: … 1–2 paragraphs
+**Depends on**: …
 
 ### Must do
-- [ ] In `[where]`, [what must be true after].
-- [ ] Reject … / Persist … / Expose … / Call … / Do not …
+- [ ] In `[where]`, [outcome] so [why].
 
 ### Inventory
 - **New files** — `path` — purpose
@@ -113,61 +105,38 @@ domain order example: `SCHEMA - Master Checkout` → `BACKEND [Codebase Name] - 
 - **Data schema changes** — … (or None)
 - **API endpoints** — `METHOD /path` — purpose (or None)
 
-## Domain: [matches Domain order #2+]
-**Goal**: … 1 or 2 paragraphs
-**Depends on**: …
-
-### Must do
-- [ ] …
-
-### Inventory
-- …
-
-
 # Out of Scope
-[Non-goals / nice-to-haves. Or: None.]
+[Non-goals. Or: None.]
 
 # Summary
 - **Important notes** — env, config, breaking changes spanning domains
 ```
 
-## Must do
+## User Behaviour (Study Cases)
 
-Observable, required checkboxes at **outcome level**: name **where** the change lands and **what must be true after**. The agent writes the code — do not spell out lines, diffs, variable names, or step-by-step edits.
-
-Default shape: `In <file / function / component / endpoint>, <required outcome>.` Mix shapes — not only `When…`.
+Observable behaviour — not feature bullets. Three paragraphs per case: **The situation** (who, context, trigger), **Before changes** (today), **After changes** (once Must do passes). Separate paragraphs; don't blend Before/After into one.
 
 Good:
 
-- In `createOrder`, replace the read-then-write stock check with an atomic decrement so concurrent orders cannot oversell.
-- In `parsePrice`, refactor float math to integer minor units; existing callers keep the same behavior.
-- In the `POST /orders` handler, reject insufficient stock with `409` `{ code: "INSUFFICIENT_STOCK" }`.
-- `POST /orders` returns `{ id, status, total }` on create.
-- Persist `orders.status` default `pending`; never null.
-- Migrate `orders`: add `currency` `char(3) NOT NULL DEFAULT 'USD'`.
-- From the order service, expose `OrderCreated` `{ orderId, userId }` for billing.
-- In the create flow, call `GET /users/:id` first; if missing, abort `404`.
-- On `GET /orders/:id`, only owner or `admin` passes authorization.
-- In the create path, `Idempotency-Key` is idempotent: same key + body → same order, no duplicate row.
-- After create succeeds, enqueue `order.created` once (consumers must be idempotent).
-- In `OrderDetail`, render line items; empty cart → empty state, not an error toast.
-- In `CheckoutForm`, Submit stays disabled while the request is in flight.
-- In `Checkout`, redirect to `/orders/:id` after create succeeds.
-- Keep copy/labels matching existing checkout strings.
-- Do not charge payment here — billing owns charges.
+> The situation A shopper with two Blue Widgets taps Pay when only one is in stock.
+> Before changes Spinner, success toast, order page — stock goes negative silently.
+> After changes Inline error naming the SKU; cart unchanged; Pay succeeds only when stock holds.
 
-Bad — too low-level (the agent decides this):
+Bad: vague ("better UX"), undecided ("guest checkout — TBD"), bullets/labels (**Actor:** …), implementation detail (`GET /orders` returns 200).
 
-- In `orders.ts` line 42, change `const foo = x` to `const foo = b`.
-- Rename `qty` to `quantity` and wrap `total` in `useMemo`.
-- Add `if (!stock) return res.status(409).json(...)` inside the try block.
-- Import `db` at the top, then add a `try/catch`, then call `await tx.commit()`.
+## Must do
 
-Bad — vague or undecided (never in the plan):
+Outcome-level checkboxes: **where**, **what must be true**, **why** (`so …`). No lines, diffs, or step-by-step edits.
 
-- Improve the API / handle errors properly / consider edge cases.
-- Optionally add CSV? / Should we support guest checkout?
-- Redis vs in-memory? / Prefer Redis unless latency is low (ask via AskQuestion outside the plan; then write one chosen approach)
-- We could use webhooks or polling — agent should decide
-- Recommended: soft delete; alternatively hard delete if compliance requires it
+Default: `In <where>, <outcome> so <reason>.`
 
+Good:
+
+- In `createOrder`, atomic stock decrement so concurrent orders cannot oversell.
+- In `POST /orders`, reject insufficient stock with `409` `{ code: "INSUFFICIENT_STOCK" }` so clients show a stock-specific message.
+- On `GET /orders/:id`, only owner or `admin` passes authorization so users cannot read another's PII.
+- In `CheckoutForm`, Submit disabled while in flight so users cannot double-submit.
+
+Bad — too low-level: change line 42, rename `qty`, add `try/catch` steps.
+
+Bad — vague/undecided: improve the API, optionally CSV, Redis vs in-memory, "consider edge cases".
