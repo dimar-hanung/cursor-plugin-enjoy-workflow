@@ -140,6 +140,7 @@ git remote set-url origin http://<host>/<group>/<project>.git
 - `403` / `401`
 
 If the check fails, report the error and give the setup steps below. Do **not** continue to Step 4.
+and tell the user to run `git ls-remote origin HEAD` again after the user confirms credentials are set.
 
 ### Set up HTTP credentials
 
