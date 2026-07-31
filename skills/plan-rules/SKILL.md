@@ -57,7 +57,7 @@ name: Short plan title
 overview: One-line summary (or "")
 todos:
   - id: stage-user-service
-    content: "user-service: after shared-schema; done when Must do passes"
+    content: "user-service: after shared-schema"
     status: pending
 isProject: false
 ---
@@ -65,7 +65,7 @@ isProject: false
 
 One `todo` per dependency stage, same order as Dependency order. Status: `pending` | `in-progress` | `completed` | `error`.
 
-**Todo `content` format:** `"[stage-name]: after [deps]; done when Must do passes"`
+**Todo `content` format:** `"[stage-name]: after [deps]"`
 
 ## Body
 
@@ -80,7 +80,7 @@ This order only. No extra top-level sections beyond those listed below. No Stage
 ## User Behaviour (Study Cases)
 [Skip when no user-facing surface — write `No user-facing change.`]
 
-Each case: title + three prose paragraphs — `The situation`, `Before changes`, `After changes`. No bullets or options inside a case. Usually 2–5 cases (happy path + edges that drive Must do). Every case's **After changes** must be covered by at least one Must do item.
+Each case: title + three prose paragraphs — `The situation`, `Before changes`, `After changes`. No bullets or options inside a case. Usually 1–5 cases (happy path + edges that drive Must do). Every case's **After changes** must be covered by at least one Must do item.
 
 ### [Title]
 The situation …
@@ -98,8 +98,6 @@ After changes …
 
 # Bottom-Up Implementation
 
-**Done when:** all Must do checked, Inventory paths exist, Validation passes (if present), no out-of-scope work.
-
 ## Dependency order
 1. `[shared / schema]` depends on none
 2. `[backend]` depends on 1
@@ -108,7 +106,6 @@ After changes …
 ## Stage: [name]
 **Goal**: … 1–2 paragraphs
 **Depends on**: …
-**Done when**: Must do checked; Inventory paths exist; [stage-specific proof if any]
 
 ### Must do
 - [Verb] `[where]` to [outcome] so [why].
