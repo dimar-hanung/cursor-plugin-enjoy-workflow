@@ -1,1 +1,0 @@
-Based on the link below, update Notion with the current status. Use Bahasa Indonesia. Keep it natural, with only the main changes, like a summary of what has been done. Avoid em dashes. use notion mcp.
