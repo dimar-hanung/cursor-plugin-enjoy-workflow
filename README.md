@@ -79,6 +79,74 @@ OpenCode does not read Cursor `.mdc` rules from the plugin. Either:
 
 Restart OpenCode after setup so skills and commands are picked up.
 
+## Use with Codex (CLI + GUI)
+
+Works for **both** Codex CLI and the ChatGPT / Codex desktop app (and IDE extension). Same skill folders; neither loads Cursor’s `.cursor-plugin/` format.
+
+Docs: https://developers.openai.com/codex/skills
+
+### Skills
+
+Copy into the user skills dir (picked up by CLI and GUI):
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R ~/.cursor/plugins/local/enjoy-workflow/skills/. ~/.agents/skills/
+```
+
+Or keep them project-scoped by copying into a repo’s `.agents/skills/` instead.
+
+Re-run the `cp` after `git pull` if you use the copy approach.
+
+### Commands
+
+Codex does not use Cursor `commands/*.md` as slash commands. Treat them as skills (wrap each prompt in `skills/<name>/SKILL.md`) or paste the prompt manually.
+
+### Rules
+
+Codex reads `AGENTS.md`, not Cursor `.mdc` rules. Copy useful rule text into `AGENTS.md` (project) if you need it.
+
+Restart Codex / reopen the desktop app after copying so skills refresh.
+
+## Use with VS Code GitHub Copilot
+
+Works in **VS Code Copilot Chat / Agent**, and the same Agent Skills paths are used by Copilot CLI and cloud agent. Does **not** load Cursor’s `.cursor-plugin/`.
+
+Docs: https://code.visualstudio.com/docs/agent-customization/agent-skills
+
+### Skills
+
+Point VS Code at the plugin skills folder with `chat.agentSkillsLocations` (User or Workspace settings):
+
+```json
+{
+  "chat.agentSkillsLocations": {
+    "~/.cursor/plugins/local/enjoy-workflow/skills": true
+  }
+}
+```
+
+Or copy them:
+
+```bash
+mkdir -p ~/.copilot/skills
+cp -R ~/.cursor/plugins/local/enjoy-workflow/skills/. ~/.copilot/skills/
+```
+
+`~/.agents/skills/` also works (same folder Codex uses). Project-scoped alternative: copy into the repo’s `.github/skills/` or `.agents/skills/`.
+
+Re-run the `cp` after `git pull` if you use the copy approach.
+
+### Commands
+
+Copilot does not read Cursor `commands/*.md`. Use [prompt files](https://code.visualstudio.com/docs/copilot/customization/prompt-files) (e.g. `.github/prompts/<name>.prompt.md`) or invoke skills with `/` in chat.
+
+### Rules
+
+Copilot uses `.github/copilot-instructions.md`, `.github/instructions/*.instructions.md`, and/or `AGENTS.md` — not Cursor `.mdc` rules. Copy useful rule text into one of those if you need it.
+
+Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh.
+
 ## Inventory
 
 ### Skills (11)
