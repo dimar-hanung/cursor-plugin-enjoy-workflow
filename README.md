@@ -37,6 +37,48 @@ git pull
 
 Then reload the Cursor window.
 
+## Use with OpenCode
+
+OpenCode does **not** load Cursor plugins (`.cursor-plugin/`). Point config at this repo, or copy files into OpenCode’s dirs.
+
+Assume the plugin is already cloned at `~/.cursor/plugins/local/enjoy-workflow` (or `"$HOME/.cursor/plugins/local/enjoy-workflow"` on Windows Git Bash).
+
+### Skills
+
+Point OpenCode at the plugin skills folder in `~/.config/opencode/opencode.json`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": ["~/.cursor/plugins/local/enjoy-workflow/skills"]
+}
+```
+
+Or copy them:
+
+```bash
+mkdir -p ~/.config/opencode/skills
+cp -R ~/.cursor/plugins/local/enjoy-workflow/skills/. ~/.config/opencode/skills/
+```
+
+Re-run the `cp` after `git pull` if you use the copy approach.
+
+### Commands
+
+```bash
+mkdir -p ~/.config/opencode/commands
+cp ~/.cursor/plugins/local/enjoy-workflow/commands/*.md ~/.config/opencode/commands/
+```
+
+### Rules (optional)
+
+OpenCode does not read Cursor `.mdc` rules from the plugin. Either:
+
+- Add them via `instructions` in `opencode.json` (copy or point at converted `.md` files), or
+- Use a community bridge such as [`opencode-cursor-rules`](https://github.com/fidelix/opencode-cursor-rules)
+
+Restart OpenCode after setup so skills and commands are picked up.
+
 ## Inventory
 
 ### Skills (11)
