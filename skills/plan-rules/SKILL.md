@@ -149,7 +149,9 @@ Bad: vague ("better UX"), undecided ("guest checkout — TBD"), bullets/labels (
 
 ## Must do
 
-Outcome-level checkboxes: **where**, **what must be true**, **why** (`so …`). Write **imperative active** sentences — verb first, not "In `[where]`…".
+Outcome-level checkboxes: **where**, **what must be true**, **why**. Write **imperative active** sentences — verb first, not "In `[where]`…".
+
+**Every Must do item must include a reason clause introduced by `so`.** Never omit the reason. If a meaningful `so <reason>` cannot be stated, the item is probably vague, unnecessary, or too low-level.
 
 **Default formula:** `[Verb] <where> to <outcome> so <reason>.`
 
