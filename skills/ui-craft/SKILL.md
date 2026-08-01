@@ -95,7 +95,7 @@ Add one line of rationale per token ("terracotta — physical goods brand"); une
 | Gesture / sheet / spring / Apple-like feel | Springs, interruptibility, materials | [apple-motion.md](references/apple-motion.md) |
 | Deep polish / component feel | Buttons, origins, clip-path, a11y | [emil-craft.md](references/emil-craft.md) |
 | "What should animate?" | Gate ruthlessly; max 5–7 ideas; **do not implement** unless asked | [find-opportunities.md](references/find-opportunities.md) |
-| Audit / improve motion codebase | Read-only; write plans under `plans/` | [motion-improve.md](references/motion-improve.md), [motion-audit.md](references/motion-audit.md), [motion-plan-template.md](references/motion-plan-template.md) |
+| Audit / improve motion codebase | Read-only; write **motion** plans under `plans/` (not `.plan.md`) | [motion-improve.md](references/motion-improve.md), [motion-audit.md](references/motion-audit.md), [motion-plan-template.md](references/motion-plan-template.md) |
 | Review motion in a diff | Flag by default; cite standards | [motion-review.md](references/motion-review.md), [motion-standards.md](references/motion-standards.md) |
 | "What's that motion called?" | Name only; do not design/build | [vocabulary.md](references/vocabulary.md) |
 

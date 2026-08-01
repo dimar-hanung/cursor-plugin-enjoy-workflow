@@ -1,11 +1,24 @@
 ---
 name: brainstorm
-description: Generates focused ideas and options without overwhelming the user. Use when the user asks to brainstorm, explore options, compare approaches, name something, or wants creative directions before deciding.
+description: >-
+  Generates focused ideas and options without overwhelming the user. Use when
+  the user asks to brainstorm, explore options, compare approaches, name
+  something, or wants creative directions before deciding. Not for first-
+  principles deconstruction before executing — that is /fundamental-think.
 ---
 
 # Brainstorm
 
 Keep it light. The goal is momentum and a clear choice — not a wall of possibilities.
+
+## Vs `/fundamental-think`
+
+| Ask | Use |
+|-----|-----|
+| Options, names, approaches, "ide dulu", compare paths | **This skill** |
+| Break down a broad/solution-shaped ask into foundational questions before building | `/fundamental-think` (or Indo variant) |
+
+If the user mixes both ("brainstorm secara fundamental"), **stay in brainstorm**: list options with light tradeoffs. Do **not** run a research/explore loop. Suggest `/fundamental-think` only if they need problem deconstruction before execution.
 
 ## Before responding
 
@@ -30,7 +43,7 @@ Each idea should be:
 - **Concrete** — enough detail to compare (one line of "what it is" + one line of tradeoff)
 - **Honest** — include a real downside or risk, not only upsides
 
-Skip filler ("it depends", generic platitudes). Skip research rabbit holes unless the user asked for it.
+Skip filler ("it depends", generic platitudes). **Skip research rabbit holes** unless the user explicitly asked for researched options — then fetch only what changes a tradeoff, not a deep dive.
 
 ## Emoji guide
 

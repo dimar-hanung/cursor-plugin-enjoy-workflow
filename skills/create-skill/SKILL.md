@@ -11,9 +11,15 @@ Here's a comprehensive guide to creating **Agent Skills** files for GitHub Copil
 
 ## 📁 1. Choose Where to Store Your Skill
 
-| Scope                              | Path                           |
-| ---------------------------------- | ------------------------------ |
-| **Per-repository (project-level)** | `.agents/skills/<skill-name>/` |
+| Kind | Path | When |
+|------|------|------|
+| **Plugin / reusable workflow skill** (this enjoy-workflow plugin) | `skills/<skill-name>/` | Behaviour shipped with the plugin for any workspace |
+| **Module memory** (project facts, preferences) | `.agents/skills/develop-module-<module>/` | Major product modules — follow `rules/agents-skills.mdc` |
+| **Ad-hoc project skill** (other behaviours in a repo) | `.agents/skills/<skill-name>/` | One-off project skill that is **not** module memory |
+
+Do **not** put plugin workflow skills under `.agents/skills/`. Do **not** name module memory skills without the `develop-module-` prefix.
+
+Default for "create a skill" in **this plugin repo**: `skills/<name>/`. Default for "remember this module" in an app repo: `develop-module-<name>/`.
 
 ---
 
@@ -22,8 +28,11 @@ Here's a comprehensive guide to creating **Agent Skills** files for GitHub Copil
 Each skill lives in its own subdirectory. The key file is `SKILL.md`:
 
 ```
-.agents/skills/my-skill/
-    └── SKILL.md
+skills/my-skill/          # plugin skill example
+└── SKILL.md
+
+.agents/skills/develop-module-checkout/   # module memory example
+└── SKILL.md
 ```
 
 ---
@@ -78,6 +87,8 @@ You can include scripts, templates, or other resources in your skill folder. Cop
     └── scripts/
         └── validate.sh
 ```
+
+(Same layout under `skills/<name>/` for plugin skills.)
 
 ---
 

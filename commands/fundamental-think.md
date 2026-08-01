@@ -1,7 +1,16 @@
 ---
 name: fundamental-think
-description: Think from first principles before executing; break broad questions into foundational ones.
+description: Think from first principles before executing; break broad questions into foundational ones. Not for listing creative options or names — use the brainstorm skill for that.
 ---
+
+## Vs brainstorm
+
+| Ask | Use |
+|-----|-----|
+| Options, names, compare approaches, creative directions | `brainstorm` skill — no explore/research loop |
+| Broad or solution-shaped ask that needs foundational questions before work | **This command** — explore/search when assumptions need grounding |
+
+If they only want ideas, do not run this command’s research path — point them to brainstorm (or switch if already clear).
 
 Before working on something, don’t immediately answer or execute the request at a surface level.
 

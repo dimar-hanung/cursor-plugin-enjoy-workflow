@@ -21,7 +21,7 @@ description: >-
 
 **Do not use** for:
 - greenfield feature work → normal implementation flow
-- deep architecture understanding with no symptom → `deep-agent`
+- deep architecture understanding with no symptom → normal exploration / explanation (no debug loop)
 - quick one-bug skim from chat context → `/search-related-problem`
 
 If the symptom is unclear, ask one short question before tracing.

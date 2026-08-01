@@ -34,6 +34,7 @@ The plan is for an AI agent to **execute**, not to discuss. Write **one** decide
 2. Blocking A vs B → AskQuestion outside the plan. Never options inside `.plan.md`.
 3. Bake answers into Must do / Out of Scope. Write YAML frontmatter first. Dependency stages, not flat task lists. Do not truncate.
 4. **Skip a formal plan** for trivial work (single obvious edit, typo, one-file fix you have done many times). State the change and execute.
+5. **Not for ui-craft motion audits** — those write self-contained files under `plans/` via `motion-plan-template.md`. Keep feature/product work in `.plan.md` (this skill).
 
 ## Dependency stage order
 

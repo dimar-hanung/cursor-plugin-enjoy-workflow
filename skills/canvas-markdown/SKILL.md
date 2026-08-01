@@ -1,10 +1,10 @@
 ---
 name: canvas-markdown
 description: >-
-  Write standalone reports as markdown files in .agents/canvas-markdown/.
-  Use for long analyses, investigations, research summaries, or data-heavy
-  conclusions that should live outside the chat. Read this skill when creating,
-  editing, or updating files in .agents/canvas-markdown/.
+  Write standalone prose reports as markdown in .agents/canvas-markdown/.
+  Use for long text analyses the user may revisit as a file — not for Cursor
+  Canvas (.canvas.tsx), not for product docs in docs/. Read this skill when
+  creating, editing, or updating files in .agents/canvas-markdown/.
 ---
 
 # Canvas Markdown
@@ -15,11 +15,27 @@ Write the deliverable as a markdown file at:
 <workspace>/.agents/canvas-markdown/<topic>.md
 ```
 
+## Deliverable router (pick one)
+
+| Need | Use | Path / form |
+|------|-----|-------------|
+| Interactive / visual layout beside chat (tables, charts, explorations) | Cursor **Canvas** skill | `.canvas.tsx` |
+| Long **prose** report to reopen or share as a file | **This skill** | `.agents/canvas-markdown/<topic>.md` |
+| Product / feature **technical docs** (ID, Mermaid, file maps) | `/create-docs` | `docs/<topic>.md` |
+| Word / `.docx` | `docx` skill | `.docx` file |
+
+**Do not** write the same report in more than one of these. If the user says only "report" / "analisis" without format: prefer **this skill** for prose conclusions; prefer **Canvas** when they ask for a canvas, dashboard-like layout, or interactive exploration; prefer **`/create-docs`** when they ask for docs, dokumentasi, or a file map under `docs/`.
+
 ## When to use
 
-Use when the user wants a **standalone report** — analyses, audits, research summaries, or multi-section findings they may revisit or share.
+Use when the user wants a **standalone prose report** — analyses, audits, research summaries, or multi-section findings they may revisit or share as markdown.
 
-Skip for code changes, short answers, drafts for other tools, or work inside an existing document.
+Skip for:
+
+- Code changes, short answers, drafts for other tools, or work inside an existing document
+- Cursor Canvas / `.canvas.tsx` requests → Canvas skill
+- Technical product documentation → `/create-docs`
+- Word documents → `docx`
 
 ## How to write
 

@@ -1,7 +1,17 @@
 ---
 name: create-docs
-description: Create technical docs in Bahasa Indonesia with Mermaid diagrams in the docs/ folder. Includes feature file-map when mapping FE/BE files.
+description: Create technical product docs in Bahasa Indonesia with Mermaid in the docs/ folder. Includes feature file-map when mapping FE/BE files. Not for prose reports (canvas-markdown) or interactive Canvas (.canvas.tsx).
 ---
+
+## When to use (vs other deliverables)
+
+| Need | Use instead |
+|------|-------------|
+| Interactive / visual exploration beside chat | Cursor Canvas (`.canvas.tsx`) |
+| Long prose analysis / audit as a markdown file | `canvas-markdown` → `.agents/canvas-markdown/` |
+| Product docs, architecture notes, feature file maps | **This command** → `docs/` |
+
+Do not duplicate the same content into `docs/` and `.agents/canvas-markdown/`.
 
 ## Rules
 

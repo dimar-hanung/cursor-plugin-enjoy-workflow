@@ -5,7 +5,9 @@ alwaysApply: true
 
 # Agents skills
 
-Every conversation or development cycle must create or update skills inside `.agents/skills`.
+When a **major module** is meaningfully changed, or durable preferences / workspace facts emerge during a development cycle, create or update a skill under `.agents/skills`.
+
+**Do not** create or update module skills for: trivial one-off edits, Ask-mode Q&A with no lasting fact, pure brainstorming, or when the user only asked for analysis without module work. Prefer updating an existing `develop-module-*` over inventing a new one.
 
 ## Naming
 

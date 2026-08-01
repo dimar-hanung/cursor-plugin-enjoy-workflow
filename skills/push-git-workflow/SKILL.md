@@ -186,6 +186,8 @@ Present the MR URL to the user as a clickable markdown link. Do **not** push to 
 
 ## Step 1 — Set git identity (required)
 
+**Allowed exception:** for this workflow, local `git config` (identity + credential helper when Step 2 needs it) is **explicitly allowed** — do not skip Step 1 because of a general "never update git config" rule.
+
 Before any commit in this workflow, set the local repo identity:
 
 ```bash
@@ -200,7 +202,7 @@ git config user.name
 git config user.email
 ```
 
-Use **local** config (no `--global`) so only the current repository is affected.
+Use **local** config for identity (no `--global`) so only the current repository is affected. Credential helper may use `--global` only as documented in Step 2 when fixing auth.
 
 ## Step 2 — Check credentials (required first)
 
@@ -460,7 +462,7 @@ MR URL: {built_url}
 - Read `.branch` from the repo root first; only ask the user for branch names when the file is missing or `production` is not set — then create or update `.branch` (production and development only; do not commit unless asked).
 - `{dev-branch}` is optional — prod-only repos skip steps 3–5 and commit directly on `feature/prod/{feature-name}`.
 - `{feature-name}`: use user's slug if given; otherwise recommend one and reuse it for the same project across `feature/dev/` and `feature/prod/`.
-- Always run **Step 1** (git identity) before any commit; use `Dimar Hanung` / `dimarhanung@ecampus.ut.ac.id` via local `git config`.
+- Always run **Step 1** (git identity) before any commit; use `Dimar Hanung` / `dimarhanung@ecampus.ut.ac.id` via local `git config`. User confirmed local (and Step 2 credential-helper) `git config` is allowed for this skill.
 - Always run **Step 2** (credential check) before any pull or push. Stop and instruct the user if credentials are unavailable or remote uses SSH.
 - Use **HTTP/HTTPS remote only** — if `origin` is SSH, tell the user to convert and run `git remote set-url origin http://...` (user provides the correct URL).
 - Never force-push `{dev-branch}` or `{prod-branch}`.
