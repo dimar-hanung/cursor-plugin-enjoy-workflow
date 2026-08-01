@@ -149,7 +149,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (11)
+### Skills (12)
 
 | Skill | Source |
 |-------|--------|
@@ -157,6 +157,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
 | `create-skill` | `~/.agents/skills` |
+| `debug-top-down` | `~/.agents/skills` |
 | `deep-agent` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
@@ -175,7 +176,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (8)
+### Commands (9)
 
 | Command | Description |
 |---------|-------------|
@@ -184,6 +185,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
+| `/plan-behaviour-research` | Verify exact versions of tech the plan touches + search version-specific pitfalls into a plan Behaviour section |
 | `/refine-ux-writing` | UX writing EN → ID localization |
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
