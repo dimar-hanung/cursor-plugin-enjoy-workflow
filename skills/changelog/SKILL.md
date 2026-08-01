@@ -40,7 +40,7 @@ Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika 
 ```markdown
 # Changelog
 
-## [Hari], [tanggal]
+## 🎉 [Hari], [tanggal]
 
 [Highlight: 1–2 kalimat ringkas tema pembaruan.]
 
@@ -60,7 +60,7 @@ Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika 
 | Level | Isi |
 |-------|-----|
 | `#` | `Changelog` |
-| `##` | **Tanggal** (`Kamis, 23 Juli 2026`) |
+| `##` | **Tanggal** (`## 🎉 Kamis, 23 Juli 2026`) |
 | `###` | Section: **Baru**, **Perbaikan**, **Improvement** |
 | `1.` | **Konteks** — dimana / untuk siapa / ketika apa |
 | `-` | **Fitur** — satu kemampuan atau perubahan; manfaat untuk user |
@@ -75,19 +75,19 @@ Nama section tetap **Baru**, **Perbaikan**, **Improvement** (Improvement tidak d
 
 ### Tanggal (wajib)
 
-Format: **`## [Hari], [d] [Bulan] [yyyy]`** — bahasa Indonesia.
+Format: **`## 🎉 [Hari], [d] [Bulan] [yyyy]`** — bahasa Indonesia, emoji tada `🎉` wajib di depan tanggal.
 
-Contoh: `## Kamis, 23 Juli 2026`
+Contoh: `## 🎉 Kamis, 23 Juli 2026`
 
 **Urutan tanggal: terbaru di atas.** Setiap pembaruan = satu blok `##` tanggal. Blok baru selalu **disisipkan paling atas** (langsung di bawah `# Changelog`). Tanggal lama turun ke bawah. Jangan urut kronologis naik (lama → baru).
 
 ```markdown
 # Changelog
 
-## Jumat, 2 Agustus 2026    ← terbaru (paling atas)
+## 🎉 Jumat, 2 Agustus 2026    ← terbaru (paling atas)
 …
 
-## Kamis, 23 Juli 2026      ← lebih lama
+## 🎉 Kamis, 23 Juli 2026      ← lebih lama
 …
 ```
 
@@ -190,7 +190,7 @@ Di section `### Improvement`: fitur **sudah ada** yang jadi lebih baik (lebih ce
 ```markdown
 # Changelog
 
-## Jumat, 2 Agustus 2026
+## 🎉 Jumat, 2 Agustus 2026
 
 Update menambah cicilan di Fasilitas A, notifikasi chat grup, dan email konfirmasi pembayaran di fasilitas yang sama.
 
@@ -216,7 +216,7 @@ Update menambah cicilan di Fasilitas A, notifikasi chat grup, dan email konfirma
 ```markdown
 # Changelog
 
-## Jumat, 2 Agustus 2026
+## 🎉 Jumat, 2 Agustus 2026
 
 Update menambah cicilan di Fasilitas A dan notifikasi chat grup.
 
@@ -226,7 +226,7 @@ Update menambah cicilan di Fasilitas A dan notifikasi chat grup.
 2. Notifikasi pada Chat Grup
    - Push saat ada pesan baru di grup.
 
-## Kamis, 23 Juli 2026
+## 🎉 Kamis, 23 Juli 2026
 
 Pembaruan hari itu menambah pelacakan status sertifikat, impor data pembimbing KIT, unduh jadwal ujian PDF, serta pengiriman sertifikat lewat POS dalam satu transaksi.
 
@@ -244,7 +244,7 @@ Pembaruan hari itu menambah pelacakan status sertifikat, impor data pembimbing K
 ## Cek sebelum kirim
 
 - [ ] anti-slop-writing (baca aloud)
-- [ ] Tanggal `## Hari, d Bulan yyyy` + highlight
+- [ ] Tanggal `## 🎉 Hari, d Bulan yyyy` + highlight
 - [ ] **Terbaru di atas** (blok tanggal baru paling atas)
 - [ ] Section `### Baru` / `### Perbaikan` / `### Improvement` (h3)
 - [ ] Modul = nested `1.` + `-`, bukan `###`
@@ -253,7 +253,7 @@ Pembaruan hari itu menambah pelacakan status sertifikat, impor data pembimbing K
 
 ## Rules
 
-**MUST:** anti-slop-writing · Indonesia · tanggal + highlight · **terbaru di atas** · section `###` · nested list · label `1.` pakai dimana/untuk siapa/ketika apa · Perbaikan sebelum+sesudah · nama UI bukan internal.
+**MUST:** anti-slop-writing · Indonesia · tanggal `## 🎉 …` + highlight · **terbaru di atas** · section `###` · nested list · label `1.` pakai dimana/untuk siapa/ketika apa · Perbaikan sebelum+sesudah · nama UI bukan internal.
 
 **NEVER:** `###` untuk label modul · flat bullet tanpa modul · highlight vague · em dash · jargon/commit mentah · filler · urut tanggal lama di atas.
 
