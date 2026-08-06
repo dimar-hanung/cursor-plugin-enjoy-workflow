@@ -176,7 +176,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (10)
+### Commands (11)
 
 | Command | Description |
 |---------|-------------|
@@ -189,6 +189,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
+| `/search-overengineering` | Find overengineering / simplification opportunities; flag Breaking per finding (`--breaking` / `--safe`) |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
 
 ## Layout
