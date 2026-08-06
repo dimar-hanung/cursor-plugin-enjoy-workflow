@@ -176,16 +176,17 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (9)
+### Commands (10)
 
 | Command | Description |
 |---------|-------------|
+| `/behaviour-research` | Verify exact versions of tech the current work touches + report version-specific pitfalls (chat; not plan-specific) |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
 | `/create-project-location` | Generate `.agents/skills/project-locations` for the workspace |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
-| `/plan-behaviour-research` | Verify exact versions of tech the plan touches + search version-specific pitfalls into a plan Behaviour section |
+| `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
