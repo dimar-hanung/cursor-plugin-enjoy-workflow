@@ -39,7 +39,7 @@ Adapted from [adenaufal/anti-slop-writing](https://github.com/adenaufal/anti-slo
    1. Changelog: user benefit
    2. Report / analysis: finding / verdict
 3. **Structure owner**
-   1. Changelog: `skills/changelog`
+   1. Changelog: `/create-changelog` (`commands/create-changelog.md`)
    2. Report / analysis: this file + ask
 4. **Voice**
    1. Both: this skill

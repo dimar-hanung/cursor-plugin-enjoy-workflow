@@ -8,7 +8,7 @@ Open this file when writing or reviewing buttons, labels, errors, confirmations,
 |----------|------------------|
 | **English** (or product already EN) | **This file** — laws and examples below |
 | **Bahasa Indonesia** (UI, changelog voice, reports/docs prose) | `anti-slop-writing` skill — banlist + register (`/refine-ux-writing` triggers it) |
-| Non-technical **changelog** structure | `skills/changelog` — sections/format; voice via `anti-slop-writing` |
+| Non-technical **changelog** structure | `/create-changelog` (`commands/create-changelog.md`) — nested modul + tipe inline; voice via `anti-slop-writing` |
 
 Laws here (verb+object, calm errors, no blame, consistent terms) still apply in ID as **intent**. Do **not** paste English example strings into Indonesian UI. For ID wording conflicts (e.g. empty-state phrasing, apology), **`anti-slop-writing` wins**.
 

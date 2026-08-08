@@ -149,7 +149,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (12)
+### Skills (11)
 
 | Skill | Source |
 |-------|--------|
@@ -162,7 +162,6 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `docx` | `~/.agents/skills` |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
-| `push-git-workflow` | `~/.agents/skills` |
 | `tidy-env` | new |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
 
@@ -176,17 +175,19 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (13)
+### Commands (15)
 
 | Command | Description |
 |---------|-------------|
 | `/behaviour-research` | Verify exact versions of tech the current work touches + report version-specific pitfalls (chat; not plan-specific) |
+| `/create-changelog` | Non-technical Indonesian changelog / release notes (nested modul + tipe inline: Baru, Perbaikan, Improvement, Dihapus, Berubah; voice via anti-slop-writing) |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
 | `/create-project-location` | Generate `.agents/skills/project-locations` for the workspace |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
+| `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/search-data-smell` | Find one bad data contract / shape smell; flag Breaking on that fix |

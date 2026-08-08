@@ -1,6 +1,6 @@
 ---
 name: push-git-workflow
-description: Pushes changes through a dev-then-prod Git workflow using git commands only (no glab or GitLab API). Sets local git identity (Dimar Hanung / dimarhanung@ecampus.ut.ac.id) before commits. Checks git credentials and remote origin at runtime. Reads production and development branch names from a `.branch` file in the repo root when present; otherwise asks the user, creates `.branch`, and includes that file in the commits that get pushed (feature slug is separate — recommend and reuse per project if user did not provide one). Prod-only repos skip the dev path. Merges feature/dev into the dev branch locally when a development branch exists; pushes feature/prod and opens a GitLab MR to the production branch via URL built from git remote. Detects merge/cherry-pick conflicts, explains them, and asks the user how to resolve. Use when the user asks to push changes, create a merge request (MR), merge to development or production, cherry-pick to production, resolve git conflicts, or follow the push-git workflow.
+description: Dev-then-prod Git push / MR workflow (git only, HTTP). Creates `.branch` when missing and includes it in the push. Use for push, MR, merge to development, cherry-pick to production, or conflict resolution in this workflow.
 ---
 
 # Push Git Workflow
@@ -463,7 +463,7 @@ MR URL: {built_url}
 - Read `.branch` from the repo root first; only ask the user for branch names when the file is missing or `production` is not set — then create or update `.branch` (production and development only) and **include it in the push** (stage/commit with the feature branch work).
 - `{dev-branch}` is optional — prod-only repos skip steps 3–5 and commit directly on `feature/prod/{feature-name}`.
 - `{feature-name}`: use user's slug if given; otherwise recommend one and reuse it for the same project across `feature/dev/` and `feature/prod/`.
-- Always run **Step 1** (git identity) before any commit; use `Dimar Hanung` / `dimarhanung@ecampus.ut.ac.id` via local `git config`. User confirmed local (and Step 2 credential-helper) `git config` is allowed for this skill.
+- Always run **Step 1** (git identity) before any commit; use `Dimar Hanung` / `dimarhanung@ecampus.ut.ac.id` via local `git config`. User confirmed local (and Step 2 credential-helper) `git config` is allowed for this command.
 - Always run **Step 2** (credential check) before any pull or push. Stop and instruct the user if credentials are unavailable or remote uses SSH.
 - Use **HTTP/HTTPS remote only** — if `origin` is SSH, tell the user to convert and run `git remote set-url origin http://...` (user provides the correct URL).
 - Never force-push `{dev-branch}` or `{prod-branch}`.
@@ -475,3 +475,5 @@ MR URL: {built_url}
 - On any conflict: detect → explain → ask user with choices → apply → confirm clean state.
 - Do not auto-resolve conflicts or commit unless the user explicitly chooses a resolution.
 - Do not commit unless the user explicitly asks (exceptions: merge commits to `{dev-branch}` in step 5 when auto-merging; committing a newly created/updated `.branch` as part of this workflow's feature commits).
+
+USER REQUEST:

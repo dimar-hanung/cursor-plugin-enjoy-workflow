@@ -81,7 +81,7 @@ Claude-era tell: many `Label: explanation` stacks. In reports, prefer periods or
    1. Particles almost never on buttons; no street slang — never `gw`, `lo`, `gue`, `lu`
    2. Exactly 3 wizard steps is OK when the product needs 3 steps — ban is *equal-length marketing chips*, not real step counts
 2. **Changelog**
-   1. Benefit-first bullets; structure from `changelog` skill
+   1. Benefit-first bullets; structure from `/create-changelog` command
 3. **Report / docs**
    1. Apply [prose.md](prose.md): burstiness, no compulsory Kesimpulan, break four-part DNA
 
