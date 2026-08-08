@@ -175,7 +175,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (15)
+### Commands (16)
 
 | Command | Description |
 |---------|-------------|
@@ -186,6 +186,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
+| `/notion-update-log` | Notion `## 📝 Note` (Pertanyaan, Pelajaran) lalu `## ⚔️ Log`; anti-slop |
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
 | `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
