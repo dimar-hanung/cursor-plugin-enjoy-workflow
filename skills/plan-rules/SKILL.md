@@ -3,7 +3,7 @@ name: plan-rules
 description: >-
   Formats implementation plans as Cursor `.plan.md` files with YAML frontmatter
   (Plan UI). Agent-first dependency stages ordered bottom-up by codebase deps
-  (default backend → frontend). Must do + Inventory per stage; Data schema changes
+  (default backend → frontend). Tasks + Inventory per stage; Data schema changes
   and API contract (REST, GraphQL, RPC, etc.) as separate stage sections when applicable, written at outcome level with imperative verbs
   (where + what must be true), never literal code edits.
   Plans are straightforward directives with no questions, options, or opinions
@@ -51,12 +51,12 @@ Do this before writing YAML or body text.
 4. Split **reuse** vs **new** (types, helpers, endpoints already there vs missing pieces).
 5. Stop exploring when you can name each stage, its dependency order, and the files it touches.
 
-Every Inventory path and every Must do `where` must be something you opened.
+Every Inventory path and every Task `where` must be something you opened.
 
 ### 3. Resolve blockers
 
 1. If A vs B blocks the plan → AskQuestion outside the plan.
-2. Bake answers into Must do / Out of Scope as facts.
+2. Bake answers into Tasks / Out of Scope as facts.
 3. Never leave options inside `.plan.md`.
 
 ### 4. Order dependency stages
@@ -69,7 +69,7 @@ A **dependency stage** = one bounded unit whose outputs must exist before depend
 2. backend (one stage per bounded area; inside BE: schema → repos → services → handlers)
 3. frontend (utils/types → clients/hooks → components → pages; **Wire** UI to backend contracts here)
 
-**Wrong:** one blob "Frontend"/"Backend" · frontend before the APIs it needs · FE Must do that only builds UI shells without wiring.
+**Wrong:** one blob "Frontend"/"Backend" · frontend before the APIs it needs · FE Tasks that only build UI shells without wiring.
 
 **Separate integration stage** only when glue spans multiple apps/services (shared SDK, env rollout, mobile + web). Not the default.
 
@@ -99,10 +99,10 @@ Fill sections in this sequence. Skip rules are inline.
 2. **User Behaviour (Study Cases)** — see format below. If no user-facing surface, write `No user-facing change.`
 3. **What Current (Technical)** — existing modules / APIs that matter.
 4. **What Changes (Technical)** — high-level; detail lives under stages.
-5. **Visualization (Technical)** — only if cross-stage flow / state machine / schema relationship is non-obvious from Must do. Title + 1–2 sentences + mermaid via skill `mermaid-diagram-specialist`. Else omit.
+5. **Visualization (Technical)** — only if cross-stage flow / state machine / schema relationship is non-obvious from Tasks. Title + 1–2 sentences + mermaid via skill `mermaid-diagram-specialist`. Else omit.
 6. **Bottom-Up Implementation**
    - **Dependency order** — numbered list matching frontmatter todos.
-   - **For each stage** — Goal · Depends on · Must do · Data schema changes (if any) · API contract (if any) · Inventory.
+   - **For each stage** — Goal · Depends on · Tasks · Data schema changes (if any) · API contract (if any) · Inventory.
 7. **Validation** — skip if none / fully covered by stage Verify.
 8. **Out of Scope** — non-goals, or `None`.
 9. **Summary** — env, config, breaking changes spanning stages.
@@ -112,17 +112,17 @@ Fill sections in this sequence. Skip rules are inline.
 - [ ] English throughout; domain labels quoted, not translated
 - [ ] No questions / options / "optionally" / trade-offs in the plan
 - [ ] Frontmatter todos match Dependency order 1:1
-- [ ] Every study-case **After changes** has ≥1 Must do
-- [ ] Every Must do uses `[Verb] … so …`
+- [ ] Every study-case **After changes** has ≥1 Task
+- [ ] Every Task uses `[Verb] … so …`
 - [ ] Schema / API sections omitted when unused; present when the stage changes them
-- [ ] Inventory paths and Must do `where` were opened during explore
+- [ ] Inventory paths and Task `where` were opened during explore
 - [ ] No `####` headings; no extra top-level sections (no Stage Index / Risks / Review Surface)
 
 ---
 
 ## Format: study cases
 
-Usually 1–5 cases (happy path + edges that drive Must do).
+Usually 1–5 cases (happy path + edges that drive Tasks).
 
 For each case:
 
@@ -130,7 +130,7 @@ For each case:
 2. Three separate English prose paragraphs — do not blend Before/After; no bullets inside a case:
    - **The situation** — who, context, trigger
    - **Before changes** — today
-   - **After changes** — once Must do passes
+   - **After changes** — once Tasks pass
 
 **Good**
 
@@ -142,12 +142,14 @@ For each case:
 
 ---
 
-## Format: Must do
+## Format: Tasks
+
+Section heading: `### Tasks`. Each bullet is one **Task**.
 
 **Formula:** `[Verb] <where> to <outcome> so <reason>.`
 
 - Imperative, verb first — not "In `[where]`…".
-- Every item needs a `so` reason. If you cannot state one, the item is vague, unnecessary, or too low-level.
+- Every Task needs a `so` reason. If you cannot state one, the item is vague, unnecessary, or too low-level.
 - **`where` max = function / symbol / route / component** — not file paths with line edits, field renames, status codes, or payload shapes (those belong in Inventory / Data schema / API contract).
 - Use **Ensure** only when no sharper verb fits.
 
@@ -178,7 +180,7 @@ By layer: API → Create, Reject, Return, Enforce, Expose · Service → Add, En
 
 **Bad**
 
-- Below function level: Create `src/orders/createOrder.ts`, change line 42, rename `qty` · Reject with `409` `{ code: "…" }` in Must do (put status/body in API contract).
+- Below function level: Create `src/orders/createOrder.ts`, change line 42, rename `qty` · Reject with `409` `{ code: "…" }` in Tasks (put status/body in API contract).
 - Vague: improve the API, optionally CSV, "consider edge cases".
 - Passive: In `createOrder`, atomic stock decrement… · Submit disabled while in flight.
 
@@ -214,12 +216,12 @@ Own `### API contract` under the stage — **not** inside Inventory. Omit when t
    - REST → **Request**, **Success `NNN`** (real status code, e.g. `201`), **Errors**
    - GraphQL → **Variables**, **Response**, **Errors**
    - RPC / similar → **Input**, **Output**, **Errors**
-4. Payload shapes in multiline `json` fences (not one-line `{ … }`).
+4. Show payload shapes in multiline fenced blocks using the contract notation and language tag already used by the current codebase (for example `json`, `graphql`, `proto`, or `ts`) — not one-line `{ … }`.
 5. **New** → full contract, no field markers.
-6. **Changed** → resulting contract; mark field deltas as **`//` comments on that field line** (no separate **Diffs** block):
-   - `// [new]`
-   - `// [edited] before: … · after: …`
-   - `// [removed]` — keep the removed field in the fence only so the marker is visible
+6. **Changed** → resulting contract; express field deltas in a form valid for that contract:
+   - If its notation supports comments, annotate the field with that notation's comment syntax (for example `//` or `#`): `[new]`, `[edited] before: … · after: …`, or `[removed]`.
+   - If its notation does not support comments, keep the fenced contract valid and add a flat **Changes** list immediately below it using the same markers.
+   - Removed fields must not remain active in the resulting contract; show them as commented-out fields or **Changes** entries.
 
 Copy the shape from the body template below.
 
@@ -273,7 +275,7 @@ After changes …
 **Goal**: … 1–2 paragraphs
 **Depends on**: …
 
-### Must do
+### Tasks
 - [Verb] `[where]` to [outcome] so [why].
 
 ### Data schema changes
@@ -345,12 +347,16 @@ Auth: session cookie
 {
   "order": {
     "id": "ID!",
-    "status": "OrderStatus!", // [edited] before: PENDING | DONE · after: PENDING | SHIPPED | DONE
-    "shippedAt": "DateTime", // [new]
-    "weight": "number" // [removed]
+    "status": "OrderStatus!",
+    "shippedAt": "DateTime"
   }
 }
 ```
+
+**Changes**
+- `order.status` **[edited]** — before: PENDING | DONE · after: PENDING | SHIPPED | DONE
+- `order.shippedAt` **[new]**
+- `order.weight` **[removed]** — before: number
 
 ### Inventory
 1. **New files**
