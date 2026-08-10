@@ -148,6 +148,7 @@ For each case:
 
 - Imperative, verb first — not "In `[where]`…".
 - Every item needs a `so` reason. If you cannot state one, the item is vague, unnecessary, or too low-level.
+- **`where` max = function / symbol / route / component** — not file paths with line edits, field renames, status codes, or payload shapes (those belong in Inventory / Data schema / API contract).
 - Use **Ensure** only when no sharper verb fits.
 
 | Verb | Use for |
@@ -171,13 +172,13 @@ By layer: API → Create, Reject, Return, Enforce, Expose · Service → Add, En
 
 **Good**
 
-- Enforce atomic stock decrement in `createOrder` so concurrent orders cannot oversell.
-- Reject insufficient stock on `POST /orders` with `409` `{ code: "INSUFFICIENT_STOCK" }` so clients show a stock-specific message.
+- Enforce stock cannot go negative in `createOrder` so concurrent orders cannot oversell.
+- Reject insufficient stock on `POST /orders` so clients show a stock-specific message.
 - Wire `CheckoutForm` to `POST /orders` so Pay submits the cart and navigates on success.
 
 **Bad**
 
-- Too low-level: Create `src/orders/createOrder.ts`, change line 42, rename `qty`.
+- Below function level: Create `src/orders/createOrder.ts`, change line 42, rename `qty` · Reject with `409` `{ code: "…" }` in Must do (put status/body in API contract).
 - Vague: improve the API, optionally CSV, "consider edge cases".
 - Passive: In `createOrder`, atomic stock decrement… · Submit disabled while in flight.
 
