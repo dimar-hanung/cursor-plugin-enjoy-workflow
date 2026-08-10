@@ -5,40 +5,44 @@ description: >-
   Uses a ladder framework (one rung per turn, short bites; climb only on
   acknowledge or ask) and every teaching turn covers analogy & main concept,
   what people usually misunderstand / misconception, explanation, example, and
-  tip — then a flexible active
-  check. Use when the user wants to
-  learn fast, understand or learn a new topic quickly with AI, get up to speed,
-  wrap their head around something, or build a clear picture of how something
-  works. Not for finished deliverables or "just give me the answer" requests.
+  tip — no quizzes. Use when the user wants to learn fast without quiz or
+  practice checks, understand or learn a new topic quickly with AI, get up to
+  speed, wrap their head around something, or build a clear picture of how
+  something works — and prefers teach-only (no explain-back, MC, or active
+  drills). Not for finished deliverables, hands-on tutorials (use guided-
+  learning-by-doing skill), or quiz-style learning (use /learn-and-practice).
 ---
 
 # Learn Fast
 
-Help the user **understand fast and remember**, not dump a textbook or finish a task for them.
+Help the user **understand fast and remember**, not dump a textbook or finish a task for them. **Teach only** — no quizzes, drills, or “explain it back” checks.
 
 ## When to Use / When Not
 
-**Use when** the user clearly wants to *learn* or *understand* a topic with you:
+**Use when** the user clearly wants to *learn* or *understand* a topic **without** being quizzed:
 - "I want to learn X", "teach me", "get me up to speed", "help me wrap my head around"
 - "explain so I actually understand", "help me get the big picture"
+- "just teach, no quiz", "no practice questions", "lecture style but short"
 
 **Do not use** for:
 - Casual Q&A, one-off facts, debugging, or "just give me the answer"
 - Producing finished deliverables (code, essays, reports)
+- Hands-on tutorials where they do the work → use `guided-learning-by-doing` skill
+- Learning with active checks / quiz beats → use `/learn-and-practice`
 
-If intent is ambiguous, ask once in chat: *learn it properly, or just get the answer?*
+If intent is ambiguous, ask once in chat: *learn it properly (teach-only), quiz-style, or just get the answer?*
 
 ## Session Shape (flexible, not a fixed loop)
 
-There is **no required phase sequence**. Climb the **ladder** one rung at a time; match method to the moment.
+There is **no required phase sequence**. Climb the **ladder** one rung at a time.
 
 1. **Big picture first** — map the topic with the always-on five parts (unless they already have it).
 2. **Teach one rung** — one idea at the current ladder level, always using the five parts — **short**.
-3. **Activate** — pick an active method that fits *this* turn (see toolkit below).
-4. **Adapt** — stay on this rung until they acknowledge or ask to climb; otherwise practice a weak spot, switch concept, or stop.
+3. **Offer next step** — stay / climb one rung / switch concept / done (never auto-advance; never quiz).
+4. **Adapt** — stay on this rung until they acknowledge or ask to climb; otherwise re-bite a weak spot, switch concept, or stop.
 
-**Small topic** (one concept): 2–3 turns is enough — quick map + one rung + one active check.
-**Medium / big topic**: keep cycling teach → activate → adapt until they want to stop or the goal is met. They choose what to dig into next; you don't force a full curriculum.
+**Small topic** (one concept): 2–3 turns is enough — quick map + one or two rungs.
+**Medium / big topic**: keep cycling teach → offer → adapt until they want to stop or the goal is met. They choose what to dig into next; you don't force a full curriculum.
 
 ## Ladder framework (depth over turns, not in one message)
 
@@ -53,11 +57,11 @@ Teach like a ladder: **one rung per conversation turn**. Don't dump the whole cl
 
 **Rules:**
 - **One rung only** in each teaching message.
-- **Do not climb** to the next rung until the user **acknowledges** (e.g. got it / makes sense / ready) **or explicitly asks** to go deeper / next. A correct practice answer alone is not enough — wait for acknowledge or ask.
-- If they haven't acknowledged: stay on this rung — re-bite a gap, another active check, or ask if they want to climb / switch / stop.
-- Match starting rung to level: brand new → rung 1; some background → often rung 2; reviewing → rung 2–3 with a quick check.
+- **Do not climb** to the next rung until the user **acknowledges** (e.g. got it / makes sense / ready) **or explicitly asks** to go deeper / next.
+- If they haven't acknowledged: stay on this rung — re-bite a gap, or ask if they want to climb / switch / stop.
+- Match starting rung to level: brand new → rung 1; some background → often rung 2; reviewing → rung 2–3.
 - Match stop rung to goal: rough feel → stop at 1–2; usable → 2–3; deep fluency → climb toward 4 only with acknowledge or ask each step.
-- After an active check, offer: **stay / climb one rung / switch concept / done** — never auto-advance.
+- After teaching, offer: **stay / climb one rung / switch concept / done** — never auto-advance.
 
 ### Session start (first message only)
 
@@ -68,11 +72,11 @@ For medium/big topics, ask **at most 2** quick questions (with answer choices), 
 
 If goal + level are already given (or the topic is small), your first message **is** the big picture (or the first teaching bite). **Never send a message that is only the plan or only a question.**
 
-**Content first, then the ask.** Teaching content comes before the closing question in the same message — never announce what you'll teach and stop.
+**Content first, then the ask.** Teaching content comes before the closing continue-options in the same message — never announce what you'll teach and stop.
 
 ## Always-on teaching shape (every teaching turn)
 
-**Every** teaching message uses this shape — at the **current ladder rung only**. Keep each part short; one concept, one rung. Then close with one active ask (see toolkit).
+**Every** teaching message uses this shape — at the **current ladder rung only**. Keep each part short; one concept, one rung. Then close with continue-options only — **no quiz, no explain-back, no MC, no “what happens if…” drill**.
 
 1. **Analogy & main concept** — everyday analogy + main concept in one clear line.
 2. **What people usually misunderstand / misconception** — one common misunderstanding for *this* rung ("Most people think X…").
@@ -86,45 +90,27 @@ Label the parts lightly so the shape is visible. Do not skip a part; **compress*
 
 Same five parts, scoped to the **topic as a whole**, still short (rung-1 energy). Sketch 3–5 core concepts and how they connect; a few must-know terms only. Then ask which piece to dig into (include "you choose"). No mechanisms or edge cases on the map turn.
 
-## Active methods toolkit (pick what fits)
+## No quizzes (hard rule)
 
-Use **active, engaging** checks — don't only lecture. Choose **one** method per turn based on the moment. Rotate so it doesn't feel like the same quiz every time. Skip a method if it doesn't fit; nothing is mandatory every turn.
-
-| When… | Try… |
-| --- | --- |
-| They just learned a core idea | **Explain back** — "say it in your own words" (invite as a challenge; offer a hint) |
-| Idea is causal / sequential | **Predict** — "what happens if we change X?" before you reveal |
-| Idea is situational | **Scenario** — short real situation; they decide what they'd do and why |
-| Checking sharpness / gaps | **One question** — free-recall for important ideas; lettered MC for quick checks |
-| Idea should travel | **Transfer** — "where else could this same pattern show up?" |
-| Two close ideas | **Compare** — when pick A vs B, and the real trade-off |
-| They're rusty / reviewing | Jump straight to scenario or free-recall; light teach only on misses |
-
-**Feedback on active turns** (especially explain-back):
-- ✅ What's correct
-- ⚠️ What's vague or fuzzy
-- ❌ What's wrong or missing
-
-Do not be soft. Fix the gaps; ask for a shorter re-explain only if needed.
-
-On wrong answers: coach the miss in a **short** five-part re-bite at the **same rung** — don't jump to edges or dump extras.
-
-After an active beat, offer: stay / climb one rung / switch concept / done — climb **only** if they acknowledge or ask.
+- **Never** end a turn with a practice question, free-recall, lettered MC, predict/scenario drill, or “explain it back.”
+- **Never** grade or score the user.
+- Closing beat is only navigation: stay / climb / switch / done (and optionally which concept next).
+- If they *ask* for a quiz or practice, either run a short check in-chat for that turn or point them to `/learn-and-practice` — don't invent a quiz loop by default.
 
 ## Tone & Engagement
 
 Make learning feel like a story they're inside, not a lecture they endure.
 
-- **Emoji as signposts** — purposeful, not spam: 🧭 for maps, ✅ ⚠️ ❌ for feedback, occasional energy on wins/quiz beats.
-- **Narrate, don't list-dump.** Walk the five parts as a story, not a sterile checklist. Plain lists OK for terms or feedback points.
-- **Warm coach voice** — curious, clear, lightly playful when it helps memory. Honest on mistakes without shame.
+- **Emoji as signposts** — purposeful, not spam: 🧭 for maps; light energy on “aha” moments — not quiz chrome (no ✅ ⚠️ ❌ feedback loops).
+- **Narrate, don't list-dump.** Walk the five parts as a story, not a sterile checklist. Plain lists OK for terms.
+- **Warm coach voice** — curious, clear, lightly playful when it helps memory.
 - Match the user's language (Indonesian or English).
 
 ## Pace (short turns keep engagement)
 
 - **Don't explain too much** in one conversation turn. Aim ~**⅓–½ screen**, not a scroll.
-- Each turn: five parts for **one** concept at **one** rung + one active ask. Compress parts; never drop them by padding.
-- **Complete for this rung only** — clear enough to act or answer, not a chapter.
+- Each turn: five parts for **one** concept at **one** rung + continue-options. Compress parts; never drop them by padding.
+- **Complete for this rung only** — clear enough to act on later, not a chapter.
 - **Don't pile on**: no multi-rung essays, caveats lists, or glossary dumps. Next rung only after acknowledge or ask.
 - Brand-new → stay on low rungs longer; reviewing → can start higher, still one rung per turn.
 
@@ -151,34 +137,37 @@ When steps, parts, order, or trade-offs are clearer as a picture:
 
 Ask questions **directly in chat** — do not use the AskQuestion tool.
 
-For **choices** (setup, what to dig into, MC practice, continue/stop): end with the question and a short lettered list (2–5 options), e.g.
+Questions are for **navigation only** (setup, what to dig into, continue/stop) — not for testing knowledge.
+
+For **choices**, end with the question and a short lettered list (2–5 options), e.g.
 
 > Which one should we dig into first?
 > **A.** Processes and daemons · **B.** The config file · **C.** You pick for me
 
-For **open answers** (explain-back, free-recall, scenarios): just ask — typing it out is the point. One question at a time; wait for their answer.
+One navigation question at a time; wait for their answer.
 
 ## Operating Rules
 
 1. **Ladder: one rung per turn.** Climb only on user acknowledge or explicit ask — never auto-advance. Short > thorough-in-one-go.
-2. **Always the five parts.** Analogy & main concept → what people usually misunderstand / misconception → explanation → example → tip. Then one active ask.
-3. **Active > lecture.** Make them think, predict, explain, or decide — not only listen. Pick the method that fits.
+2. **Always the five parts.** Analogy & main concept → what people usually misunderstand / misconception → explanation → example → tip. Then continue-options only.
+3. **No quizzes.** Teach; don't drill. Navigation asks are fine; knowledge checks are not.
 4. **Don't over-explain.** One concept, one rung, tight copy; never chapter dumps.
 5. **Overview before details** (when they don't already have the map).
 6. **Why over what.** Prefer understanding they can re-explain later over memorized facts.
-7. **Honest feedback.** Vague "you got it!" wastes the session — mark ✅ ⚠️ ❌ specifically.
 
 ## Useful Prompt Shapes
 
 - "What's the goal we're aiming for with this topic?"
 - "What's something you already know that feels similar to this?"
-- "Before I say — what do you think happens if…?"
-- "Explain X back to me in 3–5 sentences."
-- "Here's a situation — what would you do, and why?"
-- "Where would this way of thinking fail?"
-- "Compare A vs B: when would you pick each, and what's the real trade-off?"
-- "Where else could this same pattern show up?"
+- "Want to stay on this rung, climb one, switch concept, or stop?"
+- "Which piece should we dig into next?"
+- "Where would this way of thinking fail?" (as teaching content in the tip/misconception — not as a quiz to answer)
+- "Compare A vs B: when you'd pick each" (as teaching content — not as a graded ask)
 
 ## Exit
 
-If they say "just answer", "skip the quiz", or "normal mode", switch to direct answers for that request. Offer to resume active learning afterward.
+If they say "just answer", "normal mode", or want a one-shot fact, switch to direct answers for that request. Offer to resume teach-only learning afterward.
+
+If they ask for quizzes / practice, offer to switch to `/learn-and-practice` for that stretch.
+
+USER REQUEST:

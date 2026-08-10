@@ -17,6 +17,8 @@ description: >-
 
 The plan is for an AI agent to **execute**, not to discuss. Write **one** decided path.
 
+- **Do** write the entire plan in **English** — Goal, study cases, Must do, Inventory, Out of Scope, everything.
+- **Do** keep Indonesian (or other non-English) business-process labels in **double quotes** when they appear as domain names — do not translate those labels. Example: At `"Belanja"`, enforce stock check before Pay so checkout cannot oversell.
 - **Do** state facts and required work: Goal, User Behaviour (study cases), What Current/Changes, Must do, Inventory, Out of Scope.
 - **Do** write at outcome level — where the change lands and what must be true after. The agent chooses the code.
 - **Do not** put questions, A/B options, "or", "optionally", "consider", trade-offs, or recommendations in the plan.
@@ -72,6 +74,54 @@ One `todo` per dependency stage, same order as Dependency order. Status: `pendin
 
 This order only. No extra top-level sections beyond those listed below. No Stage Index / Risks / Review Surface.
 
+**User Behaviour (Study Cases)** — Observable behaviour, not feature bullets. Usually 1–5 cases (happy path + edges that drive Must do). Each case: title + three **English** prose paragraphs — **The situation** (who, context, trigger), **Before changes** (today), **After changes** (once Must do passes). Separate paragraphs; don't blend Before/After. No bullets or options inside a case. Every **After changes** must be covered by at least one Must do item. Quote non-English domain labels — e.g. `"Belanja"` — do not translate them.
+
+Good:
+
+> The situation A shopper on `"Belanja"` with two Blue Widgets taps Pay when only one is in stock.
+> Before changes Spinner, success toast, order page — stock goes negative silently.
+> After changes Inline error naming the SKU; cart unchanged; Pay succeeds only when stock holds.
+
+Bad: vague ("better UX"), undecided ("guest checkout — TBD"), bullets/labels (**Actor:** …), implementation detail (`GET /orders` returns 200), translating domain labels (`Shopping` instead of `"Belanja"`).
+
+**Must do** — Outcome-level: **where**, **what must be true**, **why**. Imperative active sentences — verb first, not "In `[where]`…". **Every item needs a `so` reason.** If a meaningful `so <reason>` cannot be stated, the item is probably vague, unnecessary, or too low-level.
+
+**Default formula:** `[Verb] <where> to <outcome> so <reason>.`
+
+Pick the verb by intent. Use **Ensure** only when no sharper verb fits.
+
+- **Create** — New capability, endpoint, flow
+- **Add** — New behavior on existing surface
+- **Change** — Replace existing behavior
+- **Update** — Adjust contract/UI without full rewrite
+- **Remove** — Stop bad behavior
+- **Enforce** — Rule or invariant
+- **Reject** — Error paths
+- **Return** — API response contract
+- **Expose** — New API/field consumers need
+- **Wire** — Connect UI to backend (clients, hooks) — belongs in frontend Must do
+- **Persist** — Data that must survive
+- **Clear** — Reset state after success
+- **Disable** / **Show** — UI guards and feedback
+- **Ensure** — Catch-all invariant (sparingly)
+
+By layer: API → Create, Reject, Return, Enforce, Expose · Service → Add, Enforce, Change · FE → Wire (to existing BE), Change, Disable, Show · Schema → Add, Persist, Change.
+
+Good:
+
+- Enforce atomic stock decrement in `createOrder` so concurrent orders cannot oversell.
+- Reject insufficient stock on `POST /orders` with `409` `{ code: "INSUFFICIENT_STOCK" }` so clients show a stock-specific message.
+- Enforce owner-or-admin access on `GET /orders/:id` so users cannot read another's PII.
+- Disable Submit in `CheckoutForm` while payment is in flight so users cannot double-submit.
+- Wire `CheckoutForm` to `POST /orders` so Pay submits the cart and navigates on success.
+- Show an inline SKU error in `CheckoutForm` when stock is insufficient so checkout fails before payment.
+
+Bad — too low-level: Create `src/orders/createOrder.ts`, change line 42, rename `qty`, add `try/catch` steps.
+
+Bad — vague/undecided: improve the API, optionally CSV, Redis vs in-memory, "consider edge cases".
+
+Bad — passive/weak: In `createOrder`, atomic stock decrement… · Submit disabled while in flight.
+
 ```markdown
 # Overview
 
@@ -81,9 +131,7 @@ This order only. No extra top-level sections beyond those listed below. No Stage
 ## User Behaviour (Study Cases)
 [Skip when no user-facing surface — write `No user-facing change.`]
 
-Each case: title + three prose paragraphs — `The situation`, `Before changes`, `After changes`. No bullets or options inside a case. Usually 1–5 cases (happy path + edges that drive Must do). Every case's **After changes** must be covered by at least one Must do item.
-
-### [Title]
+### [Short case title]
 The situation …
 Before changes …
 After changes …
@@ -111,6 +159,7 @@ After changes …
 ### Must do
 - [Verb] `[where]` to [outcome] so [why].
 
+
 ### Inventory
 1. **New files**
   - `path` — purpose
@@ -135,59 +184,3 @@ After changes …
 # Summary
 - **Important notes** — env, config, breaking changes spanning stages
 ```
-
-## User Behaviour (Study Cases)
-
-Observable behaviour — not feature bullets. Three paragraphs per case: **The situation** (who, context, trigger), **Before changes** (today), **After changes** (once Must do passes). Separate paragraphs; don't blend Before/After into one.
-
-Good:
-
-> The situation A shopper with two Blue Widgets taps Pay when only one is in stock.
-> Before changes Spinner, success toast, order page — stock goes negative silently.
-> After changes Inline error naming the SKU; cart unchanged; Pay succeeds only when stock holds.
-
-Bad: vague ("better UX"), undecided ("guest checkout — TBD"), bullets/labels (**Actor:** …), implementation detail (`GET /orders` returns 200).
-
-## Must do
-
-Outcome-level checkboxes: **where**, **what must be true**, **why**. Write **imperative active** sentences — verb first, not "In `[where]`…".
-
-**Every Must do item must include a reason clause introduced by `so`.** Never omit the reason. If a meaningful `so <reason>` cannot be stated, the item is probably vague, unnecessary, or too low-level.
-
-**Default formula:** `[Verb] <where> to <outcome> so <reason>.`
-
-Pick the verb by intent. Use **Ensure** only when no sharper verb fits.
-
-| Verb | Use when |
-| --- | --- |
-| **Create** | New capability, endpoint, flow |
-| **Add** | New behavior on existing surface |
-| **Change** | Replace existing behavior |
-| **Update** | Adjust contract/UI without full rewrite |
-| **Remove** | Stop bad behavior |
-| **Enforce** | Rule or invariant |
-| **Reject** | Error paths |
-| **Return** | API response contract |
-| **Expose** | New API/field consumers need |
-| **Wire** | Connect UI to backend (clients, hooks) — belongs in frontend Must do |
-| **Persist** | Data that must survive |
-| **Clear** | Reset state after success |
-| **Disable** / **Show** | UI guards and feedback |
-| **Ensure** | Catch-all invariant (sparingly) |
-
-By layer: API → Create, Reject, Return, Enforce, Expose · Service → Add, Enforce, Change · FE → Wire (to existing BE), Change, Disable, Show · Schema → Add, Persist, Change.
-
-Good:
-
-- Enforce atomic stock decrement in `createOrder` so concurrent orders cannot oversell.
-- Reject insufficient stock on `POST /orders` with `409` `{ code: "INSUFFICIENT_STOCK" }` so clients show a stock-specific message.
-- Enforce owner-or-admin access on `GET /orders/:id` so users cannot read another's PII.
-- Disable Submit in `CheckoutForm` while payment is in flight so users cannot double-submit.
-- Wire `CheckoutForm` to `POST /orders` so Pay submits the cart and navigates on success.
-- Show an inline SKU error in `CheckoutForm` when stock is insufficient so checkout fails before payment.
-
-Bad — too low-level: Create `src/orders/createOrder.ts`, change line 42, rename `qty`, add `try/catch` steps.
-
-Bad — vague/undecided: improve the API, optionally CSV, Redis vs in-memory, "consider edge cases".
-
-Bad — passive/weak: In `createOrder`, atomic stock decrement… · Submit disabled while in flight.

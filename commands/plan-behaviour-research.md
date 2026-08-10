@@ -29,3 +29,4 @@ Rules:
 - Include only facts that change how a Must do item is executed. This is a filter, not a dump.
 - If research finds nothing surprising, write one line: `Verified <tech versions>; no version-specific behaviour affects this plan.`
 - Plan tone still applies — facts only, no options, questions, or "consider".
+- Fix plan if the behaviour research contradicts the plan.

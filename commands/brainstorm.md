@@ -15,7 +15,7 @@ Keep it light. The goal is momentum and a clear choice — not a wall of possibi
 
 | Ask | Use |
 |-----|-----|
-| Options, names, approaches, "ide dulu", compare paths | **This skill** |
+| Options, names, approaches, "ide dulu", compare paths | **This command** |
 | Break down a broad/solution-shaped ask into foundational questions before building | `/fundamental-think` (or Indo variant) |
 
 If the user mixes both ("brainstorm secara fundamental"), **stay in brainstorm**: list options with light tradeoffs. Do **not** run a research/explore loop. Suggest `/fundamental-think` only if they need problem deconstruction before execution.
@@ -108,3 +108,5 @@ Adjust tone and depth to the trigger:
 - Don't end with "let me know if you want more" — use the **👉 Next step** section instead
 - Don't brainstorm and implement in the same response unless asked
 - Don't sprinkle random emojis — stick to the emoji guide above
+
+USER REQUEST:
