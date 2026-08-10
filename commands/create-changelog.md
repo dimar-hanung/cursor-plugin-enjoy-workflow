@@ -12,7 +12,7 @@ Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika 
 | Yang menang | Surface |
 |-------------|---------|
 | `anti-slop-writing` | Voice, banlist, sapaan, pemisah kalimat (titik/koma, bukan `—`) |
-| Command ini | Struktur, tanggal, highlight, nested list modul, label tipe inline (Baru / Perbaikan / Improvement / Dihapus / Berubah) |
+| Command ini | Struktur, tanggal, highlight tematik (bukan mirror bullet), nested list modul, label tipe inline (Baru / Perbaikan / Improvement / Dihapus / Berubah) |
 
 ## Sebelum menulis
 
@@ -31,7 +31,7 @@ Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika 
 | Spesifik | "berbagai perbaikan", filler marketing |
 | Nested list modul (`1.` + `-`) dengan tipe inline | `###` section per tipe · `###` untuk label modul · flat bullet tanpa modul |
 
-**Panjang:** Highlight → 1–2 kalimat. Bullet → 1 kalimat setelah label (atau `Sebelumnya … Sekarang …` jika kontras membantu).
+**Panjang:** Highlight → 1–2 kalimat **tema** (bukan daftar fitur). Bullet → 1 kalimat setelah label (atau `Sebelumnya … Sekarang …` jika kontras membantu).
 
 **Nada:** ramah, langsung. Utamakan **Sekarang** untuk manfaat/behaviour baru. Pakai **Sebelumnya** + **Sekarang** saat perbandingan membuat perubahan lebih jelas — tidak hanya untuk Perbaikan.
 
@@ -42,7 +42,7 @@ Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika 
 
 ## 🎉 [Hari], [tanggal]
 
-[Highlight: 1–2 kalimat ringkas tema pembaruan.]
+[Highlight: 1–2 kalimat tema / manfaat besar — bukan ulang daftar fitur di bawah.]
 
 1. [Konteks: dimana | untuk siapa | ketika apa]
    - Baru, Sekarang [fitur — apa yang bisa dilakukan]
@@ -56,6 +56,7 @@ Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika 
 |-------|-----|
 | `#` | `Changelog` |
 | `##` | **Tanggal** (`## 🎉 Kamis, 23 Juli 2026`) |
+| paragraf setelah `##` | **Highlight** — tema / manfaat besar (bukan daftar fitur) |
 | `1.` | **Konteks** — dimana / untuk siapa / ketika apa |
 | `-` | **Tipe + fitur** — label tipe, lalu isi (boleh pakai **Sekarang** / **Sebelumnya**) |
 
@@ -122,11 +123,22 @@ Satu dokumen bisa banyak tanggal; yang ditulis hari ini selalu di atas.
 
 ### Highlight (wajib)
 
-Paragraf pendek di bawah tanggal, sebelum nested list modul. 1–2 kalimat, fitur konkret, selaras detail di bawah.
+Paragraf pendek di bawah tanggal, sebelum nested list modul. **Satu tingkat di atas bullet** — tema rilis atau manfaat besar, bukan ringkasan ulang tiap `-`.
 
-```markdown
-Pembaruan hari ini menambah pelacakan status sertifikat, impor data pembimbing KIT, unduh jadwal ujian PDF, serta pengiriman sertifikat lewat POS dalam satu transaksi.
-```
+| Highlight **bukan** | Highlight **adalah** |
+|---------------------|----------------------|
+| Daftar fitur dipisah koma (mirror bullet) | Tema / area yang berubah / alasan user peduli |
+| Ulang kalimat `1.` atau isi `-` | Kalimat skim: "apa yang berbeda secara keseluruhan" |
+| Semua item di nested list | Fokus 1–2 hal terpenting, atau payung tematik |
+
+**Cara tulis:** jawab "rilis ini tentang apa?" atau "apa yang user rasakan beda?" — tanpa menyebut tiap fitur satu per satu.
+
+| Hindari | Lebih baik |
+|---------|------------|
+| `…menambah cicilan, notifikasi chat grup, dan email konfirmasi…` (mirror 3 bullet) | `Pembayaran kampus lebih fleksibel, komunikasi grup lebih cepat ketahuan.` |
+| `…pelacakan status sertifikat, impor data pembimbing KIT, unduh jadwal…` (daftar fitur) | `Alur sertifikat dan ujian jadi lebih rapi — dari lacak status sampai kirim lewat kasir.` |
+
+Detail konkret tetap di `-`; highlight hanya **orientasi cepat** sebelum user baca nested list.
 
 ## Modul (`1.`) vs fitur (`-`)
 
@@ -231,7 +243,7 @@ Pakai **Berubah** untuk perubahan hukum, regulasi, kebijakan institusi, atau sya
 
 ## Workflow
 
-1. anti-slop-writing → 2. Catat perubahan → 3. Map modul + konteks → 4. Buang internal → 5. Terjemahkan → 6. Pilih label (Baru / Perbaikan / Improvement / Dihapus / Berubah) per item → 7. Nested list dengan tipe inline → 8. Tanggal + highlight → 9. **Sisipkan blok tanggal di atas** (terbaru paling atas) → 10. Polish
+1. anti-slop-writing → 2. Catat perubahan → 3. Map modul + konteks → 4. Buang internal → 5. Terjemahkan → 6. Pilih label (Baru / Perbaikan / Improvement / Dihapus / Berubah) per item → 7. Nested list dengan tipe inline → 8. Tanggal + highlight tematik (setelah bullet, supaya tidak mirror) → 9. **Sisipkan blok tanggal di atas** (terbaru paling atas) → 10. Polish
 
 ## Contoh
 
@@ -242,7 +254,7 @@ Pakai **Berubah** untuk perubahan hukum, regulasi, kebijakan institusi, atau sya
 
 ## 🎉 Jumat, 2 Agustus 2026
 
-Update menambah cicilan di Fasilitas A, notifikasi chat grup, dan email konfirmasi pembayaran di fasilitas yang sama.
+Pembayaran kampus lebih fleksibel, plus notifikasi grup supaya pesan penting tidak ketinggalan.
 
 1. Pembayaran di Fasilitas A
    - Baru, Sekarang bisa bayar cicilan per bulan.
@@ -266,7 +278,7 @@ Update menambah cicilan di Fasilitas A, notifikasi chat grup, dan email konfirma
 
 ## 🎉 Jumat, 2 Agustus 2026
 
-Update menambah cicilan di Fasilitas A dan notifikasi chat grup.
+Pembayaran kampus lebih fleksibel, plus notifikasi grup supaya pesan penting tidak ketinggalan.
 
 1. Pembayaran di Fasilitas A
    - Baru, Sekarang bisa bayar cicilan per bulan.
@@ -275,7 +287,7 @@ Update menambah cicilan di Fasilitas A dan notifikasi chat grup.
 
 ## 🎉 Kamis, 23 Juli 2026
 
-Pembaruan hari itu menambah pelacakan status sertifikat, impor data pembimbing KIT, unduh jadwal ujian PDF, serta pengiriman sertifikat lewat POS dalam satu transaksi.
+Alur sertifikat dan ujian jadi lebih rapi — dari lacak status sampai kirim lewat kasir.
 
 1. Sertifikat untuk Mahasiswa
    - Baru, Sekarang status sertifikat bisa dilacak dari dashboard.
@@ -290,7 +302,7 @@ Pembaruan hari itu menambah pelacakan status sertifikat, impor data pembimbing K
 ## Cek sebelum kirim
 
 - [ ] anti-slop-writing (baca aloud)
-- [ ] Tanggal `## 🎉 Hari, d Bulan yyyy` + highlight
+- [ ] Tanggal `## 🎉 Hari, d Bulan yyyy` + highlight (tema, bukan daftar ulang bullet)
 - [ ] **Terbaru di atas** (blok tanggal baru paling atas)
 - [ ] Tanpa section `###` per tipe (Baru, Perbaikan, dll.)
 - [ ] Modul = nested `1.` + `-` dengan label tipe inline
@@ -301,9 +313,9 @@ Pembaruan hari itu menambah pelacakan status sertifikat, impor data pembimbing K
 
 ## Rules
 
-**MUST:** anti-slop-writing · Indonesia · tanggal `## 🎉 …` + highlight · **terbaru di atas** · nested list · label tipe inline · **Sekarang** untuk manfaat baru · **Sebelumnya**+**Sekarang** wajib di Perbaikan, Dihapus, Berubah · label `1.` pakai dimana/untuk siapa/ketika apa · nama UI bukan internal.
+**MUST:** anti-slop-writing · Indonesia · tanggal `## 🎉 …` + highlight tematik (1 tingkat di atas bullet) · **terbaru di atas** · nested list · label tipe inline · **Sekarang** untuk manfaat baru · **Sebelumnya**+**Sekarang** wajib di Perbaikan, Dihapus, Berubah · label `1.` pakai dimana/untuk siapa/ketika apa · nama UI bukan internal.
 
-**NEVER:** section `###` per tipe · `###` untuk label modul · flat bullet tanpa modul · bullet tanpa label tipe · **Berubah** untuk bug · **Dihapus** untuk peningkatan UX · highlight vague · em dash · jargon/commit mentah · filler · urut tanggal lama di atas.
+**NEVER:** section `###` per tipe · `###` untuk label modul · flat bullet tanpa modul · bullet tanpa label tipe · **Berubah** untuk bug · **Dihapus** untuk peningkatan UX · highlight yang mirror daftar `-` · highlight vague · em dash · jargon/commit mentah · filler · urut tanggal lama di atas.
 
 ## References
 
