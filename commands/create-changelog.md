@@ -129,7 +129,7 @@ Satu kalimat di bawah tanggal, sebelum nested list. **Sebut domain/modul apa saj
 
 **Tujuan:** filter relevansi, bukan ringkasan fitur.
 
-**Rumus:** `Ada perubahan di [modul], [modul], dan [modul].`
+**Rumus:** `Ada update di [modul], [modul], dan [modul].`
 
 - Ambil nama dari label `1.` — singkat, tanpa detail `-`.
 - Boleh pakai nama UI yang user kenal (Pembayaran, Sertifikat, Chat Grup).
@@ -142,8 +142,8 @@ Satu kalimat di bawah tanggal, sebelum nested list. **Sebut domain/modul apa saj
 
 **Lebih baik:**
 
-- `Ada perubahan di pembayaran kampus, chat grup, login, dan pengajuan cuti.`
-- `Ada perubahan di sertifikat mahasiswa, impor pembimbing KIT, jadwal ujian, dan pengiriman sertifikat POS.`
+- `Ada update di pembayaran kampus, chat grup, login, dan pengajuan cuti.`
+- `Ada update di sertifikat mahasiswa, impor pembimbing KIT, jadwal ujian, dan pengiriman sertifikat POS.`
 
 **Tes cepat:** dari highlight saja, user tahu **area mana** yang kena — tanpa perlu baca bullet.
 
@@ -266,7 +266,7 @@ Pakai **Berubah** untuk perubahan hukum, regulasi, kebijakan institusi, atau sya
 
 ## 🎉 Jumat, 2 Agustus 2026
 
-Ada perubahan di pembayaran kampus, chat grup, login, pencarian admin, unduh laporan, dan pengajuan cuti.
+Ada update di pembayaran kampus, chat grup, login, pencarian admin, unduh laporan, dan pengajuan cuti.
 
 1. Pembayaran di Fasilitas A
    - Baru, Sekarang bisa bayar cicilan per bulan.
@@ -290,7 +290,7 @@ Ada perubahan di pembayaran kampus, chat grup, login, pencarian admin, unduh lap
 
 ## 🎉 Jumat, 2 Agustus 2026
 
-Ada perubahan di pembayaran kampus dan chat grup.
+Ada update di pembayaran kampus dan chat grup.
 
 1. Pembayaran di Fasilitas A
    - Baru, Sekarang bisa bayar cicilan per bulan.
@@ -299,7 +299,7 @@ Ada perubahan di pembayaran kampus dan chat grup.
 
 ## 🎉 Kamis, 23 Juli 2026
 
-Ada perubahan di sertifikat mahasiswa, impor pembimbing KIT, jadwal ujian, dan pengiriman sertifikat POS.
+Ada update di sertifikat mahasiswa, impor pembimbing KIT, jadwal ujian, dan pengiriman sertifikat POS.
 
 1. Sertifikat untuk Mahasiswa
    - Baru, Sekarang status sertifikat bisa dilacak dari dashboard.
