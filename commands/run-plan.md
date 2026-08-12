@@ -22,7 +22,7 @@ Each `## Stage: [domain]` is one agent. Ignore `Depends on` / `after [stage]` if
 
 **Collision check:** collect Inventory paths (new + modified) per domain. If two pending domains share a path, merge those domains into **one** agent. Keep the rest parallel.
 
-If a stage has no Contract, derive Request / Success / Errors from Must do (`Return`, `Expose`, `Wire`) and Inventory **API endpoints**. Still launch; do not block on format.
+If a stage has no Contract, derive Request / Success / Errors from Tasks (`Return`, `Expose`, `Wire`) and Inventory **API endpoints**. Still launch; do not block on format.
 
 ## 3. Launch — one message, every domain
 
@@ -44,7 +44,7 @@ After launch, tell the user which domains started (say **Composer 2.5**, not the
 
 Include these context blocks in every `prompt`. Do not point the subagent at the plan file and expect it to pick a domain.
 
-- This domain's full `## Stage:` section (Contract, Outcome, Must do, Inventory)
+- This domain's full `## Stage:` section (Contract, Outcome, Tasks, Inventory)
 - Contract blocks of every domain listed under Consumes (`none` if omitted)
 - Goal, Out of Scope, and study-case After changes this domain must satisfy
 - Absolute workspace path and plan file path
@@ -54,7 +54,7 @@ Workspace: {absolute workspace path}
 Plan file: {absolute plan path}
 
 ## This domain
-{include context: this domain's ## Stage: section — Contract, Outcome, Must do, Inventory}
+{include context: this domain's ## Stage: section — Contract, Outcome, Tasks, Inventory}
 
 ## Contracts you bind to
 {include context: Contract blocks of every domain listed under Consumes}
@@ -66,7 +66,7 @@ Out of Scope: {include context: Out of Scope}
 Study cases this domain must satisfy (After changes only): {include context: relevant cases}
 
 ## Rules
-- Implement this domain's Must do until Outcome is true.
+- Implement this domain's Tasks until Outcome is true.
 - Edit ONLY this domain's Inventory paths (new + modified). Do not touch other domains' files.
 - Bind to Consumes Contracts as written. Use the request/success/errors shape even if the other domain's code is not in the tree yet.
 - Follow the plan's decided path. Do not ask questions, add options, or expand Out of Scope.
@@ -85,7 +85,7 @@ Study cases this domain must satisfy (After changes only): {include context: rel
 Do not poll. When completion notifications have arrived for every launched agent:
 
 1. Read what each returned, then **review the implementation** — open the files they changed. Do not run `# Validation`, domain Verify commands, or a test suite.
-2. For each domain, check the code against that stage's **Contract**, **Outcome**, and **Must do**, plus relevant study-case **After changes**. Note misses, extra work in Out of Scope, and Inventory path collisions.
+2. For each domain, check the code against that stage's **Contract**, **Outcome**, and **Tasks**, plus relevant study-case **After changes**. Note misses, extra work in Out of Scope, and Inventory path collisions.
 3. Mark matching YAML todos `completed` or `error`.
 4. Report a review per domain: what landed, what matches the plan, what does not. Link `[Name](id)` again.
 
@@ -93,7 +93,7 @@ If a domain missed its Contract, say so. Do not silently re-run every domain. Re
 
 ## Do not
 
-- Implement domain Must do in this parent agent
+- Implement this domain's Tasks in this parent agent
 - Sequence domains (backend first, “after schema”, wait-then-UI)
 - Put two Task launches in different turns when they can start together
 - Change the plan’s decided path while executing

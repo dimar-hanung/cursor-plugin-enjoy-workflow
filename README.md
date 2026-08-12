@@ -149,12 +149,11 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (12)
+### Skills (9)
 
 | Skill | Source |
 |-------|--------|
 | `anti-slop-writing` | new (from `/refine-ux-writing`) |
-| `brainstorm` | `~/.cursor/skills` |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
 | `create-skill` | `~/.agents/skills` |
@@ -162,8 +161,6 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `docx` | `~/.agents/skills` |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
-| `push-git-workflow` | `~/.agents/skills` |
-| `tidy-env` | new |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
 
 `tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
@@ -176,20 +173,31 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (9)
+### Commands (21)
 
 | Command | Description |
 |---------|-------------|
+| `/behaviour-research` | Verify exact versions of tech the current work touches + report version-specific pitfalls (chat; not plan-specific) |
+| `/brainstorm` | Focused ideas and options (names, approaches, tradeoffs) — not first-principles deconstruction |
+| `/create-changelog` | Non-technical Indonesian changelog / release notes (nested modul + tipe inline: Baru, Perbaikan, Improvement, Dihapus, Berubah; voice via anti-slop-writing) |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
 | `/create-project-location` | Generate `.agents/skills/project-locations` for the workspace |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
-| `/plan-behaviour-research` | Verify exact versions of tech the plan touches + search version-specific pitfalls into a plan Behaviour section |
+| `/learn-fast` | Fast ladder teaching, teach-only — no quizzes or active drills |
+| `/learn-and-practice` | Same ladder + five-part teaching + practice/quiz-style checks |
+| `/notion-update-log` | Notion `## 📝 Note` (Pertanyaan, Pelajaran) lalu `## ⚔️ Log`; anti-slop |
+| `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
+| `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/run-plan` | Execute a plan: one Composer 2.5 subagent per domain, in parallel |
+| `/search-data-smell` | Find one bad data contract / shape smell; flag Breaking on that fix |
+| `/search-overengineering` | Find one overengineering / simplification opportunity; flag Breaking on that fix |
+| `/search-performance-can-improve` | Find one likely performance win via hot-path skim; flag Breaking on that fix |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
+| `/tidy-env` | Reposition existing `.env` keys into sectioned layout — no rename/add/invent keys |
 
 ## Layout
 

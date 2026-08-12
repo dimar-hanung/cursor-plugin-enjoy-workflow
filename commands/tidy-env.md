@@ -1,7 +1,6 @@
 ---
 name: tidy-env
 description: Repositions existing .env entries into a sectioned layout (header, # Section groups, blank lines, optional ENV-LOCAL). Does not rename, add, or invent env keys. Use when the user asks to tidy, clean, organize, format, or restructure a .env / .env.example / .env.local file.
-disable-model-invocation: true
 ---
 
 # Tidy Env
@@ -87,3 +86,5 @@ Section comments are labels for *placement* of existing keys only — never a li
 User: "Tidy up `.env`"
 
 Agent: reposition existing entries into header + sections (+ ENV-LOCAL if those lines already exist); report moves only — no new/renamed keys.
+
+USER REQUEST:

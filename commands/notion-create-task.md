@@ -1,5 +1,6 @@
 Use notion mcp. use anti-slop-writing skill.
-Add task and fill the content
+I may already done or still working on the task. 
+Add item and fill the content
 https://app.notion.com/p/dimarhanung/59a5e82b0373466986490128738c4023?v=0b82ec1059c54f17a9462a1e3ddc5fa5&source=copy_link 
 
 Use template

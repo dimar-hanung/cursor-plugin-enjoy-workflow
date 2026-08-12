@@ -19,7 +19,7 @@ description: >-
    2. Notes: short; see UX mechanics below + `ux-craft` English laws
 2. **Changelog / release notes**
    1. Register: semi-formal; benefit-first
-   2. Notes: structure owned by `changelog` skill; **voice** here
+   2. Notes: structure owned by `/create-changelog` command; **voice** here
 3. **Report / analysis / canvas-markdown / docs prose**
    1. Register: semi-formal (or formal ringan if gov/legal)
    2. Notes: full prose rules in [references/prose.md](references/prose.md)
@@ -104,10 +104,10 @@ English button/error laws still apply as **intent** via `writing.md`.
 
 ## 2. Voice — changelog & release notes
 
-- Benefit first: `Sekarang bisa…` not `Kami telah menambahkan…`
+- Benefit first: `Sekarang bisa…` not `Kami telah menambahkan…` — berlaku untuk **Baru**, **Improvement**, dan bagian "sesudah" di **Perbaikan**
 - One idea per bullet; plain words; no stack/jargon
-- Section structure → `skills/changelog`; voice/banlist/dashes → **this skill**
-- Perbaikan: before/after clear without em dashes
+- Section structure → `/create-changelog` (`commands/create-changelog.md`); voice/banlist/dashes → **this skill**
+- **Sebelumnya** + **Sekarang** untuk kontras — wajib di Perbaikan, Dihapus, Berubah; boleh di Improvement; Baru utamakan **Sekarang** saja
 
 ---
 

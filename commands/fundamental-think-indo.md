@@ -1,16 +1,16 @@
 ---
 name: fundamental-think-indo
-description: Versi Bahasa Indonesia — pikirkan secara fundamental sebelum mengeksekusi. Bukan untuk daftar opsi/nama kreatif — itu skill brainstorm.
+description: Versi Bahasa Indonesia — pikirkan secara fundamental sebelum mengeksekusi. Bukan untuk daftar opsi/nama kreatif — itu /brainstorm.
 ---
 
 ## Vs brainstorm
 
 | Permintaan | Pakai |
 |------------|-------|
-| Opsi, nama, bandingkan pendekatan, arah kreatif | skill `brainstorm` — tanpa loop explore/riset |
+| Opsi, nama, bandingkan pendekatan, arah kreatif | `/brainstorm` — tanpa loop explore/riset |
 | Pertanyaan luas / terlalu ke solusi yang perlu dipecah ke fondasi sebelum kerja | **Command ini** — explore/search jika asumsi perlu dibuktikan |
 
-Kalau yang diminta hanya ide, jangan jalankan jalur riset command ini — arahkan ke brainstorm.
+Kalau yang diminta hanya ide, jangan jalankan jalur riset command ini — arahkan ke `/brainstorm`.
 
 Sebelum mengerjakan sesuatu, jangan langsung menjawab atau langsung mengeksekusi permintaan secara permukaan.
 
