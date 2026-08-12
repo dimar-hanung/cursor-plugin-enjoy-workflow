@@ -188,6 +188,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/plan-behaviour-research` | Verify exact versions of tech the plan touches + search version-specific pitfalls into a plan Behaviour section |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
+| `/run-plan` | Execute a plan: one Composer 2.5 subagent per domain, in parallel |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
 
 ## Layout
