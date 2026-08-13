@@ -20,7 +20,7 @@ Insert after `## What Current (Technical)` and before `## What Changes (Technica
 ## Behaviour
 
 ### <tech> <exact version>
-- [behaviour fact] — affects [stage or Task] ([source link])
+- [behaviour fact] — affects [domain or Task] ([source link])
 ```
 
 Rules:

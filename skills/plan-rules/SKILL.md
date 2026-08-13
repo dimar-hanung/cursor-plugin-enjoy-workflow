@@ -1,9 +1,9 @@
 ---
 name: plan-rules
 description: >-
-  Formats Cursor `.plan.md` plans with YAML todos and parallel domain stages
+  Formats Cursor `.plan.md` plans with YAML todos and parallel domains
   (`### Provides`, `### Consumes`, `### Outcome`). Never a pipeline that waits
-  on a previous stage. Use when creating, drafting, or presenting any plan —
+  on a previous domain. Use when creating, drafting, or presenting any plan —
   or when switching to Plan mode.
 ---
 
@@ -23,14 +23,11 @@ If the table says skip, stop this skill.
 
 ## Hard rules
 
-- Write the **entire** plan in **English**.
-- Keep non-English business-process labels in **double quotes** — do not translate them (e.g. At `"Belanja"`, …).
-- One decided path only. No questions, A/B options, "or", "optionally", "consider", trade-offs, or recommendations inside `.plan.md`.
-- Decisions → **AskQuestion outside the plan** (≤4/round). Bake the answer into Tasks / Out of Scope.
-- Tasks and study cases: outcome level (where + what must be true). Provides / Consumes / API contract: request-shaped. The executor chooses the code.
-- Max heading level `###`. Table names and API operations are **bold labels**, not `####`.
+- Write the **entire** plan in **English**. Keep non-English business-process labels in **double quotes** — do not translate them (e.g. At `"Belanja"`, …).
+- One decided path only. No questions, A/B options, "or", "optionally", "consider", trade-offs, or recommendations inside `.plan.md`. Decisions → **AskQuestion outside the plan** (≤4/round). Bake the answer into Tasks / Out of Scope.
+- Max heading level `###`. Table names and API operations are **bold labels**, not `####`. Allowed H1s: `# Overview` · `# Parallel Domains` · `# Validation` · `# Out of Scope` · `# Summary`. Duplicate `## Domain:` once per Domains item.
 - Do not truncate. Plans may be large.
-- Cite only files and symbols you opened.
+- Study cases and Tasks: outcome level (where + what must be true). Provides / Consumes / API contract: request-shaped. The executor chooses the code.
 
 ## Procedure
 
@@ -44,17 +41,17 @@ Do this before writing YAML or body text.
 4. Split **reuse** vs **new** (types, helpers, endpoints already there vs missing pieces).
 5. Stop exploring when you can name each domain, its Provides, its Consumes, its Outcome, and the files it owns.
 
-Every Inventory path and every Task `where` must be something you opened.
+Cite only files and symbols you opened. Every Inventory path and every Task `where` must be among them.
 
-### 2. Split domain stages (parallel)
+### 2. Split domains (parallel)
 
-A **domain** = one bounded capability an agent can finish without waiting for another stage. Split by domain, not by stack layer. All domains start together.
+A **domain** = one bounded capability an agent can finish without waiting for another domain. Split by domain, not by stack layer. All domains start together.
 
 - **Do** split by capability (`orders`, `stock`, `notifications`). One domain owns each call and may Provide or Consume several. Split only when capability or Inventory files diverge — not because a domain has more than one call.
-- **Do** put API and UI of the same capability in **separate parallel domains** when they would not edit the same files (`orders-api` Provides `POST /orders`, `orders-ui` Consumes it). Both start now; UI **Wire**s to that Provides, not to a finished backend stage.
+- **Do** put API and UI of the same capability in **separate parallel domains** when they would not edit the same files (`orders-api` Provides `POST /orders`, `orders-ui` Consumes it). Both start now; UI **Wire**s to that Provides, not to a finished backend domain.
 - **Do** use a separate integration domain only when glue spans multiple apps/services (shared SDK, env rollout, mobile + web) — it still starts in parallel against those Provides.
 - **Do not** pipeline layers: shared → schema → repos → services → handlers → frontend.
-- **Do not** write `Depends on`, `after [stage]`, or any gate that says another domain must finish first.
+- **Do not** write `Depends on`, `after [domain]`, or any gate that says another domain must finish first.
 - **Do not** put the same path in two domains' Inventory. If they would collide, merge them or give the file to one owner; others bind via Consumes.
 
 ### 3. Write YAML frontmatter first
@@ -80,43 +77,39 @@ isProject: false
 ---
 ```
 
-1. One `todo` per domain. List in any order — none is a gate for another.
+1. One `todo` per domain, 1:1 with the Domains list. Any order — none is a gate.
 2. `content` format: `"[domain] → [outcome]"`. Call lists live under `## Domains`, not in the todo.
 3. Status: `pending` | `in-progress` | `completed` | `error`.
 
 ### 4. Write the body (this order only)
 
-Allowed H1s: `# Overview` · `# Parallel Domains` · `# Validation` · `# Out of Scope` · `# Summary`. Duplicate `## Stage:` once per Domains item.
-
 1. **Goal** — what and why.
-2. **User Behaviour (Study Cases)** — format below. If no user-facing surface, write `No user-facing change.`
+2. **User Behaviour (Study Cases)** — if no user-facing surface, write `No user-facing change.`
 3. **What Current (Technical)** — existing modules / APIs that matter.
 4. **Behaviour** — omit unless `/plan-behaviour-research` was run (then it sits here).
 5. **What Changes (Technical)** — high-level; detail under domains.
 6. **Visualization (Technical)** — only if cross-domain contracts / state machine / schema is non-obvious. Title + 1–2 sentences + mermaid via skill `mermaid-diagram-specialist`. Else omit.
-7. **Parallel Domains** — `## Domains` numbered index (one numbered call per line under Provides / Consumes), then one `## Stage:` per domain.
+7. **Parallel Domains** — `## Domains` index, then one `## Domain:` per domain.
 8. **Validation** — skip if none / fully covered by domain Verify.
 9. **Out of Scope** — non-goals, or `None`.
 10. **Summary** — env, config, breaking changes spanning domains.
 
-Delete `### Data schema changes` / `### API contract` when that domain has none.
+Fill each section using the matching rules below. Copy structure from the body template.
 
 ### 5. Self-check before presenting
 
-- [ ] English throughout; domain labels quoted, not translated
-- [ ] No questions / options / "optionally" / trade-offs in the plan
-- [ ] Frontmatter todos match the Domains list 1:1; none is a gate
-- [ ] Every study-case **After changes** has ≥1 Task
-- [ ] Every Task uses `[Verb] … so …`
-- [ ] Every domain has `### Provides`, `### Consumes`, and `### Outcome`; Consumes copies each bound call (or `none`)
-- [ ] Schema / API sections omitted when unused; present when the domain changes them
-- [ ] Inventory paths and Task `where` were opened during explore; no path in two domains
-- [ ] No `####` headings; no extra H1s (no Stage Index / Risks / Review Surface)
+- [ ] Hard rules held (English, quotes, one path, no `####`, no extra H1s)
+- [ ] Todos match Domains 1:1; no domain is a gate
+- [ ] Every **After changes** has ≥1 Task; every Task is `[Verb] … so …`
+- [ ] Every domain has Provides, Consumes, Outcome; Consumes copies each bound call (or `none`)
+- [ ] Schema / API headings omitted when unused
+- [ ] Inventory paths and Task `where` were opened; no path in two domains
 
 ---
 
-## Format: study cases
-max 5 main cases.
+## Study cases
+
+Max 5 main cases. Every **After changes** has ≥1 Task.
 
 For each case:
 
@@ -136,49 +129,56 @@ For each case:
 
 ---
 
-## Format: Provides, Consumes, Outcome
+## Parallel domains
 
-Always write both headings (`none` when empty). Stack several calls under the same heading. Request / Success / Errors are bold labels, not headings. HTTP/GraphQL/RPC detail → **API contract** on the providing domain. Function calls stay fully specified here.
+### Domains index
+
+One block per domain (`**N. `[domain]`**`), then `Provides:` / `Consumes:` / `Outcome:` on their own lines. Comma-separate multiple calls; `none` when empty.
+
+### Provides, Consumes, Outcome
+
+Always write both headings (`none` when empty). Stack several calls under the same heading. Bold call name, then labeled bullets (`- Request:` / `- Success:` / `- Errors:`), not headings. The call name is the operation (`POST /orders`, `decrementStock`); Request is fields only. Put a status token on Success / Errors when the protocol has one (HTTP); omit it for functions. HTTP/GraphQL/RPC payload detail → **API contract** on the providing domain. Function calls stay fully specified here.
 
 | Heading | What to write |
 | --- | --- |
-| `### Provides` | Each published call: bold label + Request + Success + Errors. `none` when this domain publishes no call. Exactly one domain owns each call. |
-| `### Consumes` | Each bound call from another domain: **`[domain]` `[call]`** + that call's Request / Success / Errors (must match). Copy only the calls this stage binds to — not the rest of that domain's Provides. `none` when this domain binds to nothing. Copying is the interface — not a wait. |
+| `### Provides` | Each published call: **`[call]`** then `- Request:` / `- Success:` / `- Errors:`. `none` when this domain publishes no call. Exactly one domain owns each call. |
+| `### Consumes` | Each bound call from another domain: **`[domain]` `[call]`** then the same three bullets (must match). Copy only the calls this domain binds to — not the rest of that domain's Provides. `none` when this domain binds to nothing. Copying is the interface — not a wait. |
+| `### Outcome` | What must be true when this domain is done — observable, 1–2 sentences. |
 
 **Good**
 
 ```markdown
 ### Provides
 **`POST /orders`**
-**Request:** `{ items: [{ sku, qty }], paymentMethod }`
-**Success:** `201` `{ id, status }`
-**Errors:** `409` `{ code: "INSUFFICIENT_STOCK", sku }`
+- Request: `{ items: [{ sku, qty }], paymentMethod }`
+- Success: `201` `{ id, status }`
+- Errors: `409` `{ code: "INSUFFICIENT_STOCK", sku }`
 
 **`GET /orders/:id`**
-**Request:** `{ id }`
-**Success:** `200` `{ id, status, items }`
-**Errors:** `404` `{ code: "NOT_FOUND" }`
+- Request: `{ id }`
+- Success: `200` `{ id, status, items }`
+- Errors: `404` `{ code: "NOT_FOUND" }`
 
 ### Consumes
 **`[stock]` `decrementStock`**
-**Request:** `{ sku, qty }`
-**Success:** `{ remaining }`
-**Errors:** `{ code: "INSUFFICIENT_STOCK", sku }`
+- Request: `{ sku, qty }`
+- Success: `{ remaining }`
+- Errors: `{ code: "INSUFFICIENT_STOCK", sku }`
 
 **`[payments]` `charge`**
-**Request:** `{ orderId, method }`
-**Success:** `{ chargeId, status }`
-**Errors:** `{ code: "PAYMENT_FAILED" }`
+- Request: `{ orderId, method }`
+- Success: `{ chargeId, status }`
+- Errors: `{ code: "PAYMENT_FAILED" }`
 
 ### Outcome
 A shopper can pay; concurrent checkouts cannot drive stock negative; clients receive a stock-specific error.
 ```
 
-**Bad:** "depends on stock stage" · one blended Request covering two calls · Consumes a domain name with no call · copying a sibling's unused Provides · wrapping Provides/Consumes in a `**Contract**` bullet list.
+**Bad:** "depends on stock domain" · one blended Request covering two calls · Consumes a domain name with no call · copying a sibling's unused Provides · wrapping Provides/Consumes in a `**Contract**` bullet list.
 
 ---
 
-## Format: Tasks
+## Tasks
 
 Section heading: `### Tasks`. Each bullet is one **Task**.
 
@@ -220,21 +220,23 @@ Section heading: `### Tasks`. Each bullet is one **Task**.
 
 ---
 
-## Format: Data schema changes
+## Data schema, API contract, Inventory
 
-Own `### Data schema changes` under the domain — **not** inside Inventory. Omit when unused. Use project migration/ORM names and types. Copy the shape from the body template.
+Own `### Data schema changes` and `### API contract` under the domain — **not** inside Inventory. Omit either heading when that domain has none. Shapes are in the body template.
 
----
+**Data schema** — project migration/ORM names and types.
 
-## Format: API contract
+**API contract** — detailed payload for this domain's **Provides**, one operation block per Provides call. Match the project's style — one style per domain, not both: REST → **Request** / **Success `201`** (real HTTP status) / **Errors**; GraphQL → **Variables** / **Response** / **Errors**; RPC → **Input** / **Output** / **Errors**. Multiline fenced payloads in the codebase's notation.
 
-Own `### API contract` under the domain — **not** inside Inventory. Omit when unused. This is the detailed payload for this domain's **Provides** — one operation block per Provides call. Match the project's style — one style per domain, not both: REST → **Request** / **Success `201`** (real HTTP status) / **Errors**; GraphQL → **Variables** / **Response** / **Errors**; RPC → **Input** / **Output** / **Errors**. Multiline fenced payloads in the codebase's notation. Changed operations: comment deltas in-contract, or a **Changes** list if comments are invalid. Copy the REST shape in the body template; rename labels for the project's style.
+Field-level deltas on changed operations: annotate the affected fields inline with a trailing comment so the diff is visible in place. Leave unchanged fields uncommented.
 
----
+- `// new` — field added
+- `// deleted` — field removed (keep the line so the removal is visible)
+- `// changes from <old>` — type / shape / constraint change (state the previous form)
 
-## Format: Inventory (per domain)
+Use the codebase's comment syntax (`//` for JSON/TS/GraphQL, `#` for YAML/Python). If the payload notation is linted and forbids comments, use a **Changes** bullet list under the block instead.
 
-Ordered parent list only. Copy the shape from the body template.
+**Inventory** — ordered parent list only (New files / Modified files / Verify).
 
 ---
 
@@ -266,43 +268,39 @@ Copy this structure. Replace placeholders.
 # Parallel Domains
 
 ## Domains
-1. `[orders-api]`
-   - Provides:
-     1. `POST /orders`
-     2. `GET /orders/:id`
-   - Consumes:
-     1. `[stock]` `decrementStock`
-     2. `[payments]` `charge`
-   - Outcome: pay without oversell
-2. `[stock]`
-   - Provides:
-     1. `decrementStock`
-   - Consumes: none
-   - Outcome: stock never negative
-3. `[payments]`
-   - Provides:
-     1. `charge`
-   - Consumes: none
-   - Outcome: charge recorded
-4. `[orders-ui]`
-   - Provides: none
-   - Consumes:
-     1. `[orders-api]` `POST /orders`
-     2. `[orders-api]` `GET /orders/:id`
-   - Outcome: Pay wired; stock error shown
 
-## Stage: [domain]
+**1. `[orders-api]`**
+- Provides: `POST /orders`, `GET /orders/:id`
+- Consumes: `[stock]` `decrementStock`, `[payments]` `charge`
+- Outcome: pay without oversell
+
+**2. `[stock]`**
+- Provides: `decrementStock`
+- Consumes: none
+- Outcome: stock never negative
+
+**3. `[payments]`**
+- Provides: `charge`
+- Consumes: none
+- Outcome: charge recorded
+
+**4. `[orders-ui]`**
+- Provides: none
+- Consumes: `[orders-api]` `POST /orders`, `[orders-api]` `GET /orders/:id`
+- Outcome: Pay wired; stock error shown
+
+## Domain: [domain]
 ### Provides
 **`[call]`**
-**Request:** `METHOD /path` `{ fields }`
-**Success:** `status` `{ fields }`
-**Errors:** `status` `{ code, … }`
+- Request: `{ fields }`
+- Success: `{ fields }`
+- Errors: `{ code, … }`
 
 ### Consumes
 **`[other-domain]` `[call]`**
-**Request:** `{ fields }`
-**Success:** `{ fields }`
-**Errors:** `{ code, … }`
+- Request: `{ fields }`
+- Success: `{ fields }`
+- Errors: `{ code, … }`
 
 ### Outcome
 [What must be true when this domain is done — observable, 1–2 sentences.]
@@ -331,6 +329,7 @@ Copy this structure. Replace placeholders.
 - `shipped_at` **[new]**
 
 ### API contract
+[Notation follows the operation's protocol — JSON (REST), SDL (GraphQL), proto (gRPC), or whatever the codebase uses. The block below is REST/JSON as one example, not a required format.]
 
 **`POST /orders` — new** (REST)
 
@@ -360,6 +359,17 @@ Auth: session cookie
 {
   "code": "INSUFFICIENT_STOCK",
   "sku": "string"
+}
+```
+
+**`PATCH /orders/:id` — changed** (REST)
+
+**Request**
+```json
+{
+  "status": "string",    // changes from enum('pending','done') to enum('pending','shipped','done')
+  "shippedAt": "string", // new
+  "note": "string"       // deleted
 }
 ```
 

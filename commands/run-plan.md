@@ -12,17 +12,17 @@ Execute the current plan with **one Composer 2.5 subagent per domain, all starte
 
 Use, in order: the file the user named or attached → the plan this chat is working on → the newest `*.plan.md` in the workspace (ask if several).
 
-Read the whole file. You need Goal, Out of Scope, study-case **After changes**, `# Parallel Domains`, every `## Stage:` (including Data schema and API contract), YAML `todos`, and `## Behaviour` when present.
+Read the whole file. You need Goal, Out of Scope, study-case **After changes**, `# Parallel Domains`, every `## Domain:` (including Data schema and API contract), YAML `todos`, and `## Behaviour` when present.
 
 If the user named a domain, run only that one. Otherwise run every todo that is not `completed`.
 
 ## 2. Split into parallel domains
 
-Each `## Stage: [domain]` is one agent. Ignore `Depends on` / `after [stage]` if an older plan still has them.
+Each `## Domain: [name]` is one agent. Treat `## Stage:` the same if an older plan still uses it. Ignore `Depends on` / `after [domain]` (or `after [stage]`) if an older plan still has them.
 
 **Collision check:** collect Inventory paths (new + modified) per domain. If two pending domains share a path, merge those domains into **one** agent. Keep the rest parallel.
 
-If a stage has no `### Provides` / `### Consumes`, still launch; do not invent a contract from Inventory.
+If a domain has no `### Provides` / `### Consumes`, still launch; do not invent a contract from Inventory.
 
 ## 3. Launch — one message, every domain
 
@@ -49,15 +49,15 @@ Workspace: {absolute workspace path}
 Plan file: {absolute plan path}
 
 ## This domain
-{include context: this domain's full ## Stage: section}
+{include context: this domain's full ## Domain: section}
 
 ## You Consume (bind now — do not wait)
-{for each call under this stage's ### Consumes, include THAT call from the providing domain's ### Provides:}
+{for each call under this domain's ### Consumes, include THAT call from the providing domain's ### Provides:}
 
-### [consumed-domain] `[call]`
-**Request:** …
-**Success:** …
-**Errors:** …
+**`[consumed-domain]` `[call]`**
+- Request: …
+- Success: …
+- Errors: …
 
 {if Consumes is none: none}
 
@@ -88,7 +88,7 @@ Behaviour: {include context: ## Behaviour when present, else omit this line}
 Do not poll. When completion notifications have arrived for every launched agent:
 
 1. Read what each returned, then **review the implementation** — open the files they changed. Do not run `# Validation`, domain Verify commands, or a test suite.
-2. For each domain, check the code against that stage's `### Provides`, `### Consumes`, `### Outcome`, and `### Tasks`, plus relevant study-case **After changes**. Note misses, extra work in Out of Scope, and Inventory path collisions.
+2. For each domain, check the code against that domain's `### Provides`, `### Consumes`, `### Outcome`, and `### Tasks`, plus relevant study-case **After changes**. Note misses, extra work in Out of Scope, and Inventory path collisions.
 3. Mark matching YAML todos `completed` or `error`.
 4. Report a review per domain: what landed, what matches the plan, what does not. Link `[Name](id)` again.
 
