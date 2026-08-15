@@ -96,6 +96,7 @@ Align with Microsoft voice adapted for ID: warm, crisp, ready to help. Gov produ
 - Errors: what happened + how to fix; no blame; no `Oops!`
 - Empty: what it is + how to fill + CTA; prefer `Belum ada…` over scolding `Tidak ada…`
 - Keep loanwords users know (`email`, `API`, `upload`); don’t invent `surel` / `tembolok`
+- Never `card` / `kartu` for a UI tile (kanban, dashboard, card view). Name the object (`tugas`, `item`, `catatan`…) or omit. Keep `kartu` only for payment/ID (`kartu kredit`, `nomor kartu`). Flag it if the source uses either.
 - Preserve `{placeholders}` exactly
 
 English button/error laws still apply as **intent** via `writing.md`.
@@ -140,6 +141,7 @@ English button/error laws still apply as **intent** via `writing.md`.
 14. Prompt-keyword spam → say once, then plain language
 15. Relative `di mana` calque → rewrite as direct sentences
 16. Chat closers: `Semoga membantu!`, `Tentu saja!`
+17. UI tile `card` / `kartu` / `tampilan kartu` → name the object or omit; keep `kartu` only for payment/ID
 
 More → [banlist.md](references/banlist.md) · [patterns.md](references/patterns.md)
 
@@ -155,12 +157,14 @@ More → [banlist.md](references/banlist.md) · [patterns.md](references/pattern
    1. Prefer: `Email dan kata sandi`
 5. `Anda harus memasukkan data yang valid`
    1. Prefer: `Masukkan data yang benar`
+6. `Belum ada kartu` / `Tambah kartu` / `Card view` (UI tile)
+   1. Prefer: `Belum ada tugas` / `Buat tugas` / `Daftar` or `Grid` — never `card` or `kartu` for the tile
 
 ---
 
 ## Quick glossary (UI)
 
-Simpan · Batal · Hapus · Ubah/Edit · Pengaturan (not Setelan) · Akun (not rekening) · Masuk · Daftar · Cari · Lanjutkan · Kirim · Kesalahan/Error
+Simpan · Batal · Hapus · Ubah/Edit · Pengaturan (not Setelan) · Akun (not rekening) · Masuk · Daftar · Cari · Lanjutkan · Kirim · Kesalahan/Error · Kartu (payment/ID only — never for UI tiles; name the object)
 
 ---
 
@@ -172,16 +176,17 @@ Simpan · Batal · Hapus · Ubah/Edit · Pengaturan (not Setelan) · Akun (not r
 2. Bad: Apakah Anda ingin menyimpan perubahan Anda? → Good: Simpan perubahan?
 3. Bad: Jelajahi fitur kami untuk meningkatkan pengalaman Anda → Good: Lihat fitur
 4. Bad: Fitur ini merupakan salah satu inovasi penting yang memfasilitasi optimalisasi kerja Anda → Good: Simpan filter. Dipakai lagi nanti.
+5. Bad: Belum ada kartu. Tambah kartu untuk memulai. → Good: Belum ada tugas. Buat tugas pertama.
 
 **Changelog**
 
-5. Bad: Kami telah menambahkan kemampuan untuk mengekspor laporan — Good: Sekarang bisa ekspor laporan ke PDF.
-6. Bad: Berbagai perbaikan performa dan pengalaman pengguna — Good: Halaman daftar pelanggan dimuat lebih cepat.
+6. Bad: Kami telah menambahkan kemampuan untuk mengekspor laporan — Good: Sekarang bisa ekspor laporan ke PDF.
+7. Bad: Berbagai perbaikan performa dan pengalaman pengguna — Good: Halaman daftar pelanggan dimuat lebih cepat.
 
 **Report / prose**
 
-7. Bad: Di era digital ini, dapat disimpulkan bahwa transformasi digital memainkan peran krusial… → Good: Tahun lalu 87% tiket masuk lewat aplikasi. Antrean loket turun setengahnya.
-8. Bad: …yang menyoroti pentingnya kolaborasi antar pemangku kepentingan. → Good: Tim sales dan finance pakai satu nomor invoice. Dispute turun.
+8. Bad: Di era digital ini, dapat disimpulkan bahwa transformasi digital memainkan peran krusial… → Good: Tahun lalu 87% tiket masuk lewat aplikasi. Antrean loket turun setengahnya.
+9. Bad: …yang menyoroti pentingnya kolaborasi antar pemangku kepentingan. → Good: Tim sales dan finance pakai satu nomor invoice. Dispute turun.
 
 Error frames: `Tidak bisa [aksi]` / `Gagal [aksi]` + next step.
 
@@ -212,6 +217,7 @@ Error frames: `Tidak bisa [aksi]` / `Gagal [aksi]` + next step.
 6. Length fits surface (UI tight; prose concrete)
 7. Placeholders `{…}` unchanged
 8. Read aloud — memo / ChatGPT / landing page? → rewrite
+9. No `card` / `kartu` for UI tiles (name the object or omit)
 
 ---
 

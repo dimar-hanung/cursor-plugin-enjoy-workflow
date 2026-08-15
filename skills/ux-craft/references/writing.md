@@ -65,6 +65,7 @@ Consistent language builds trust; inconsistent language forces the user to trans
 
 - One term per concept, everywhere — pick "project" or "workspace", never both for the same thing. Keep a terms list for the product.
 - The user's nouns, not internal names ("Download report", not "Export SSRS artifact").
+- Never "card" (or Indonesian `kartu`) for a UI tile — kanban, dashboard, card view. Name the object ("Add task", not "Add card"; "No tasks yet", not "No cards yet") or omit. Keep "card" only for payment/ID. ID wording: `anti-slop-writing`.
 - Front-load the key word: "Delete account" not "Click here if you would like to delete your account".
 - No marketing adverbs in product UI: "Effortlessly", "Seamlessly", "Supercharge", "Unlock". Plain verbs; say what happens.
 - Tone scales with stakes — casual for routine, neutral for transactional, formal for irreversible/legal.
@@ -94,4 +95,5 @@ Read every new or changed string aloud before shipping — awkward spoken copy i
 - [ ] Do errors say what happened and how to fix it?
 - [ ] Do destructive confirms name the object and consequence?
 - [ ] Is terminology consistent with one term per concept?
+- [ ] No "card" / `kartu` for UI tiles — object named, or omitted?
 - [ ] Would you read this aloud to a stranger without cringing?

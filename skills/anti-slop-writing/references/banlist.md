@@ -128,6 +128,14 @@ Also: `mampu untuk X` → verb langsung; sentence-start `sebaliknya` → `tapi` 
 
 Never in UI, changelog, or shipped reports: Semoga membantu!, Tentu saja!, Baik berikut adalah…, Jangan ragu untuk bertanya, Sebagai AI…
 
+## UI chrome — never as the user’s noun
+
+1. `card` / `kartu` / `tampilan kartu` for a UI tile (kanban, dashboard widget, card view)
+   1. Prefer: name the object (`tugas`, `item`, `catatan`, `tiket`…) or omit (`Tambah`, `Belum ada apa-apa di sini`)
+   2. View toggle: `Daftar` / `Grid` (or icon-only) — not `Tampilan kartu`
+   3. Keep `kartu` only for payment/ID: `kartu kredit`, `nomor kartu`, `kartu debit`
+   4. Do not keep English `card` in Indonesian UI as a substitute — both are weird for a tile
+
 ## Replacement rule
 
 Do not synonym-hunt. Restructure:

@@ -149,14 +149,13 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (9)
+### Skills (8)
 
 | Skill | Source |
 |-------|--------|
 | `anti-slop-writing` | new (from `/refine-ux-writing`) |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
-| `create-skill` | `~/.agents/skills` |
 | `debug-top-down` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
