@@ -172,7 +172,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (23)
+### Commands (24)
 
 | Command | Description |
 |---------|-------------|
@@ -195,6 +195,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/run-plan` | Execute a plan: one Composer 2.5 subagent per domain, in parallel |
 | `/search-data-smell` | Find one bad data contract / shape smell; flag Breaking on that fix |
+| `/search-idea` | Find one improvement/feature idea with real leverage via journey skim (impact × effort, not a fix) |
 | `/search-overengineering` | Find one overengineering / simplification opportunity; flag Breaking on that fix |
 | `/search-performance-can-improve` | Find one likely performance win via hot-path skim; flag Breaking on that fix |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
