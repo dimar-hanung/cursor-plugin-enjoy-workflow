@@ -27,7 +27,7 @@ description: >-
    1. Register: match audience
    2. Notes: same banlist; less slang than personal blog
 
-**Canonical for Indonesian wording** on these surfaces. English UX laws: `skills/ux-craft/references/writing.md` (intent applies; ID wording conflicts → **this skill wins**).
+**Canonical for Indonesian wording** on these surfaces. English UX laws: `skills/ux-craft/references/writing.md` (intent applies; ID wording conflicts → **this skill wins**). Chat / spoken replies → `speak-indonesian` (familiar words; no rare KBBI). That skill still wins on “would a person actually say this word?”
 
 **Test:** Read aloud. Sounds like a memo, landing page, or ChatGPT → rewrite.
 

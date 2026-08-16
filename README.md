@@ -154,12 +154,12 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | Skill | Source |
 |-------|--------|
 | `anti-slop-writing` | new (from `/refine-ux-writing`) |
+| `speak-indonesian` | new (familiar spoken ID; no rare KBBI) |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
 | `debug-top-down` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
-| `plan-rules` | `~/.agents/skills` |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
 
 `tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
@@ -172,7 +172,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (21)
+### Commands (23)
 
 | Command | Description |
 |---------|-------------|
@@ -188,6 +188,8 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/learn-and-practice` | Same ladder + five-part teaching + practice/quiz-style checks |
 | `/notion-update-log` | Notion `## 📝 Note` (Pertanyaan, Pelajaran) lalu `## ⚔️ Log`; anti-slop |
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
+| `/plan-rules` | Full executor-ready `.plan.md` (parallel domains, Tasks, schema, API, Inventory) |
+| `/plan-rules-simple` | High-level `.plan.md` as a one-page RFC for developer review (Problem → Proposal → Impact → Decision Requested) |
 | `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
 | `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |

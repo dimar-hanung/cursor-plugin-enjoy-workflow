@@ -14,7 +14,7 @@ Follow `/behaviour-research` steps 1–2, with these plan-specific constraints:
 
 ## 3. Write the section into the plan
 
-Insert after `## What Current (Technical)` and before `## What Changes (Technical)` — this section extends the plan-rules body order when this command is used.
+Insert after `## What Current (Technical)` and before `## What Changes (Technical)` — this section extends the `/plan-rules` and `/plan-rules-simple` body order when this command is used.
 
 ```markdown
 ## Behaviour

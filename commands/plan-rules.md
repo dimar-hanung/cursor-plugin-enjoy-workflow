@@ -1,25 +1,22 @@
 ---
 name: plan-rules
 description: >-
-  Formats Cursor `.plan.md` plans with YAML todos and parallel domains
-  (`### Provides`, `### Consumes`, `### Outcome`). Never a pipeline that waits
-  on a previous domain. Use when creating, drafting, or presenting any plan —
-  or when switching to Plan mode.
+  Formats a full executor-ready Cursor `.plan.md` with YAML todos and parallel
+  domains (`### Provides`, `### Consumes`, `### Outcome`, Tasks, schema, API
+  contract, Inventory). Use when creating a detailed plan for `/run-plan`, or
+  /plan-rules. For a high-level one-page review plan, use /plan-rules-simple.
 ---
 
 # Plan Rules
 
 Follow the steps in order. Fill the body template at the end — do not invent extra top-level sections.
 
-## When to use / skip
+## Vs `/plan-rules-simple`
 
-| Case | Action |
+| Need | Use |
 | --- | --- |
-| Creating, drafting, or presenting a plan · switching to Plan mode | Use this skill |
-| Trivial work (typo, one obvious file, repeated one-line fix) | Skip the plan — state the change and execute |
-| UI motion audit (no product behaviour change) | Skip — use `skills/ui-craft/references/motion-plan-template.md`, not `.plan.md` |
-
-If the table says skip, stop this skill.
+| Full executor-ready plan (Tasks, schema, API contract, Inventory) | **This command** |
+| High-level one-page plan a developer can review quickly | `/plan-rules-simple` |
 
 ## Hard rules
 
