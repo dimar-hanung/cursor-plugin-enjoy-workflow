@@ -1,20 +1,20 @@
 ---
 name: create-changelog
-description: Tulis changelog non-teknis Bahasa Indonesia (release notes / apa yang baru). Struktur tanggal + highlight + nested modul; tipe perubahan inline di bullet; voice via anti-slop-writing.
+description: Tulis changelog non-teknis Bahasa Indonesia (release notes / apa yang baru). Struktur tanggal + highlight + nested modul; tipe perubahan inline di bullet; voice via anti-slop-writing-informal.
 ---
 
 # Changelog (Non-Teknis)
 
 Update singkat untuk user non-teknis. Bahasa: **Indonesia** (Inggris hanya jika diminta).
 
-**Wajib baca** [anti-slop-writing](../skills/anti-slop-writing/SKILL.md) sebelum menulis dan finalisasi (voice, banlist, sapaan). Detail anti-AI ada di skill itu.
+**Wajib baca** [anti-slop-writing-informal](../skills/anti-slop-writing-informal/SKILL.md) sebelum menulis dan finalisasi (voice, banlist, sapaan). Detail anti-AI ada di skill itu. Changelog resmi (gov, bank, legal) → [anti-slop-writing-formal](../skills/anti-slop-writing-formal/SKILL.md).
 
-- **`anti-slop-writing`** — voice, banlist, sapaan, pemisah kalimat (titik/koma, bukan `—`)
+- **`anti-slop-writing-informal`** — voice default, sapaan, pemisah kalimat (titik/koma, bukan `—`); banlist lengkap di `anti-slop-writing-formal`
 - **Command ini** — struktur, tanggal, highlight domain/modul (filter relevansi), nested list modul, label tipe inline (Baru / Perbaikan / Improvement / Dihapus / Berubah)
 
 ## Sebelum menulis
 
-1. Baca `anti-slop-writing` → polish tiap bullet.
+1. Baca `anti-slop-writing-informal` → polish tiap bullet.
 2. Kumpulkan perubahan (input, diff, commit, PR). **Tanya tanggal** jika belum jelas.
 3. Filter internal: refactor, CI, deps — skip kecuali changelog teknis.
 4. Map tiap item → konteks `1.` (dimana / untuk siapa / ketika apa) + fitur di `-` dengan label tipe di depan
@@ -255,7 +255,7 @@ Pakai **Berubah** untuk perubahan hukum, regulasi, kebijakan institusi, atau sya
 
 ## Workflow
 
-1. anti-slop-writing → 2. Catat perubahan → 3. Map modul + konteks → 4. Buang internal → 5. Terjemahkan → 6. Pilih label (Baru / Perbaikan / Improvement / Dihapus / Berubah) per item → 7. Nested list dengan tipe inline → 8. Tanggal + highlight domain (dari label `1.`) → 9. **Sisipkan blok tanggal di atas** (terbaru paling atas) → 10. Polish
+1. anti-slop-writing-informal → 2. Catat perubahan → 3. Map modul + konteks → 4. Buang internal → 5. Terjemahkan → 6. Pilih label (Baru / Perbaikan / Improvement / Dihapus / Berubah) per item → 7. Nested list dengan tipe inline → 8. Tanggal + highlight domain (dari label `1.`) → 9. **Sisipkan blok tanggal di atas** (terbaru paling atas) → 10. Polish
 
 ## Contoh
 
@@ -313,7 +313,7 @@ Ada update di sertifikat mahasiswa, impor pembimbing KIT, jadwal ujian, dan peng
 
 ## Cek sebelum kirim
 
-- [ ] anti-slop-writing (baca aloud)
+- [ ] anti-slop-writing-informal (baca aloud)
 - [ ] Tanggal `## 🎉 Hari, d Bulan yyyy` + highlight domain/modul (filter relevansi)
 - [ ] **Terbaru di atas** (blok tanggal baru paling atas)
 - [ ] Tanpa section `###` per tipe (Baru, Perbaikan, dll.)
@@ -325,10 +325,10 @@ Ada update di sertifikat mahasiswa, impor pembimbing KIT, jadwal ujian, dan peng
 
 ## Rules
 
-**MUST:** anti-slop-writing · Indonesia · tanggal `## 🎉 …` + highlight domain/modul · **terbaru di atas** · nested list · label tipe inline · **Sekarang** untuk manfaat baru · **Sebelumnya**+**Sekarang** wajib di Perbaikan, Dihapus, Berubah · label `1.` pakai dimana/untuk siapa/ketika apa · nama UI bukan internal.
+**MUST:** anti-slop-writing-informal · Indonesia · tanggal `## 🎉 …` + highlight domain/modul · **terbaru di atas** · nested list · label tipe inline · **Sekarang** untuk manfaat baru · **Sebelumnya**+**Sekarang** wajib di Perbaikan, Dihapus, Berubah · label `1.` pakai dimana/untuk siapa/ketika apa · nama UI bukan internal.
 
 **NEVER:** section `###` per tipe · `###` untuk label modul · flat bullet tanpa modul · bullet tanpa label tipe · **Berubah** untuk bug · **Dihapus** untuk peningkatan UX · highlight berisi detail fitur atau manfaat · em dash · jargon/commit mentah · filler · urut tanggal lama di atas.
 
 ## References
 
-- [anti-slop-writing](../skills/anti-slop-writing/SKILL.md) — voice, banlist, polish
+- [anti-slop-writing-informal](../skills/anti-slop-writing-informal/SKILL.md) — voice, banlist, polish

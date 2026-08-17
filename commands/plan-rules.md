@@ -179,7 +179,7 @@ A shopper can pay; concurrent checkouts cannot drive stock negative; clients rec
 
 Section heading: `### Tasks`. Each bullet is one **Task**.
 
-**Formula:** `[Verb] <where> to <outcome> so <reason>.`
+**Formula:** `[Verb] [where] to [outcome] so [reason].`
 
 - Imperative, verb first — not "In `[where]`…".
 - Every Task needs a `so` reason. If you cannot state one, the item is vague, unnecessary, or too low-level.
@@ -229,7 +229,7 @@ Field-level deltas on changed operations: annotate the affected fields inline wi
 
 - `// new` — field added
 - `// deleted` — field removed (keep the line so the removal is visible)
-- `// changes from <old>` — type / shape / constraint change (state the previous form)
+- `// changes from [old]` — type / shape / constraint change (state the previous form)
 
 Use the codebase's comment syntax (`//` for JSON/TS/GraphQL, `#` for YAML/Python). If the payload notation is linted and forbids comments, use a **Changes** bullet list under the block instead.
 

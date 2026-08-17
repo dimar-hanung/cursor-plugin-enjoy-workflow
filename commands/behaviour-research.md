@@ -21,7 +21,7 @@ Applies to any tech the current task touches, not just frameworks and databases:
 
 For each `tech + exact version` pair, web-search pitfalls that intersect what is being built, fixed, or changed:
 
-- Query shape: `<tech> <major.minor> <feature being touched> breaking change | gotcha | pitfall | known issue`
+- Query shape: `{{tech}} {{major.minor}} {{feature being touched}} breaking change | gotcha | pitfall | known issue`
 - Prioritize:
   - Breaking changes between the installed version and the version you "remember".
   - Surprising defaults — transactions, isolation level, lazy loading, caching, connection pooling, timezone/encoding, cascade behaviour, retry/timeout defaults, rate limits, pagination limits.
@@ -33,8 +33,8 @@ For each `tech + exact version` pair, web-search pitfalls that intersect what is
 ```markdown
 ## Behaviour
 
-### <tech> <exact version>
-- [behaviour fact] — affects [current task / code path] ([source link])
+### {{tech}} {{exact version}}
+- {{behaviour fact}} — affects {{current task / code path}} ({{source link}})
 ```
 
 Rules:

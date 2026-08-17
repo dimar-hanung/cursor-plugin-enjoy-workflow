@@ -2,11 +2,11 @@
 
 Use when writing or refining longer Bahasa Indonesia: reports, technical docs narrative, canvas-markdown analyses, research summaries, meeting notes turned into prose — not button-length UI.
 
-Adapted from [adenaufal/anti-slop-writing](https://github.com/adenaufal/anti-slop-writing) Indonesian v3 (structure + BI rules). Still obey shared banlist and **zero em/en dashes**.
+Adapted from [adenaufal/anti-slop-writing](https://github.com/adenaufal/anti-slop-writing) Indonesian v3 (structure + BI rules). Still obey shared banlist and **zero em/en dashes**. Casual/personal long-form (blog, caption) → `anti-slop-writing-informal`.
 
 ## Before writing
 
-1. Lock **register** (formal ringan / semi-formal / light casual) — default semi-formal.
+1. Lock **register** (formal ringan / semi-formal). Plugin default is informal — casual pieces → `anti-slop-writing-informal`.
 2. Lock **audience** (client, internal eng, public).
 3. Lead with the **finding or decision**, not a time-frame opener.
 

@@ -3,7 +3,7 @@
 Every motion plan under ui-craft follows this structure. The executor may be a less capable model with zero context and zero taste — the plan must contain everything, exactly. No references to "the audit above" or "the easing we discussed."
 
 ```markdown
-# NNN — <Short imperative title>
+# NNN — {{Short imperative title}}
 
 - **Status**: TODO
 - **Commit**: <output of `git rev-parse --short HEAD` when this plan was written>
@@ -57,10 +57,10 @@ imitate (token names, file placement, prop patterns):
 ## Verification
 
 - **Mechanical**: <exact commands — typecheck, lint, build — with expected outcome>.
-- **Feel check**: run the UI, trigger <interaction>, and confirm:
+- **Feel check**: run the UI, trigger {{interaction}}, and confirm:
   - <observable check, e.g. "the dropdown scales from its trigger, not from center">
   - <e.g. "spamming the toggle never restarts the animation from zero">
-  - In DevTools, set playback to 10% (Animations panel) and confirm <detail>.
+  - In DevTools, set playback to 10% (Animations panel) and confirm {{detail}}.
   - Toggle `prefers-reduced-motion` (Rendering panel) and confirm movement is dropped but opacity feedback remains.
 - **Done when**: <machine- or eye-checkable completion criteria>.
 ```

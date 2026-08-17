@@ -149,20 +149,23 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (8)
+### Skills (11)
 
 | Skill | Source |
 |-------|--------|
-| `anti-slop-writing` | new (from `/refine-ux-writing`) |
+| `anti-slop-writing-formal` | split from `anti-slop-writing` (formal / semi-formal — only when required) |
+| `anti-slop-writing-informal` | split from `anti-slop-writing` (**default** for all Indonesian writing) |
 | `speak-indonesian` | new (familiar spoken ID; no rare KBBI) |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
 | `debug-top-down` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
+| `guided-learning-by-doing` | new (hands-on step-by-step tutorials; user does the work) |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
+| `ux-craft` | new (how the product works: flows, forms, states, a11y, UX writing) |
 
-`tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
+`tugas-kuliah` stays personal — the skill lives in `~/.cursor/skills` and the command `commands/tugas-kuliah.md` is gitignored; neither ships with this plugin.
 
 ### Rules (3)
 
@@ -172,13 +175,14 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (24)
+### Commands (27)
 
 | Command | Description |
 |---------|-------------|
 | `/behaviour-research` | Verify exact versions of tech the current work touches + report version-specific pitfalls (chat; not plan-specific) |
 | `/brainstorm` | Focused ideas and options (names, approaches, tradeoffs) — not first-principles deconstruction |
-| `/create-changelog` | Non-technical Indonesian changelog / release notes (nested modul + tipe inline: Baru, Perbaikan, Improvement, Dihapus, Berubah; voice via anti-slop-writing) |
+| `/create-changelog` | Non-technical Indonesian changelog / release notes (nested modul + tipe inline: Baru, Perbaikan, Improvement, Dihapus, Berubah; voice via anti-slop-writing-informal) |
+| `/create-changelog-prod` | Continue the production changelog from Notion — last changelog date → today, from branches merged to production (`.branch`) in FE + BE repos, written via `/create-changelog` |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
 | `/create-project-location` | Generate `.agents/skills/project-locations` for the workspace |
 | `/create-quiz-plan` | Interactive quiz from the current plan |
@@ -186,12 +190,13 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
 | `/learn-fast` | Fast ladder teaching, teach-only — no quizzes or active drills |
 | `/learn-and-practice` | Same ladder + five-part teaching + practice/quiz-style checks |
+| `/notion-create-task` | Add a Notion task via Notion MCP (TODO_SIMPLE template; brief, non-technical, anti-slop informal voice, related Project filled) |
 | `/notion-update-log` | Notion `## 📝 Note` (Pertanyaan, Pelajaran) lalu `## ⚔️ Log`; anti-slop |
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
 | `/plan-rules` | Full executor-ready `.plan.md` (parallel domains, Tasks, schema, API, Inventory) |
 | `/plan-rules-simple` | High-level `.plan.md` as a one-page RFC for developer review (Problem → Proposal → Impact → Decision Requested) |
 | `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
-| `/refine-ux-writing` | Triggers `anti-slop-writing` (EN → ID UX microcopy) |
+| `/refine-ux-writing` | Triggers `anti-slop-writing-informal` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/run-plan` | Execute a plan: one Composer 2.5 subagent per domain, in parallel |
 | `/search-data-smell` | Find one bad data contract / shape smell; flag Breaking on that fix |
@@ -200,6 +205,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/search-performance-can-improve` | Find one likely performance win via hot-path skim; flag Breaking on that fix |
 | `/search-related-problem` | Find one likely bug via path skim (not edge-case hunting) |
 | `/tidy-env` | Reposition existing `.env` keys into sectioned layout — no rename/add/invent keys |
+| `/use-english` | Answer this conversation in English |
 
 ## Layout
 

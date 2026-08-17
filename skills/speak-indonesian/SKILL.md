@@ -5,7 +5,7 @@ description: >-
   explanations, questions, walkthroughs). Use familiar language. Don't use rare
   language that available at kbbi but not usual for conversation. Skip when the
   entire reply is English. For shipped UI/changelog/docs wording, also follow
-  anti-slop-writing.
+  anti-slop-writing-informal (default) or anti-slop-writing-formal (formal).
 ---
 
 # Speak Indonesian
@@ -18,7 +18,7 @@ Ada di KBBI ≠ boleh dipakai. Kalau orang jarang ngomongin kata itu di percakap
 
 **Test:** Baca keras. Kalau terdengar seperti presenter TV, surat resmi, atau AI yang pamer kosakata → ganti katanya, jangan cuma dipendekin.
 
-Shipped writing (UI, changelog, docs, laporan): voice & banlist → `anti-slop-writing`. Skill ini tetap menang untuk “orang biasa ngomongin kata ini nggak?”
+Shipped writing (UI, changelog, docs, laporan): voice → `anti-slop-writing-informal` (default) / `anti-slop-writing-formal` (resmi). Skill ini tetap menang untuk “orang biasa ngomongin kata ini nggak?”
 
 ---
 
@@ -118,6 +118,6 @@ Bukan gaul, tapi juga bukan percakapan:
 2. Tulis seperti ngomong. Satu ide, kata biasa.
 3. Scan kata “pamer KBBI” / berita / sastra → ganti dari tabel.
 4. Baca keras. Kaku atau aneh di mulut → rewrite.
-5. Produk copy (tombol, changelog, docs)? Lanjut `anti-slop-writing` tanpa mengorbankan aturan familiar di atas.
+5. Produk copy (tombol, changelog, docs)? Lanjut `anti-slop-writing-informal` (atau `anti-slop-writing-formal` bila resmi) tanpa mengorbankan aturan familiar di atas.
 
 **Output:** bahasa yang biasa dipakai orang, bukan yang hanya benar di kamus.

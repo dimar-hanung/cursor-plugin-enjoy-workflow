@@ -19,14 +19,14 @@ Insert after `## What Current (Technical)` and before `## What Changes (Technica
 ```markdown
 ## Behaviour
 
-### <tech> <exact version>
-- [behaviour fact] — affects [domain or Task] ([source link])
+### {{tech}} {{exact version}}
+- {{behaviour fact}} — affects {{domain or Task}} ({{source link}})
 ```
 
 Rules:
 
 - Every fact names the exact installed version and links a source. No facts from memory alone.
 - Include only facts that change how a Task is executed. This is a filter, not a dump.
-- If research finds nothing surprising, write one line: `Verified <tech versions>; no version-specific behaviour affects this plan.`
+- If research finds nothing surprising, write one line: `Verified {{tech versions}}; no version-specific behaviour affects this plan.`
 - Plan tone still applies — facts only, no options, questions, or "consider".
 - Fix plan if the behaviour research contradicts the plan.

@@ -1,8 +1,8 @@
-# Indonesian banlist (all surfaces)
+# Indonesian banlist (formal & semi-formal surfaces)
 
 Adapted from [adenaufal/anti-slop-writing](https://github.com/adenaufal/anti-slop-writing) `indonesian/references/vocabulary-banlist.md` (v3). Prefer **plain verbs + facts** over synonym swaps.
 
-Use for UI, changelog, reports, docs, and general Indonesian. Cut anything that does not carry new information.
+Use for UI, changelog, reports, docs, and professional Indonesian. Cut anything that does not carry new information. Casual/personal register → `anti-slop-writing-informal`.
 
 ## Significance puffers — drop or prove
 

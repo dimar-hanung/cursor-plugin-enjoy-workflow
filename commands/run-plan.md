@@ -45,27 +45,27 @@ After launch, tell the user which domains started (say **Composer 2.5**, not the
 Fill the template. Do not point the subagent at the plan file and expect it to pick a domain.
 
 ```text
-Workspace: {absolute workspace path}
-Plan file: {absolute plan path}
+Workspace: {{absolute workspace path}}
+Plan file: {{absolute plan path}}
 
 ## This domain
-{include context: this domain's full ## Domain: section}
+{{include context: this domain's full ## Domain: section}}
 
 ## You Consume (bind now — do not wait)
-{for each call under this domain's ### Consumes, include THAT call from the providing domain's ### Provides:}
+{{for each call under this domain's ### Consumes, include THAT call from the providing domain's ### Provides:}}
 
 **`[consumed-domain]` `[call]`**
 - Request: …
 - Success: …
 - Errors: …
 
-{if Consumes is none: none}
+{{if Consumes is none: none}}
 
 ## Shared plan facts
-Goal: {include context: Goal}
-Out of Scope: {include context: Out of Scope}
-Study cases this domain must satisfy (After changes only): {include context: relevant cases}
-Behaviour: {include context: ## Behaviour when present, else omit this line}
+Goal: {{include context: Goal}}
+Out of Scope: {{include context: Out of Scope}}
+Study cases this domain must satisfy (After changes only): {{include context: relevant cases}}
+Behaviour: {{include context: ## Behaviour when present, else omit this line}}
 
 ## Rules
 - Edit ONLY this domain's Inventory paths (new + modified). Do not touch other domains' files.
