@@ -149,7 +149,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (12)
+### Skills (14)
 
 | Skill | Source |
 |-------|--------|
@@ -162,6 +162,8 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `docx` | `~/.agents/skills` |
 | `grill-me` | adapted from mattpocock/skills + enjoy-workflow plan pipeline |
 | `guided-learning-by-doing` | new (hands-on step-by-step tutorials; user does the work) |
+| `learn-and-practice` | moved from `commands/learn-and-practice` (ladder teaching + practice checks) |
+| `learn-fast` | moved from `commands/learn-fast` (ladder teaching, teach-only) |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
 | `ux-craft` | new (how the product works: flows, forms, states, a11y, UX writing) |
@@ -176,7 +178,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (29)
+### Commands (27)
 
 | Command | Description |
 |---------|-------------|
@@ -190,8 +192,6 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/create-quiz-plan` | Interactive quiz from the current plan |
 | `/fundamental-think` | First-principles thinking before execution |
 | `/fundamental-think-indo` | Same, in Bahasa Indonesia |
-| `/learn-fast` | Fast ladder teaching, teach-only — no quizzes or active drills |
-| `/learn-and-practice` | Same ladder + five-part teaching + practice/quiz-style checks |
 | `/notion-create-task` | Add a Notion task via Notion MCP (TODO_SIMPLE template; brief, non-technical, anti-slop informal voice, related Project filled) |
 | `/notion-update-log` | Notion `## 📝 Note` (Pertanyaan, Pelajaran) lalu `## ⚔️ Log`; anti-slop |
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |

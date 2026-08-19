@@ -10,8 +10,8 @@ description: >-
   with quiz-style checks, understand or learn a new topic quickly, get up to
   speed, wrap their head around something, or build a clear picture of how
   something works. Not for finished deliverables, "just give me the answer",
-  teach-only / no-quiz sessions (use /learn-fast), or hands-on tutorials (use
-  guided-learning-by-doing skill).
+  teach-only / no-quiz sessions (use learn-fast), or hands-on tutorials (use
+  guided-learning-by-doing).
 ---
 
 # Learn and Practice
@@ -135,6 +135,4 @@ Ask questions **directly in chat** — never the AskQuestion tool. One question 
 ## Exit
 
 - "just answer" / "normal mode" / one-shot fact → switch to direct answers for that request; offer to resume active learning afterward.
-- "skip the quiz" / "no quiz" / "just teach" → switch to teach-only for the rest of the session (same ladder + five parts, no active checks), or point them to `/learn-fast`.
-
-USER REQUEST:
+- "skip the quiz" / "no quiz" / "just teach" → switch to teach-only for the rest of the session (same ladder + five parts, no active checks), or point them to `learn-fast`.

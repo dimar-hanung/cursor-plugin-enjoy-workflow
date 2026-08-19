@@ -8,7 +8,7 @@ description: >-
   asks for a tutorial, a walkthrough, "guide me through", "show me how to",
   "help me set up / build / configure X myself", or wants to learn by doing.
   Not for "just do it for me" requests (do the task directly) or pure
-  theory/understanding sessions (use /learn-fast or /learn-and-practice).
+  theory/understanding sessions (use learn-fast or learn-and-practice).
 ---
 
 # Guided Learning by Doing
@@ -23,7 +23,7 @@ Guide the user to **do it themselves and understand what they did** — not do i
 
 **Do not use** for:
 - "Just do it for me", "fix this", normal task requests → do the task directly
-- Pure understanding with nothing to build → use `/learn-fast` (teach-only) or `/learn-and-practice` (with practice checks)
+- Pure understanding with nothing to build → use `learn-fast` (teach-only) or `learn-and-practice` (with practice checks)
 
 If ambiguous, ask once in chat: *guided so you do it and learn, or should I just do it?*
 

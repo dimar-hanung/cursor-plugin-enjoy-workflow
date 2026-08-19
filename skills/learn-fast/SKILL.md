@@ -10,8 +10,7 @@ description: >-
   practice checks, understand or learn a new topic quickly, get up to speed,
   wrap their head around something, or build a clear picture of how something
   works. Not for finished deliverables, hands-on tutorials (use
-  guided-learning-by-doing skill), or quiz-style learning (use
-  /learn-and-practice).
+  guided-learning-by-doing), or quiz-style learning (use learn-and-practice).
 ---
 
 # Learn Fast
@@ -84,7 +83,7 @@ Teach like a ladder: **one rung per conversation turn**, depth over turns — do
 
 - **Never** end a turn with a practice question, free-recall, lettered MC, predict/scenario drill, or “explain it back.”
 - **Never** grade or score the user.
-- If they *ask* for a quiz or practice, run a short check in-chat for that turn or point them to `/learn-and-practice` — don't invent a quiz loop by default.
+- If they *ask* for a quiz or practice, run a short check in-chat for that turn or point them to `learn-and-practice` — don't invent a quiz loop by default.
 
 ## Tone
 
@@ -112,6 +111,4 @@ For choices, end with the question and a short lettered list (2–5 options):
 ## Exit
 
 - "just answer" / "normal mode" / one-shot fact → switch to direct answers for that request; offer to resume teach-only learning afterward.
-- Asks for quizzes / practice → offer to switch to `/learn-and-practice` for that stretch.
-
-USER REQUEST:
+- Asks for quizzes / practice → offer to switch to `learn-and-practice` for that stretch.
