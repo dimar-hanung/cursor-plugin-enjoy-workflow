@@ -16,6 +16,8 @@ Follow the steps in order. Fill the body template at the end — do not invent e
 | Case | Action |
 | --- | --- |
 | Creating, drafting, or presenting a plan · switching to Plan mode | Use this skill |
+| Design has open decisions or needs stress-testing before committing | Run `grill-me` (pre-plan) first; then write the plan from its decision record |
+| `.plan.md` exists but has vague Tasks, contract gaps, or before `/run-plan` | Run `grill-me` (post-plan, gap-only); patch the plan from its decision record |
 | Trivial work (typo, one obvious file, repeated one-line fix) | Skip the plan — state the change and execute |
 | UI motion audit (no product behaviour change) | Skip — use `skills/ui-craft/references/motion-plan-template.md`, not `.plan.md` |
 

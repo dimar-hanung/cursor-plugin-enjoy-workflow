@@ -93,3 +93,5 @@ Do not poll. When completion notifications have arrived for every launched agent
 4. Report a review per domain: what landed, what matches the plan, what does not. Link `[Name](id)` again.
 
 If a domain missed its Provides or failed to bind Consumes, say so. Do not silently re-run every domain. Re-launch only the failed domain (same Task args) when the miss is clear, or ask if the failure is ambiguous.
+
+If review finds **plan ambiguity** (vague Tasks, missing Consumes, study cases without Tasks) rather than implementation bugs, run `grill-me` in **post-plan** mode on those gaps, patch `.plan.md`, then re-launch affected domains only.

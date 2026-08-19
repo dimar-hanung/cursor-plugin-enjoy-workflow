@@ -149,7 +149,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (8)
+### Skills (9)
 
 | Skill | Source |
 |-------|--------|
@@ -158,11 +158,10 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `client-business-understanding` | `~/.cursor/skills` |
 | `debug-top-down` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
+| `grill-me` | adapted from mattpocock/skills + enjoy-workflow plan pipeline |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `plan-rules` | `~/.agents/skills` |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
-
-`tugas-kuliah` stays personal in `~/.cursor/skills` (not in this plugin).
 
 ### Rules (3)
 
@@ -172,12 +171,13 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (21)
+### Commands (22)
 
 | Command | Description |
 |---------|-------------|
 | `/behaviour-research` | Verify exact versions of tech the current work touches + report version-specific pitfalls (chat; not plan-specific) |
 | `/brainstorm` | Focused ideas and options (names, approaches, tradeoffs) — not first-principles deconstruction |
+| `/grill-me` | Stress-test design (pre-plan) or vet/patch `.plan.md` gaps (post-plan) before `/run-plan` |
 | `/create-changelog` | Non-technical Indonesian changelog / release notes (nested modul + tipe inline: Baru, Perbaikan, Improvement, Dihapus, Berubah; voice via anti-slop-writing) |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
 | `/create-project-location` | Generate `.agents/skills/project-locations` for the workspace |
