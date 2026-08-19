@@ -176,7 +176,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (28)
+### Commands (29)
 
 | Command | Description |
 |---------|-------------|
@@ -198,6 +198,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/plan-rules` | Full executor-ready `.plan.md` (parallel domains, Tasks, schema, API, Inventory) |
 | `/plan-rules-simple` | High-level `.plan.md` as a one-page RFC for developer review (Problem → Proposal → Impact → Decision Requested) |
 | `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
+| `/push-git-workflow-mr` | Same Git/HTTP setup, but MR only — push a feature branch and give the GitLab MR URL; never merge to development or production |
 | `/refine-ux-writing` | Triggers `anti-slop-writing-informal` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
 | `/run-plan` | Execute a plan: one Composer 2.5 subagent per domain, in parallel |
