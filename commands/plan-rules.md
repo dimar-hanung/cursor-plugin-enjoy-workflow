@@ -1,27 +1,34 @@
 ---
 name: plan-rules
 description: >-
-  Formats Cursor `.plan.md` plans with YAML todos and parallel domains
-  (`### Provides`, `### Consumes`, `### Outcome`). Never a pipeline that waits
-  on a previous domain. Use when creating, drafting, or presenting any plan —
-  or when switching to Plan mode.
+  Formats a full executor-ready Cursor `.plan.md` with YAML todos and parallel
+  domains (`### Provides`, `### Consumes`, `### Outcome`, Tasks, schema, API
+  contract, Inventory). Use when creating a detailed plan for `/run-plan`, or
+  /plan-rules. For a high-level one-page review plan, use /plan-rules-simple.
 ---
 
 # Plan Rules
 
 Follow the steps in order. Fill the body template at the end — do not invent extra top-level sections.
 
+## Vs `/plan-rules-simple`
+
+| Need | Use |
+| --- | --- |
+| Full executor-ready plan (Tasks, schema, API contract, Inventory) | **This command** |
+| High-level one-page plan a developer can review quickly | `/plan-rules-simple` |
+
 ## When to use / skip
 
 | Case | Action |
 | --- | --- |
-| Creating, drafting, or presenting a plan · switching to Plan mode | Use this skill |
-| Design has open decisions or needs stress-testing before committing | Run `grill-me` (pre-plan) first; then write the plan from its decision record |
-| `.plan.md` exists but has vague Tasks, contract gaps, or before `/run-plan` | Run `grill-me` (post-plan, gap-only); patch the plan from its decision record |
+| Creating, drafting, or presenting a plan · switching to Plan mode | Use this command |
+| Design has open decisions or needs stress-testing before committing | Run `/grill-me` (pre-plan) first; then write the plan from its decision record |
+| `.plan.md` exists but has vague Tasks, contract gaps, or before `/run-plan` | Run `/grill-me` (post-plan, gap-only); patch the plan from its decision record |
 | Trivial work (typo, one obvious file, repeated one-line fix) | Skip the plan — state the change and execute |
 | UI motion audit (no product behaviour change) | Skip — use `skills/ui-craft/references/motion-plan-template.md`, not `.plan.md` |
 
-If the table says skip, stop this skill.
+If the table says skip, stop this command.
 
 ## Hard rules
 
@@ -184,7 +191,7 @@ A shopper can pay; concurrent checkouts cannot drive stock negative; clients rec
 
 Section heading: `### Tasks`. Each bullet is one **Task**.
 
-**Formula:** `[Verb] <where> to <outcome> so <reason>.`
+**Formula:** `[Verb] [where] to [outcome] so [reason].`
 
 - Imperative, verb first — not "In `[where]`…".
 - Every Task needs a `so` reason. If you cannot state one, the item is vague, unnecessary, or too low-level.
@@ -234,7 +241,7 @@ Field-level deltas on changed operations: annotate the affected fields inline wi
 
 - `// new` — field added
 - `// deleted` — field removed (keep the line so the removal is visible)
-- `// changes from <old>` — type / shape / constraint change (state the previous form)
+- `// changes from [old]` — type / shape / constraint change (state the previous form)
 
 Use the codebase's comment syntax (`//` for JSON/TS/GraphQL, `#` for YAML/Python). If the payload notation is linted and forbids comments, use a **Changes** bullet list under the block instead.
 

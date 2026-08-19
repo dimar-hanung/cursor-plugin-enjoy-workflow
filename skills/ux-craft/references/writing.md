@@ -7,10 +7,10 @@ Open this file when writing or reviewing buttons, labels, errors, confirmations,
 | Language | Canonical source |
 |----------|------------------|
 | **English** (or product already EN) | **This file** — laws and examples below |
-| **Bahasa Indonesia** (UI, changelog voice, reports/docs prose) | `anti-slop-writing` skill — banlist + register (`/refine-ux-writing` triggers it) |
-| Non-technical **changelog** structure | `/create-changelog` (`commands/create-changelog.md`) — nested modul + tipe inline; voice via `anti-slop-writing` |
+| **Bahasa Indonesia** (UI, changelog voice, reports/docs prose) | `anti-slop-writing-informal` (default) — register + voice; `anti-slop-writing-formal` for formal register + full banlist (`/refine-ux-writing` triggers them) |
+| Non-technical **changelog** structure | `/create-changelog` (`commands/create-changelog.md`) — nested modul + tipe inline; voice via `anti-slop-writing-informal` |
 
-Laws here (verb+object, calm errors, no blame, consistent terms) still apply in ID as **intent**. Do **not** paste English example strings into Indonesian UI. For ID wording conflicts (e.g. empty-state phrasing, apology), **`anti-slop-writing` wins**.
+Laws here (verb+object, calm errors, no blame, consistent terms) still apply in ID as **intent**. Do **not** paste English example strings into Indonesian UI. For ID wording conflicts (e.g. empty-state phrasing, apology), the anti-slop-writing skills win — `anti-slop-writing-informal` by default, `anti-slop-writing-formal` when formal.
 
 ## Contents
 
@@ -65,7 +65,7 @@ Consistent language builds trust; inconsistent language forces the user to trans
 
 - One term per concept, everywhere — pick "project" or "workspace", never both for the same thing. Keep a terms list for the product.
 - The user's nouns, not internal names ("Download report", not "Export SSRS artifact").
-- Never "card" (or Indonesian `kartu`) for a UI tile — kanban, dashboard, card view. Name the object ("Add task", not "Add card"; "No tasks yet", not "No cards yet") or omit. Keep "card" only for payment/ID. ID wording: `anti-slop-writing`.
+- Never "card" (or Indonesian `kartu`) for a UI tile — kanban, dashboard, card view. Name the object ("Add task", not "Add card"; "No tasks yet", not "No cards yet") or omit. Keep "card" only for payment/ID. ID wording: `anti-slop-writing-informal` (default) / `anti-slop-writing-formal`.
 - Front-load the key word: "Delete account" not "Click here if you would like to delete your account".
 - No marketing adverbs in product UI: "Effortlessly", "Seamlessly", "Supercharge", "Unlock". Plain verbs; say what happens.
 - Tone scales with stakes — casual for routine, neutral for transactional, formal for irreversible/legal.

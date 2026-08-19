@@ -50,7 +50,7 @@ Color is the fastest fingerprint — unconstrained generation clusters in the sa
 - Real product or context imagery — not floating gradient orbs behind the hero
 - ~60/30/10 dominant + neutral + accent; extend via tints/shades, never new hues — not a shallow flat palette with no structure
 - Dark mode only when brand-justified, with a designed dark palette — not dark-by-default with neon-on-dark and glowing card borders
-- Brand accent on actions, selection, and focus; tinted borders (`border-{accent}-200/300`) or surface shift for panel edges — "clean" is not colorless all-neutrals soup
+- Brand accent on actions, selection, and focus; tinted borders (`border-{{accent}}-200/300`) or surface shift for panel edges — "clean" is not colorless all-neutrals soup
 
 ## 3. Typography
 

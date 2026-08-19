@@ -1,16 +1,18 @@
 ---
-name: anti-slop-writing
+name: anti-slop-writing-formal
 description: >-
-  Write or refine Bahasa Indonesia so it sounds human — not AI, machine-
-  translated, or bureaucratic. Use for product UI microcopy, changelogs,
-  reports, docs, analyses, emails, EN→ID localization, or when running
-  /refine-ux-writing. Canonical for natural Indonesian product and general
-  writing in this plugin.
+  Write or refine formal and semi-formal Bahasa Indonesia so it sounds human,
+  clear, and specific — not AI-generated, machine-translated, or bureaucratic.
+  Use ONLY when a formal or semi-formal register is required (gov, bank,
+  legal, academic, corporate client, laporan resmi) or the user asks for
+  formal. Holds the canonical banlist, UI mechanics, and prose rules for all
+  registers. Default register in this plugin is informal →
+  anti-slop-writing-informal.
 ---
 
-# Anti-Slop Writing (Bahasa Indonesia)
+# Anti-Slop Writing — Formal & Semi-Formal (Bahasa Indonesia)
 
-**Role:** Write or refine Bahasa Indonesia that a real person would say or send — warm enough for the surface, specific, short where space is tight — while keeping established tech terms when forced translation would confuse readers.
+**Role:** Write or refine Bahasa Indonesia that a real person would send in a professional context — warm enough for the surface, specific, short where space is tight — while keeping established tech terms when forced translation would confuse readers.
 
 **Surfaces this skill covers**
 
@@ -27,7 +29,7 @@ description: >-
    1. Register: match audience
    2. Notes: same banlist; less slang than personal blog
 
-**Canonical for Indonesian wording** on these surfaces. English UX laws: `skills/ux-craft/references/writing.md` (intent applies; ID wording conflicts → **this skill wins**).
+**Bukan default.** Semua tulisan Indonesia default ke `anti-slop-writing-informal`; buka skill ini hanya saat register formal / semi-formal diperlukan. Skill ini memegang canonical banlist, UI mechanics, dan prose rules yang dipakai semua register. English UX laws: `skills/ux-craft/references/writing.md` (intent applies; ID wording conflicts → the anti-slop-writing skills win). Chat / spoken replies → `speak-indonesian` (familiar words; no rare KBBI). That skill still wins on “would a person actually say this word?”
 
 **Test:** Read aloud. Sounds like a memo, landing page, or ChatGPT → rewrite.
 
@@ -49,7 +51,7 @@ description: >-
 6. **No translationese** — rewrite English scaffolds (`Apakah Anda dapat…`, `Kami telah menambahkan…`).
 7. **One term per concept** — no synonym cycling (`proyek` / `workspace` / `ruang kerja` for the same thing).
 8. **No chat artifacts** — `Semoga membantu!`, `Baik, berikut adalah…`, `Sebagai AI…`.
-9. **No street pronouns** — never `gw`, `lo`, `gue`, `lu`; use omit / `kamu` / `Anda` / `aku` by register.
+9. **No street pronouns** — never `gw`, `lo`, `gue`, `lu`; use omit / `Anda` / `kamu` by register.
 
 ---
 
@@ -59,18 +61,12 @@ description: >-
    1. Use for: gov, bank, legal, academic report
    2. Pronouns: `Anda` / impersonal
    3. Particles (`sih`, `dong`, `nih`): none
-2. **Semi-formal** (default)
+2. **Semi-formal**
    1. Use for: SaaS UI, changelog, most reports, docs
    2. Pronouns: omit / `kamu` sparingly / `Anda` if brand
    3. Particles: rare; prose may use lightly
-3. **Light casual**
-   1. Use for: consumer social product, friendly empty
-   2. Pronouns: omit / `kamu`
-   3. Particles: at most one softener
-4. **Informal blog**
-   1. Use for: only if user asks
-   2. Pronouns: `aku` / `kamu` consistently — never `gw`, `lo`, `gue`, `lu`
-   3. Particles: OK in prose — **never** on buttons
+
+Default register plugin ini informal — casual dan personal (light casual consumer voice, aku/kamu blog, social captions) → `anti-slop-writing-informal`.
 
 Never mix `Anda` and `kamu` in the same flow or document section.
 
@@ -97,7 +93,7 @@ Align with Microsoft voice adapted for ID: warm, crisp, ready to help. Gov produ
 - Empty: what it is + how to fill + CTA; prefer `Belum ada…` over scolding `Tidak ada…`
 - Keep loanwords users know (`email`, `API`, `upload`); don’t invent `surel` / `tembolok`
 - Never `card` / `kartu` for a UI tile (kanban, dashboard, card view). Name the object (`tugas`, `item`, `catatan`…) or omit. Keep `kartu` only for payment/ID (`kartu kredit`, `nomor kartu`). Flag it if the source uses either.
-- Preserve `{placeholders}` exactly
+- Preserve `{{placeholders}}` exactly
 
 English button/error laws still apply as **intent** via `writing.md`.
 
@@ -195,11 +191,11 @@ Error frames: `Tidak bisa [aksi]` / `Gagal [aksi]` + next step.
 ## Process
 
 1. **Surface** — UI / changelog / report-docs / other.
-2. **Register** — lock pronouns and formality.
+2. **Register** — lock pronouns and formality (formal ringan / semi-formal).
 3. **Keep vs translate** — mark EN terms readers already know.
 4. **Draft** — write or refine; front-load the key word or finding.
 5. **Anti-slop pass** — shared rules + quick banlist; open references if still stiff.
-6. **Length** — fit the surface (UI tight; prose can breathe but stay concrete); `{vars}` exact; **zero** em/en dashes.
+6. **Length** — fit the surface (UI tight; prose can breathe but stay concrete); `{{vars}}` exact; **zero** em/en dashes.
 7. **Read aloud** — awkward spoken = wrong written.
 8. **Consistency** — same term across the piece / neighboring screens.
 
@@ -225,9 +221,10 @@ Error frames: `Tidak bisa [aksi]` / `Gagal [aksi]` + next step.
 
 ### Local
 
-- [banlist.md](references/banlist.md) — expanded vocab (all surfaces)
+- [banlist.md](references/banlist.md) — expanded vocab (all formal surfaces)
 - [patterns.md](references/patterns.md) — structural / BI tells (UI + prose)
 - [prose.md](references/prose.md) — reports, docs, analyses, longer Indonesian
+- [anti-slop-writing-informal](../anti-slop-writing-informal/SKILL.md) — casual / personal register (blog, caption, aku/kamu)
 
 ### External
 

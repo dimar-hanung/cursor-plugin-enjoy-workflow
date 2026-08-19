@@ -10,8 +10,8 @@ description: Repositions existing .env entries into a sectioned layout (header, 
 ## Target format
 
 ```dotenv
-# <project> — <one-line purpose>
-# <optional usage note>
+# {{project}} — {{one-line purpose}}
+# {{optional usage note}}
 
 # General
 EXISTING_MODE_KEY=development
@@ -41,7 +41,7 @@ EXISTING_REST_KEY=https://example.com/rest
 
 ## Rules
 
-1. **Header** — `# <project> — <purpose>`, optional usage note, then a blank line.
+1. **Header** — `# {{project}} — {{purpose}}`, optional usage note, then a blank line.
 2. **Sections** — group *existing* related keys under `# Section Name`. One blank line between sections; none inside a section.
 3. **Assignment** — keep `KEY=value` with no spaces around `=`. Empty stays `KEY=`.
 4. **Comments** — keep `# KEY=value` as-is; place next to its section or in ENV-LOCAL if it is a local override line already in the file.

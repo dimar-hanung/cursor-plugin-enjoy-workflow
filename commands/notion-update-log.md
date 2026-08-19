@@ -7,11 +7,11 @@ description: Update Notion Note (### Pertanyaan, ### Pelajaran umum) lalu Log. E
 
 Update log kerja di Notion. Bahasa: **Indonesia**. Ringkas, mudah discan — bukan paragraf teknis.
 
-**Wajib baca** [anti-slop-writing](../skills/anti-slop-writing/SKILL.md). Voice di situ; struktur di command ini.
+**Wajib baca** [anti-slop-writing-informal](../skills/anti-slop-writing-informal/SKILL.md). Voice di situ; struktur di command ini. Konteks resmi → `anti-slop-writing-formal`.
 
 | Yang menang | Surface |
 |-------------|---------|
-| `anti-slop-writing` | Voice, banlist, titik/koma (bukan `—`) |
+| `anti-slop-writing-informal` | Voice default, titik/koma (bukan `—`); banlist lengkap di `anti-slop-writing-formal` |
 | Command ini | `## 📝 Note` lalu `## ⚔️ Log` + label tipe |
 
 ## Alur
@@ -163,7 +163,7 @@ Titik untuk pisah kalimat. Tanpa em dash. Tanpa label Progress/Hasil.
 
 ## References
 
-- [anti-slop-writing](../skills/anti-slop-writing/SKILL.md)
+- [anti-slop-writing-informal](../skills/anti-slop-writing-informal/SKILL.md)
 
 
 USER REQUEST:

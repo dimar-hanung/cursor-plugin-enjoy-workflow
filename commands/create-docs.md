@@ -15,7 +15,7 @@ Do not duplicate the same content into `docs/` and `.agents/canvas-markdown/`.
 
 ## Rules
 
-1. Write `docs/<topic-kebab>.md` (Bahasa Indonesia).
+1. Write `docs/{{topic-kebab}}.md` (Bahasa Indonesia).
 2. Include Mermaid where it clarifies flow, architecture, or schema (`mermaid-diagram-specialist`).
 3. No line numbers in file maps — use component/method names.
 4. Single-repo features: drop secondary-module / dual FE–BE scaffolding.
@@ -37,27 +37,27 @@ Do not duplicate the same content into `docs/` and `.agents/canvas-markdown/`.
 
 ```markdown
 ---
-name: <docs-name>
-description: <one line>
+name: {{docs-name}}
+description: {{one line}}
 ---
 
-# {Feature Display Name} File Map
+# {{Feature Display Name}} File Map
 
-Use for "{internal feature name}".
+Use for "{{internal feature name}}".
 
 ## Files Mapping
 
-### Frontend (`{frontend-root}`)
+### Frontend (`{{frontend-root}}`)
 - [File](relative/path) — role
 
-### Backend (`{backend-root}`)
+### Backend (`{{backend-root}}`)
 - [File](relative/path) — role
 
 ### Integration Entry Points
 - [File](relative/path) — role
 
 ## Database Mapping
-- **{table}**: relation to feature (optional)
+- **{{table}}**: relation to feature (optional)
 
 ## Runtime path
 - Frontend route / REST base / socket namespace (as relevant)

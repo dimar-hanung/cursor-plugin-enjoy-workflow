@@ -12,7 +12,7 @@ description: >-
 Write the deliverable as a markdown file at:
 
 ```
-<workspace>/.agents/canvas-markdown/<topic>.md
+{{workspace}}/.agents/canvas-markdown/{{topic}}.md
 ```
 
 ## Deliverable router (pick one)
@@ -20,8 +20,8 @@ Write the deliverable as a markdown file at:
 | Need | Use | Path / form |
 |------|-----|-------------|
 | Interactive / visual layout beside chat (tables, charts, explorations) | Cursor **Canvas** skill | `.canvas.tsx` |
-| Long **prose** report to reopen or share as a file | **This skill** | `.agents/canvas-markdown/<topic>.md` |
-| Product / feature **technical docs** (ID, Mermaid, file maps) | `/create-docs` | `docs/<topic>.md` |
+| Long **prose** report to reopen or share as a file | **This skill** | `.agents/canvas-markdown/{{topic}}.md` |
+| Product / feature **technical docs** (ID, Mermaid, file maps) | `/create-docs` | `docs/{{topic}}.md` |
 | Word / `.docx` | `docx` skill | `.docx` file |
 
 **Do not** write the same report in more than one of these. If the user says only "report" / "analisis" without format: prefer **this skill** for prose conclusions; prefer **Canvas** when they ask for a canvas, dashboard-like layout, or interactive exploration; prefer **`/create-docs`** when they ask for docs, dokumentasi, or a file map under `docs/`.
