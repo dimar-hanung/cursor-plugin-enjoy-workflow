@@ -149,13 +149,12 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 
 ## Inventory
 
-### Skills (14)
+### Skills (13)
 
 | Skill | Source |
 |-------|--------|
 | `anti-slop-writing-formal` | split from `anti-slop-writing` (formal / semi-formal — only when required) |
 | `anti-slop-writing-informal` | split from `anti-slop-writing` (**default** for all Indonesian writing) |
-| `speak-indonesian` | new (familiar spoken ID; no rare KBBI) |
 | `canvas-markdown` | `~/.agents/skills` |
 | `client-business-understanding` | `~/.cursor/skills` |
 | `debug-top-down` | `~/.agents/skills` |
@@ -166,7 +165,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `learn-fast` | moved from `commands/learn-fast` (ladder teaching, teach-only) |
 | `mermaid-diagram-specialist` | `~/.agents/skills` |
 | `ui-craft` | merged (anti-slop + Emil + Apple + animation skills) |
-| `ux-craft` | new (how the product works: flows, forms, states, a11y, UX writing) |
+| `ux-craft` | new (how the product works: flows, forms, states, a11y, UX writing always ID; familiar spoken ID in `references/writing.md`) |
 
 `tugas-kuliah` stays personal — the skill lives in `~/.cursor/skills` and the command `commands/tugas-kuliah.md` is gitignored; neither ships with this plugin.
 

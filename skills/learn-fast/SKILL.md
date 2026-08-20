@@ -37,14 +37,26 @@ Close with a one-line "this topic is X" answer, then ask which piece to dig into
 ### 3. Teach one rung
 
 Every teaching message covers **one concept at one ladder rung** using all six parts, in order. Content first, then the closing navigation — never announce what you'll teach and stop.
+Response
+```
+### Main Concept
+{{Explanation and overview about the concept.}}
 
-1. **Main concept** — one clear line for this rung. **Analogy only for the topic's main concept** (the 🧭 map, or a small topic's first Feel): one everyday analogy that maps the core idea. Skip on rungs 2–4; don't invent a new one per turn or stretch it to cover exceptions.
-2. **Misconception** — one thing people usually get wrong at *this* rung ("Most people think X…").
-3. **Explanation** — only what this rung needs; usually **2–4 sentences**, one why-level. Why over what: understanding they can re-explain later, not memorized facts. Tiny Mermaid only if it replaces a paragraph.
-4. **Example** — **one** concrete example at this rung's depth.
-5. **Tip** — **one** practical tip (use, avoid burn, or memory hook).
-6. **Short conclusion** — **1–2 sentences** answering this rung's question ("so what's the answer?"): the takeaway they can walk away with, not a recap.
+### Misconception
+{{What people usually get wrong at this rung ("Most people think X…").}}
 
+### Explanation
+{{What this rung needs. Why over what: understanding they can re-explain later, not memorized facts. Tiny Mermaid only if it replaces a paragraph.}}
+
+### Example
+{{A concrete example at this rung's depth.}}
+
+### Tip
+{{A practical tip (use, avoid burn, or memory hook).}}
+
+### Short conclusion
+{{The takeaway answering this rung's question ("so what's the answer?") — not a recap.}}
+```
 Label the parts lightly so the shape is visible. Never skip a part — **compress**, don't expand; if you want to say more, save it for the next rung.
 
 ### 4. Close with navigation

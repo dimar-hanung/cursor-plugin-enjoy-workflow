@@ -18,7 +18,7 @@ description: >-
 
 1. **UI microcopy** (buttons, errors, empty, labels)
    1. Register: semi-formal conversational; often omit pronouns
-   2. Notes: short; see UX mechanics below + `ux-craft` English laws
+   2. Notes: short; see UX mechanics below + `ux-craft` writing.md (always ID unless user asks EN)
 2. **Changelog / release notes**
    1. Register: semi-formal; benefit-first
    2. Notes: structure owned by `/create-changelog` command; **voice** here
@@ -29,7 +29,7 @@ description: >-
    1. Register: match audience
    2. Notes: same banlist; less slang than personal blog
 
-**Bukan default.** Semua tulisan Indonesia default ke `anti-slop-writing-informal`; buka skill ini hanya saat register formal / semi-formal diperlukan. Skill ini memegang canonical banlist, UI mechanics, dan prose rules yang dipakai semua register. English UX laws: `skills/ux-craft/references/writing.md` (intent applies; ID wording conflicts → the anti-slop-writing skills win). Chat / spoken replies → `speak-indonesian` (familiar words; no rare KBBI). That skill still wins on “would a person actually say this word?”
+**Bukan default.** Semua tulisan Indonesia default ke `anti-slop-writing-informal`; buka skill ini hanya saat register formal / semi-formal diperlukan. Skill ini memegang canonical banlist, UI mechanics, dan prose rules yang dipakai semua register. UX writing: `skills/ux-craft/references/writing.md` — always Bahasa Indonesia unless the user asks for English (intent applies; ID voice conflicts → the anti-slop-writing skills win). Chat / spoken replies → `writing.md` § Bahasa Indonesia (familiar words; no rare KBBI). That section still wins on “would a person actually say this word?”
 
 **Test:** Read aloud. Sounds like a memo, landing page, or ChatGPT → rewrite.
 
@@ -95,7 +95,7 @@ Align with Microsoft voice adapted for ID: warm, crisp, ready to help. Gov produ
 - Never `card` / `kartu` for a UI tile (kanban, dashboard, card view). Name the object (`tugas`, `item`, `catatan`…) or omit. Keep `kartu` only for payment/ID (`kartu kredit`, `nomor kartu`). Flag it if the source uses either.
 - Preserve `{{placeholders}}` exactly
 
-English button/error laws still apply as **intent** via `writing.md`.
+Button/error laws in `writing.md` apply as **intent**; UX copy stays Bahasa Indonesia unless the user asks for English.
 
 ---
 
@@ -225,6 +225,7 @@ Error frames: `Tidak bisa [aksi]` / `Gagal [aksi]` + next step.
 - [patterns.md](references/patterns.md) — structural / BI tells (UI + prose)
 - [prose.md](references/prose.md) — reports, docs, analyses, longer Indonesian
 - [anti-slop-writing-informal](../anti-slop-writing-informal/SKILL.md) — casual / personal register (blog, caption, aku/kamu)
+- [writing.md](../ux-craft/references/writing.md) — UX writing (always ID unless user asks EN) + familiar words (§ Bahasa Indonesia)
 
 ### External
 

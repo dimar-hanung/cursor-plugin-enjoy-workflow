@@ -6,7 +6,13 @@ description: >-
   UX writing/microcopy, loading/empty/error/success states, accessibility,
   trust/consent, AI output, billing, permissions, and destructive actions.
   Complements ui-craft (how it looks and moves). Skip only for pure
-  backend/data tasks with no user-facing surface.
+  backend/data tasks with no user-facing surface. UX writing/microcopy is
+  always Bahasa Indonesia unless the user asks for English. ALWAYS apply
+  when speaking or responding in Bahasa Indonesia (chat replies,
+  explanations, questions, walkthroughs): use familiar language; don't use
+  rare KBBI that isn't usual for conversation. Skip chat-ID rules when the
+  entire reply is English. For shipped ID UI/changelog/docs, also follow
+  anti-slop-writing-informal (default) or anti-slop-writing-formal (formal).
 ---
 
 # UX Craft
@@ -15,13 +21,16 @@ Work with the grain of how people think, read, decide, trust, and recover — no
 
 ## Before answering
 
-Identify silently; expose in the answer only when useful:
+If this is **only Indonesian chat** (explanations, teaching, Q&A) with no product UX work: open [writing.md](references/writing.md) § Bahasa Indonesia only — skip Core laws, anti-patterns, and other references.
+
+Otherwise identify silently; expose in the answer only when useful:
 
 - User/role, primary decision, and the next action the UI should make obvious
 - Value visible before signup, payment, permission, or sensitive input
 - Happy path + empty/loading/failed/partial/offline + recovery path
 - Whether the task works with keyboard, touch, narrow viewport, reduced motion
 - Project contract: design system, voice, i18n, nearby patterns
+- UX copy → always Bahasa Indonesia (writing.md). Familiar words only; if unsure, search the web for how people actually say it, not KBBI. Chat follows the user.
 
 ## Core laws (ordered — earlier beats later on conflict)
 
@@ -73,13 +82,14 @@ Open the smallest set needed. When several match, start highest-stakes: **trust/
 | Keyboard, focus, touch, contrast, motion, responsive | [accessibility.md](references/accessibility.md) | Any interaction behavior change |
 | Sharing, billing, privacy, permissions, AI, automation, destructive | [trust.md](references/trust.md) | Recovery → states; consent copy → writing |
 | Loading, empty, error, offline, undo, toasts | [states.md](references/states.md) | Input loss → forms; external impact → trust |
-| Buttons, errors, empty copy, banners, toasts | [writing.md](references/writing.md) | Cost/consent/billing → trust |
+| Buttons, errors, empty copy, banners, toasts | [writing.md](references/writing.md) — always ID unless user asks EN | Cost/consent/billing → trust; voice → `anti-slop-writing-informal` |
+| Bahasa Indonesia chat | [writing.md](references/writing.md) § Bahasa Indonesia | Shipped UI/changelog/docs → also `anti-slop-writing-informal` (formal → `anti-slop-writing-formal`) |
 
 ## Output
 
 - **Review:** findings by severity — issue, violated law/anti-pattern, user impact, smallest fix, verification needed
 - **Implement:** smallest project-consistent change; report changed behavior + states covered + remaining risk
-- **Copy:** before/after when useful; route new strings through existing i18n when present
+- **Copy:** always Bahasa Indonesia unless the user asks for English; before/after when useful; route new strings through existing i18n when present
 
 ## Review table
 
@@ -96,5 +106,5 @@ Verdict: `Clean` · `Needs pass` · `Broken UX`.
 - [tables.md](references/tables.md) — data tables, lists, sorting, bulk actions, responsive
 - [accessibility.md](references/accessibility.md) — keyboard, focus, touch, contrast, motion, responsive
 - [trust.md](references/trust.md) — consent, preview, AI/automation, billing, permissions, audit
-- [writing.md](references/writing.md) — UX writing: buttons, errors, confirmations, tone
+- [writing.md](references/writing.md) — UX writing (always ID unless user asks EN): buttons, errors, confirmations, tone; chat ID → § Bahasa Indonesia
 - [states.md](references/states.md) — loading/empty/error/success, undo, toasts, optimistic updates

@@ -26,7 +26,7 @@ description: >-
 6. **Community post** — Discord, Telegram, forum, grup WA
 7. **Casual consumer brand voice** — playful empty states, onboarding santai
 
-Formal/semi-formal required (gov, bank, legal, academic, corporate client, laporan resmi) → `anti-slop-writing-formal`. Spoken chat replies → `speak-indonesian`.
+Formal/semi-formal required (gov, bank, legal, academic, corporate client, laporan resmi) → `anti-slop-writing-formal`. Spoken chat replies → `ux-craft` [writing.md](../ux-craft/references/writing.md) § Bahasa Indonesia (familiar words; no rare KBBI).
 
 **Test:** Read aloud. Sounds like a brochure, a press release, or ChatGPT trying to be relatable → rewrite.
 
@@ -74,7 +74,7 @@ Never mix `kamu` and `Anda` in one piece. Never mix `aku` and `saya`.
 8. **Emoji / exclamation padding** — `!!!`, emoji every line; one per caption is usually plenty
 9. **Template listicle openers** — `Berikut 5 alasan mengapa…` → start with the thing itself
 10. **Hedge clusters** — `menurut aku sih sebenarnya mungkin…` → pick a stance
-11. **News/AI openers** — `Di era…`, `Seiring…`, `Perlu diketahui bahwa…`, `Berikut adalah…` (see `speak-indonesian` for the familiar-word swap table)
+11. **News/AI openers** — `Di era…`, `Seiring…`, `Perlu diketahui bahwa…`, `Berikut adalah…` (swap table: `ux-craft` [writing.md](../ux-craft/references/writing.md) § Bahasa Indonesia)
 
 ---
 
@@ -105,7 +105,8 @@ Never mix `kamu` and `Anda` in one piece. Never mix `aku` and `saya`.
 2. **Voice** — lock pronouns (`aku`/`kamu` or omit); match the user's own samples if given.
 3. **Draft** — write like telling a friend; front-load the interesting thing.
 4. **Anti-slop pass** — shared rules + informal tells above.
-5. **Read aloud** — if you wouldn't say it to a friend without cringing, rewrite.
+5. **Familiar words** — no rare KBBI; if unsure, search how Indonesians actually say it (not KBBI). See [writing.md](../ux-craft/references/writing.md) § Bahasa Indonesia.
+6. **Read aloud** — if you wouldn't say it to a friend without cringing, rewrite.
 
 **Output:** Indonesian text only (written or refined), keep formatting/placeholders/line breaks, unless the user asks for a comparison or rationale.
 
@@ -125,4 +126,5 @@ Never mix `kamu` and `Anda` in one piece. Never mix `aku` and `saya`.
 ## References
 
 - [anti-slop-writing-formal](../anti-slop-writing-formal/SKILL.md) — formal register when required + canonical banlist, UI mechanics, prose rules
+- [writing.md](../ux-craft/references/writing.md) — familiar Indonesian words (chat + ID copy); swap table
 - [adenaufal/anti-slop-writing](https://github.com/adenaufal/anti-slop-writing) — upstream ID v3
