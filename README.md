@@ -159,7 +159,7 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `client-business-understanding` | `~/.cursor/skills` |
 | `debug-top-down` | `~/.agents/skills` |
 | `docx` | `~/.agents/skills` |
-| `grill-me` | adapted from mattpocock/skills + enjoy-workflow plan pipeline |
+| `grill-me` | One decision at a time before or after `.plan.md` (skill only) |
 | `guided-learning-by-doing` | new (hands-on step-by-step tutorials; user does the work) |
 | `learn-and-practice` | moved from `commands/learn-and-practice` (ladder teaching + practice checks) |
 | `learn-fast` | moved from `commands/learn-fast` (ladder teaching, teach-only) |
@@ -177,13 +177,12 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `principles` | Intent-first + readable/low-abstraction code |
 | `table-structure-diagrams` | Column-level Mermaid ERDs for schema questions |
 
-### Commands (27)
+### Commands (25)
 
 | Command | Description |
 |---------|-------------|
 | `/behaviour-research` | Verify exact versions of tech the current work touches + report version-specific pitfalls (chat; not plan-specific) |
 | `/brainstorm` | Focused ideas and options (names, approaches, tradeoffs) — not first-principles deconstruction |
-| `/grill-me` | Stress-test design (pre-plan) or vet/patch `.plan.md` gaps (post-plan) before `/run-plan` |
 | `/create-changelog` | Non-technical Indonesian changelog / release notes (nested modul + tipe inline: Baru, Perbaikan, Improvement, Dihapus, Berubah; voice via anti-slop-writing-informal) |
 | `/create-changelog-prod` | Continue the production changelog from Notion — last changelog date → today, from branches merged to production (`.branch`) in FE + BE repos, written via `/create-changelog` |
 | `/create-docs` | Technical docs in Bahasa Indonesia + Mermaid (+ feature file-map) |
@@ -194,13 +193,12 @@ Reload the VS Code window (or reopen Copilot Chat) after setup so skills refresh
 | `/notion-create-task` | Add a Notion task via Notion MCP (TODO_SIMPLE template; brief, non-technical, anti-slop informal voice, related Project filled) |
 | `/notion-update-log` | Notion `## 📝 Note` (Pertanyaan, Pelajaran) lalu `## ⚔️ Log`; anti-slop |
 | `/plan-behaviour-research` | Same research as `/behaviour-research`, scoped to the plan + insert a Behaviour section |
-| `/plan-rules` | Full executor-ready `.plan.md` (parallel domains, Tasks, schema, API, Inventory) |
+| `/plan-rules` | Flexible `.plan.md` written for easy review (no fixed template; include only what helps decide) |
 | `/plan-rules-simple` | High-level `.plan.md` as a one-page RFC for developer review (Problem → Proposal → Impact → Decision Requested) |
 | `/push-git-workflow` | Dev-then-prod Git push / MR (creates `.branch` when missing and includes it in the push) |
 | `/push-git-workflow-mr` | Same Git/HTTP setup, but MR only — push a feature branch and give the GitLab MR URL; never merge to development or production |
 | `/refine-ux-writing` | Triggers `anti-slop-writing-informal` (EN → ID UX microcopy) |
 | `/remove-unrelated` | Hide unnecessary technical detail |
-| `/run-plan` | Execute a plan: one Composer 2.5 subagent per domain, in parallel |
 | `/search-data-smell` | Find one bad data contract / shape smell; flag Breaking on that fix |
 | `/search-idea` | Find one improvement/feature idea with real leverage via journey skim (impact × effort, not a fix) |
 | `/search-overengineering` | Find one overengineering / simplification opportunity; flag Breaking on that fix |
