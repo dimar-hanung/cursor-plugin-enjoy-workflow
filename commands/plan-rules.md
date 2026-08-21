@@ -2,12 +2,12 @@
 name: plan-rules
 description: >-
   Write a `.plan.md` that's easy to review — include only what helps a reviewer
-  decide; no fixed template. Use /plan-rules-simple for a one-page RFC only.
+  decide; no fixed template.
 ---
 
 # Plan Rules
 
-**Skip** trivial one-file fixes. **Use `/plan-rules-simple`** for a quick RFC without implementation detail.
+**Skip** trivial one-file fixes.
 
 - English. Business labels stay in **"quotes"**.
 - One decided path — no options in the plan; decide outside first.
